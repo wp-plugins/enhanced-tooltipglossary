@@ -1,0 +1,4 @@
+#tt {position:absolute; display:block;}
+#tttop {display:block; height:5px; margin-left:5px;}
+#ttcont {display:block; padding:2px 12px 3px 7px; margin-left:5px; background:#666; color:white}
+#ttbot {display:block; height:5px; margin-left:5px;}
