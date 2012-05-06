@@ -61,6 +61,10 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 
 == Changelog ==
 
+= 1.1 =
+* Add A tag to the list of tags to ignore (Thanks to Robert Gilman)
+* Change activation mechanisim  (Thanks to Robert Gilman)
+* Fix bug when using excerpt (Thanks to Robert Gilman)
 
 = 1.0 =
 * First release nased on revised version on TooltipGlossary

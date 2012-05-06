@@ -3,7 +3,7 @@
 Plugin Name: EnhancedTooltipGlossary
 Plugin URI: http://www.creativemindsweb.com/plugins/enhancedtooltipglossary
 Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-Version: 1.0
+Version: 1.1
 Author: CreativeMinds based on jatls tooltipglossary
 */
 
@@ -57,6 +57,17 @@ Author: CreativeMinds based on jatls tooltipglossary
 		flush_rewrite_rules();
 	}
 	add_action( 'init', 'create_post_types');
+
+	
+      function glossary_flush_rewrite_rules()  {
+               
+                // First, we "add" the custom post type via the above written function.
+                create_post_types();
+               
+                flush_rewrite_rules();
+               
+        }
+		register_activation_hook( __FILE__, 'glossary_flush_rewrite_rules' );
 
 //Function parses through post entries and replaces any found glossary terms with links to glossary term page.
 
@@ -123,12 +134,14 @@ function red_glossary_parse($content){
 			if (get_option('red_glossaryProtectedTags') == 1) {
 			$pre_regex = '/<pre[^>]*>(.*?)<\/pre>/si';				
 			$object_regex = '/<object[^>]*>(.*?)<\/object>/si';				
+			$span_regxA = '/<a[^>]*>(.*?)<\/a>/si';
 			$span_regxH1 = '/<h1[^>]*>(.*?)<\/h1>/si';
 			$span_regxH2 = '/<h2[^>]*>(.*?)<\/h2>/si';
 			$span_regxH3 = '/<h3[^>]*>(.*?)<\/h3>/si';
 			$script_regex = '/<script[^>]*>(.*?)<\/script>/si';
 			$pretags = array();
 			$objecttags = array();
+			$spantagsA = array();
 			$spantagsH1 = array();
 			$spantagsH2 = array();
 			$spantagsH3 = array();
@@ -154,6 +167,19 @@ function red_glossary_parse($content){
 					foreach ($objecttags[0] as $objecttag)
 	    			{	    						
 						$content = preg_replace($object_regex, '#'.$i.'object', $content,1);
+						$i++;
+	    			}
+				}
+
+
+				$spanATagsCount = preg_match_all($span_regxA,$content,$spantagsA,PREG_PATTERN_ORDER); 
+				$i=0;
+
+				if($spanATagsCount>0)
+				{
+					foreach ($spantagsA[0] as $spantagA)
+	    			{	    						
+						$content = preg_replace($span_regxA, '#'.$i.'a', $content,1);
 						$i++;
 	    			}
 				}
@@ -327,6 +353,16 @@ function red_glossary_parse($content){
     			}
 			}
 
+				if($spanATagsCount>0)
+			{
+				$i=0;
+				foreach ($spantagsA[0] as $spantagAContent)
+	    		{	    	    								
+	    			$content = str_replace('#'.$i.'a', $spantagAContent, $content);					
+					$i++;
+	    		}		
+			}
+
 			
 			if($spanH1TagsCount>0)
 			{
@@ -405,9 +441,18 @@ function red_glossary_createList($content){
 			foreach($glossary_index as $glossary_item){
 				//show tooltip based on user option
 				if (get_option('red_glossaryTooltip') == 1) {	
-					$glossaryItemContent = htmlspecialchars($glossary_item->post_content);
-					$glossaryItemContent = addslashes($glossaryItemContent);												
-						if (get_option('red_glossaryTermLink') == 1) {
+	
+					if(get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt){
+							$glossaryItemContent=$glossary_item->post_excerpt;
+						} else {
+							$glossaryItemContent=$glossary_item->post_content;
+						}
+				
+						$glossaryItemContent = htmlspecialchars($glossaryItemContent);
+						$glossaryItemContent = addslashes($glossaryItemContent);												
+
+
+				if (get_option('red_glossaryTermLink') == 1) {
 							$content .= '<p><span class="' . $glossary_style . '"  onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();">'. $glossary_item->post_title . '</span></p>';
 						} else {
 							$content .= '<p><a class="' . $glossary_style . '" href="' . get_permalink($glossary_item) . '" onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();">'. $glossary_item->post_title . '</a></p>';
@@ -518,7 +563,7 @@ function glossary_options() {
 	   <tr valign="top">
         <th scope="row">Avoid parsing protected tags?</th>
         <td><input type="checkbox" name="red_glossaryProtectedTags" <?php checked(true, get_option('red_glossaryProtectedTags')); ?> value="1" /></td>
-        <td colspan="2">Select this option if you want to avoid using the glossary for the following tags: Script, H1, H2, H3, PRE, Object.</td>
+        <td colspan="2">Select this option if you want to avoid using the glossary for the following tags: Script, A, H1, H2, H3, PRE, Object.</td>
       </tr>
 
     </table>
