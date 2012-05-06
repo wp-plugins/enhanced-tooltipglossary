@@ -5,7 +5,7 @@ Donate link: http://www.creativemindsweb.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic
 Requires at least: 3.2
 Tested up to: 3.2
-Stable tag: 1.0
+Stable tag: 1.1
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
