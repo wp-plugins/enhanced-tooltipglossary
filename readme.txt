@@ -1,11 +1,11 @@
 === Plugin Name ===
 Name: Enhanced TooltipGlossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
-Donate link: http://www.creativemindsweb.com/plugins
+Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic
 Requires at least: 3.2
-Tested up to: 3.2
-Stable tag: 1.1
+Tested up to: 3.4.2
+Stable tag: 1.2
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -17,6 +17,9 @@ The code has been bug fixed based on TooltipGlossary and many new features added
 
 The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
 
+Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
+
+For more information visit our  [plugin site](http://www.cminds.com/plugins)
 
 == Installation ==
 
@@ -60,6 +63,16 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 1. The options available for EnhancedTooltipGlossary in the administration area.
 
 == Changelog ==
+
+= 1.2 =
+* Added alphabetical letter index for glossary list
+* Added option to style glossary list as tiles instead of regular list
+* Do not show glossary explanation tooltip when on its explanation page
+* Do not show [glossary_exclude] tag in tooltips
+* Fix bug when excluded tags were embedded into other excluded tags
+* Fix bug when glossary terms were substrings of other glossary terms and only the shortest was caught (Thanks to Torsten Keil)
+* Fix bug when HTML code in tooltip content causes page to break
+* Thanks for Paul Ryan (prar@hawaii.edu) for his code contribution and Sebastian Palus for his addition and bug fixes
 
 = 1.1 =
 * Add A tag to the list of tags to ignore (Thanks to Robert Gilman)
