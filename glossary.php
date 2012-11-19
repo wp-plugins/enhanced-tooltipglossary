@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: EnhancedTooltipGlossary
+  Plugin Name: Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
   Version: 1.2
@@ -551,7 +551,7 @@ function glossary_options() {
                 <tr valign="top">
                     <th scope="row">Remove term link to the glossary page.?</th>
                     <td><input type="checkbox" name="red_glossaryTermLink" <?php checked(true, get_option('red_glossaryTermLink')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you do not want to show links from posts or pages to the glossary pages.</td>
+                    <td colspan="2">Select this option if you do not want to show links from posts or pages to the glossary pages. Keep in mind that the plug use a span tag instead of a link tag and if you are using a custom css you should take this into account</td>
                 </tr>
                 <tr valign="top">
                     <th scope="row">Use term excerpt for hover?</th>

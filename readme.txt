@@ -1,8 +1,8 @@
 === Plugin Name ===
-Name: Enhanced TooltipGlossary
+Name: Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary, pages, posts, definitions, tooltip, automatic
+Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip
 Requires at least: 3.2
 Tested up to: 3.4.2
 Stable tag: 1.2
@@ -19,7 +19,21 @@ The tooltip is created with JavaScript based on the article written by [Michael 
 
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
 
-For more information visit our  [plugin site](http://www.cminds.com/plugins)
+**More About this Plug**
+	
+You can find more information about CM Invitation Codes plug in [CreativeMinds Website](http://www.cminds.com/plugins/).
+
+
+**More Plugin by CreativeMinds**
+
+Current list of available plugin by CreativeMinds
+
+* [Enhanced ToolTip Glossary](http://wordpress.org/extend/plugins/enhanced-tooltipglossary/) - Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition. 
+
+* [Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
+
+* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
+
 
 == Installation ==
 
