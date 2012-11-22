@@ -1,11 +1,11 @@
 === Plugin Name ===
-Name: Enhanced Tooltip Glossary
+Name: CM Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip
 Requires at least: 3.2
 Tested up to: 3.4.2
-Stable tag: 1.2
+Stable tag: 1.3
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -77,6 +77,10 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 1. The options available for EnhancedTooltipGlossary in the administration area.
 
 == Changelog ==
+
+= 1.3 =
+* Reorganize admin menu
+* Added 'with_front'=false for rewrite item
 
 = 1.2 =
 * Added alphabetical letter index for glossary list

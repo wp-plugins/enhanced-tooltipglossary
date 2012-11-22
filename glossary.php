@@ -1,9 +1,9 @@
 <?php
 /*
-  Plugin Name: Enhanced Tooltip Glossary
+  Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 1.2
+  Version: 1.3
   Author: CreativeMinds based on jatls tooltipglossary
  */
 
@@ -23,7 +23,9 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-
+define('RED_MENU_OPTION', 'red_menu_option');
+define('RED_ABOUT_OPTION', 'red_about');
+define('RED_SETTINGS_OPTION', 'red_settings');
 //Add options needed for plugin
 add_option('red_glossaryOnlySingle', 0); //Show on Home and Category Pages or just single post pages?
 add_option('red_glossaryOnPages', 1); //Show on Pages or just posts?
@@ -39,28 +41,94 @@ add_option('red_glossaryTermLink', 0); //Remove links to glossary page
 add_option('red_glossaryExcerptHover', 0); //Search for all occurances in a post or only one?
 add_option('red_glossaryProtectedTags', 1); //SAviod the use of Glossary in Protected tags?
 // Register glossary custom post type
-function create_post_types() {
+function red_create_post_types() {
+    
     $glossaryPermalink = get_option('red_glossaryPermalink');
     $args = array(
         'label' => 'Glossary',
+        'labels' => array(
+            'add_new_item' => 'Add New Glossary Item',
+            'edit_item' => 'Edit Glossary Item',
+            'view_item' => 'View Glossary Item',
+            'singular_name' => 'Glossary Item',
+            'name' => 'CM Enhanced Tooltip Glossary',
+            'menu_name' => 'Glossary'
+        ),
         'description' => '',
         'public' => true,
         'show_ui' => true,
+        'show_in_menu' => RED_MENU_OPTION,
         '_builtin' => false,
         'capability_type' => 'post',
         'hierarchical' => false,
-        'rewrite' => array('slug' => $glossaryPermalink),
+        'rewrite' => array('slug' => $glossaryPermalink, 'with_front' => false),
         'query_var' => true,
+        
         'supports' => array('title', 'editor', 'author', 'excerpt'));
-    register_post_type('glossary', $args);
+    register_post_type('glossary',$args);
 }
 
-add_action('init', 'create_post_types');
-
+add_action('init', 'red_create_post_types');
+function red_admin_menu() {
+    $page = add_menu_page('Glossary', 'CM Glossary', 'manage_options', RED_MENU_OPTION, 'red_adminMenu');
+    add_submenu_page(RED_MENU_OPTION, 'Add New', 'Add New', 'manage_options', 'post-new.php?post_type=glossary');
+    add_submenu_page(RED_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'manage_options', RED_SETTINGS_OPTION, 'glossary_options');
+    add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'manage_options', RED_ABOUT_OPTION, 'red_about');
+    add_filter('views_edit-glossary', 'red_filter_admin_nav', 10, 1);
+}
+add_action('admin_menu', 'red_admin_menu');
+function red_adminMenu() {
+    
+}
+function red_about() {
+    ob_start();
+    require 'admin_about.php';
+    $content = ob_get_contents();
+    ob_end_clean();
+    require 'admin_template.php';
+}
+function red_filter_admin_nav($views) {
+        global $submenu, $plugin_page, $pagenow;
+        $scheme = is_ssl()?'https://':'http://';
+        $adminUrl = str_replace($scheme.$_SERVER['HTTP_HOST'], '', admin_url());
+        $homeUrl = home_url();
+        $currentUri = str_replace($adminUrl, '', $_SERVER['REQUEST_URI']);
+        $submenus = array();
+        if (isset($submenu[RED_MENU_OPTION])) {
+            $thisMenu = $submenu[RED_MENU_OPTION];
+            foreach ($thisMenu as $item) {
+                $slug = $item[2];
+                $isCurrent = ($slug == $plugin_page || strpos($item[2], '.php')=== strpos($currentUri, '.php'));
+                $url = (strpos($item[2], '.php')!==false)?$slug:get_admin_url('', 'admin.php?page='.$slug);
+                $submenus[$item[0]] = 
+                    '<a href="'.$url.'" class="'.($isCurrent?'current':'').'">'.$item[0].'</a>';
+            }
+            
+        }
+        return $submenus;
+}
+function red_showNav() {
+    global $submenu, $plugin_page, $pagenow;
+        $submenus = array();
+        if (isset($submenu[RED_MENU_OPTION])) {
+            $thisMenu = $submenu[RED_MENU_OPTION];
+            foreach ($thisMenu as $item) {
+                $slug = $item[2];
+                $isCurrent = $slug == $plugin_page;
+                $url = (strpos($item[2], '.php')!==false)?$slug:get_admin_url('', 'admin.php?page='.$slug);
+                $submenus[] = array(
+                    'link' => $url,
+                    'title' => $item[0],
+                    'current' => $isCurrent
+                );
+            }
+            require('admin_nav.php');
+        }
+}
 function glossary_flush_rewrite_rules() {
 
     // First, we "add" the custom post type via the above written function.
-    create_post_types();
+    red_create_post_types();
 
     flush_rewrite_rules();
 }
@@ -470,12 +538,6 @@ function red_glossary_createList_scripts() {
 add_filter('the_content', 'red_glossary_createList');
 add_action('wp_enqueue_scripts', 'red_glossary_createList_scripts');
 
-//admin page user interface
-add_action('admin_menu', 'glossary_menu');
-
-function glossary_menu() {
-    add_options_page('TooltipGlossary Options', 'TooltipGlossary', 8, __FILE__, 'glossary_options');
-}
 
 function glossary_options() {
     if (isset($_POST["red_glossarySave"])) {
@@ -491,88 +553,11 @@ function glossary_options() {
             }
         }
     }
-    ?>
-
-    <div class="wrap">
-        <h2>Enhanced TooltipGlossary 1.2 by CreativeMinds</h2>
-        <form method="post" action="options.php">
-    <?php wp_nonce_field('update-options'); ?>
-            <table class="form-table">
-                <tr valign="top">
-                    <th scope="row">Main Glossary Page</th>
-                    <td><input type="text" name="red_glossaryID" value="<?php echo get_option('red_glossaryID'); ?>" /></td>
-                    <td colspan="2">Enter the page ID of the page you would like to use as the glossary (list of terms).  The page will be generated automatically for you on the specified page (so you should leave the content blank).  This is optional - terms will still be highlighted in relevant posts/pages but there won't be a central list of terms if this is left blank.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Glossary Permalink</th>
-                    <td><input type="text" name="red_glossaryPermalink" value="<?php echo get_option('red_glossaryPermalink'); ?>" /></td>
-                    <td colspan="2">Enter the name you would like to use for the permalink to the glossary.  By default this is glossary, however you can update this if you wish. eg. http://mysite.com/<strong>glossary</strong>/term</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Show tooltip when the user hovers over the term?</th>
-                    <td><input type="checkbox" name="red_glossaryTooltip" <?php checked(true, get_option('red_glossaryTooltip')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you wish for the definition to show in a tooltip when the user hovers over the term.  The tooltip can be style differently using the tooltip.css and tooltip.js files in the plugin folder.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Only show terms on single pages (not Homepage)?</th>
-                    <td><input type="checkbox" name="red_glossaryOnlySingle" <?php checked(true, get_option('red_glossaryOnlySingle')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you wish to only highlight glossary terms when viewing a single page/post.  This can be used so terms aren't highlighted on your homepage for example.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Highlight terms on pages (not just posts)?</th>
-                    <td><input type="checkbox" name="red_glossaryOnPages" <?php checked(true, get_option('red_glossaryOnPages')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you wish for the glossary to highlight terms on pages as well as posts.  With this deselected, only posts will be searched for matching glossary terms.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Style main glossary page differently?</th>
-                    <td><input type="checkbox" name="red_glossaryDiffLinkClass" <?php checked(true, get_option('red_glossaryDiffLinkClass')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you wish for the links in the main glossary listing to be styled differently than the term links.  By selecting this option you will be able to use the class 'glossaryLinkMain' to style only the links on the glossary page otherwise they will retain the class 'glossaryLink' and will be identical to the linked terms.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Show main glossary page as tiles</th>
-                    <td><input type="checkbox" name="red_glossaryListTiles" <?php checked(true, get_option('red_glossaryListTiles')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you wish the main glossary listing to be displayed in tiles. This is not recommended when you have long terms.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Highlight first term occurance only?</th>
-                    <td><input type="checkbox" name="red_glossaryFirstOnly" <?php checked(true, get_option('red_glossaryFirstOnly')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you want to only highlight the first occurance of each term on a page/post.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Limit tooltip length?</th>
-                    <td><input type="text" name="red_glossaryLimitTooltip" value="<?php echo get_option('red_glossaryLimitTooltip'); ?>"  /></td>
-                    <td colspan="2">Select this option if you want to show only a limited number of chars and add More Details at the end of the tooltip text. Minimum is 30 chars.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Clean tooltip text?</th>
-                    <td><input type="checkbox" name="red_glossaryFilterTooltip" <?php checked(true, get_option('red_glossaryFilterTooltip')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you want to remove extra spaces and special characters from tooltip text.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Remove term link to the glossary page.?</th>
-                    <td><input type="checkbox" name="red_glossaryTermLink" <?php checked(true, get_option('red_glossaryTermLink')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you do not want to show links from posts or pages to the glossary pages. Keep in mind that the plug use a span tag instead of a link tag and if you are using a custom css you should take this into account</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Use term excerpt for hover?</th>
-                    <td><input type="checkbox" name="red_glossaryExcerptHover" <?php checked(true, get_option('red_glossaryExcerptHover')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you want to use the term excerpt (if it exists) as hover text.</td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Avoid parsing protected tags?</th>
-                    <td><input type="checkbox" name="red_glossaryProtectedTags" <?php checked(true, get_option('red_glossaryProtectedTags')); ?> value="1" /></td>
-                    <td colspan="2">Select this option if you want to avoid using the glossary for the following tags: Script, A, H1, H2, H3, PRE, Object.</td>
-                </tr>
-
-            </table>
-            <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="red_glossaryID,red_glossaryOnlySingle,red_glossaryOnPages,red_glossaryTooltip,red_glossaryDiffLinkClass,red_glossaryListTiles,red_glossaryPermalink,red_glossaryFirstOnly,red_glossaryLimitTooltip,red_glossaryFilterTooltip,red_glossaryTermLink,red_glossaryExcerptHover,red_glossaryProtectedTags" />
-            <p class="submit">
-                <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" name="red_glossarySave" />
-            </p>
-        </form>
-    </div>
-    <?php
+    ob_start();
+    require('admin_settings.php');
+    $content = ob_get_contents();
+    ob_end_clean();
+    require('admin_template.php');
 }
 
 function strip_only($str, $tags, $stripContent = false) {
