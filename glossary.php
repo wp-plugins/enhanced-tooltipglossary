@@ -1,9 +1,9 @@
 <?php
 /*
-  Plugin Name: CM Enhanced Tooltip Glossary
+  Plugin Name: Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 1.3
+  Version: 1.31
   Author: CreativeMinds based on jatls tooltipglossary
  */
 
@@ -51,7 +51,7 @@ function red_create_post_types() {
             'edit_item' => 'Edit Glossary Item',
             'view_item' => 'View Glossary Item',
             'singular_name' => 'Glossary Item',
-            'name' => 'CM Enhanced Tooltip Glossary',
+            'name' => 'CM Glossary',
             'menu_name' => 'Glossary'
         ),
         'description' => '',
@@ -365,9 +365,9 @@ function red_glossary_parse($content) {
                     }
 
                     if ((get_option('red_glossaryLimitTooltip') > 30) && (strlen($glossaryItemContent) > get_option('red_glossaryLimitTooltip'))) {
-                        $glossaryItemContent = substr($glossaryItemContent, 0, get_option('red_glossaryLimitTooltip')) . '    <strong>More Details...<strong>';
+                        $glossaryItemContent = substr($glossaryItemContent, 0, get_option('red_glossaryLimitTooltip')) . '    <strong>   More Details...<strong>';
                     }
-
+                    $glossaryItemContent = str_replace('\'', '\\\'', $glossaryItemContent);
                     if (get_option('red_glossaryTermLink') == 1) {
                         $link_replace = '<span title="Glossary: '. $glossary_title . '" onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();" class="glossaryLink">$1</span>';
                     } else {
