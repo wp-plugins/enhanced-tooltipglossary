@@ -3,7 +3,6 @@
  * CM Enhanced Tooltip Glossary about page
  *
  * @author CreativeMinds (http://www.cminds.com)
- * @version 1.3
  * @copyright Copyright (c) 2012, CreativeMinds
  * @package Glossary/View
  */
@@ -27,7 +26,7 @@ This plugin was developed by <a href="http://www.cminds.com/" target="new">Creat
 <li><strong>Expert Knowledge </strong>- Custom WordPress plugin is our specialty. We devote a lot of work to deliver bug free products. We use WP custom functions and we excel in PHP / SQL / JQuery/ Ajax</li>
 <li><strong>Integration with 3rd-party</strong>- We integrate upon request with external 3-rd party tools and services such as GoToMeeting, Vimeo and many others.</li>
 <li><strong>Fixed Price Quotes </strong>- We provide fixed price quotes so you know exactly what your total and final development cost will be.</li>
-<li><strong>Support and Warranty </strong>- Once your plugin is completed we will not leave you out in the cold. We believe that your success is our success and we want a happy customer who will use us again. You and your Plugin will be fully supported for 3-Months Warranty..</li>
+<li><strong>Support and Warranty </strong>- Once your plugin is completed we will not leave you out in the cold. We believe that your success is our success and we want a happy customer who will use us again. You and your Plugin will be fully supported for 3-Months Warranty.</li>
 
 </ul>
 </p>

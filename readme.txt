@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
 Tested up to: 3.4.2
-Stable tag: 1.31
+Stable tag: 1.4
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -75,6 +75,13 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 1. The options available for EnhancedTooltipGlossary in the administration area.
 
 == Changelog ==
+= 1.4 =
+* Fixed bug when multiline tooltips were not displayed correctly on Glossary List
+* Fixed bug when glossary list was displayed in the bottom of all pages/posts when Glossary Page ID was not set in Settings
+* Terms that are substrings of current glossary item are not highlighted now on glossary definition page
+* Fixed bug when term with brackets inside was not highlighted
+* Added "Published/Trash" filter for glossary terms
+
 = 1.31 =
 * Bug fix with escaped single qoutations
 

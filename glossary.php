@@ -1,9 +1,9 @@
 <?php
 /*
-  Plugin Name: Enhanced Tooltip Glossary
+  Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 1.31
+  Version: 1.4
   Author: CreativeMinds based on jatls tooltipglossary
  */
 
@@ -106,6 +106,17 @@ function red_filter_admin_nav($views) {
             
         }
         return $submenus;
+}
+add_action('restrict_manage_posts','red_restrict_manage_posts');
+function red_restrict_manage_posts() {
+    global $typenow;
+    if ($typenow == 'glossary') {
+        $status = get_query_var('post_status');
+        ?><select name="post_status">
+            <option value="published">Published</option>
+            <option value="trash"<?php if ($status=='trash') echo ' selected="selected"'; ?>>Trash</option>
+        </select><?php
+    }
 }
 function red_showNav() {
     global $submenu, $plugin_page, $pagenow;
@@ -314,15 +325,16 @@ function red_glossary_parse($content) {
                 }
             }
 
-
+            $replaceRules = array();
             foreach ($glossary_index as $glossary_item) {
                 $timestamp++;
                 $glossary_title = $glossary_item->post_title;
-                if ($GLOBALS['post']->post_type == 'glossary' && $GLOBALS['post']->post_title == $glossary_item->post_title)
+                if ($GLOBALS['post']->post_type == 'glossary' && ($GLOBALS['post']->post_title == $glossary_item->post_title || strpos($GLOBALS['post']->post_title, $glossary_item->post_title)!==false))
                     continue;
                 //old code bug-doesn't take into account href='' takes into account only href="")
                 //$glossary_search = '/\b'.$glossary_title.'s*?\b(?=([^"]*"[^"]*")*[^"]*$)/i';
-                $glossary_search = '/(?<!glossaryLink">)\b'.$glossary_title.'s*?\b(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a>)/i';
+                $glossary_title = preg_quote($glossary_title);
+                $glossary_search = '/(^|(?=\s|\b))'.$glossary_title.'((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a>)/i';
                 $glossary_replace = '<a' . $timestamp . '>$0</a' . $timestamp . '>';
 
                 $origContent = $content;
@@ -334,7 +346,7 @@ function red_glossary_parse($content) {
                 }
                 $content_temp = rtrim($content_temp);
 
-                $link_search = '/<a' . $timestamp . '>(' . $glossary_item->post_title . '[A-Za-z]*?)<\/a' . $timestamp . '>/i';
+                $link_search = '/<a' . $timestamp . '>(' . preg_quote($glossary_item->post_title) . '[A-Za-z]*?)<\/a' . $timestamp . '>/i';
                 if (get_option('red_glossaryTooltip') == 1) {
                     if (get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt) {
                         $glossaryItemContent = $glossary_item->post_excerpt;
@@ -357,9 +369,7 @@ function red_glossary_parse($content) {
                         $glossaryItemContent = str_replace("color:#000000", "color:#ffffff", $glossaryItemContent);
                         $glossaryItemContent = str_replace('\\[glossary_exclude\\]', '', $glossaryItemContent);
                     } else {
-                        $glossaryItemContent = nl2br($glossaryItemContent);
-                        $glossaryItemContent = str_replace("\r\n", "", $glossaryItemContent);
-                        $glossaryItemContent = str_replace("\n", "", $glossaryItemContent);
+                        $glossaryItemContent = strtr($glossaryItemContent, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />')); ;
                         
                         $glossaryItemContent = htmlentities($glossaryItemContent);
                     }
@@ -380,10 +390,13 @@ function red_glossary_parse($content) {
                         $link_replace = '<a href="' . get_permalink($glossary_item) . '" title="Glossary: ' . $glossary_title . '" class="glossaryLink">$1</a>';
                     }
                 }
-                $content_temp = preg_replace($link_search, $link_replace, $content_temp);
+                $replaceRules[$timestamp] = array('link_search' => $link_search, 'link_replace' => $link_replace);
+//                $content_temp = preg_replace($link_search, $link_replace, $content_temp);
                 $content = $content_temp;
             }
-
+            foreach ($replaceRules as $timestamp=>$rule) {
+                $content = preg_replace($rule['link_search'], $rule['link_replace'], $content);
+            }
 
             if ($excludeTagsCount > 0) {
                 $i = 0;
@@ -496,7 +509,7 @@ function red_glossaryShowList($content = '') {
                     $glossaryItemContent = addslashes($glossaryItemContent);
 $glossaryItemContent = str_replace('[glossary_exclude]', "", $glossaryItemContent);
                 $glossaryItemContent = str_replace('[/glossary_exclude]', "", $glossaryItemContent);
-
+                $glossaryItemContent = strtr($glossaryItemContent, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />')); 
                     if (get_option('red_glossaryTermLink') == 1) {
                         $content .= '<li><span class="' . $glossary_style . '"  onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();">' . $glossary_item->post_title . '</span></li>';
                     } else {
@@ -520,7 +533,7 @@ $glossaryItemContent = str_replace('[glossary_exclude]', "", $glossaryItemConten
 //create the actual glossary
 function red_glossary_createList($content) {
     $glossaryPageID = get_option('red_glossaryID');
-    if (is_numeric($glossaryPageID) && is_page($glossaryPageID)) {
+    if (is_numeric($glossaryPageID) && is_page($glossaryPageID) && $glossaryPageID>0) {
         $content = red_glossaryShowList($content);
     }
     return $content;
