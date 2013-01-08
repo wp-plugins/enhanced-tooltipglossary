@@ -66,10 +66,15 @@
             <td><input type="checkbox" name="red_glossaryProtectedTags" <?php checked(true, get_option('red_glossaryProtectedTags')); ?> value="1" /></td>
             <td colspan="2">Select this option if you want to avoid using the glossary for the following tags: Script, A, H1, H2, H3, PRE, Object.</td>
         </tr>
+                <tr valign="top">
+            <th scope="row">Terms case-sensitive?</th>
+            <td><input type="checkbox" name="red_glossaryCaseSensitive" <?php checked(true, get_option('red_glossaryCaseSensitive')); ?> value="1" /></td>
+            <td colspan="2">Select this option if you want glossary terms to be case-sensitive.</td>
+        </tr>
 
     </table>
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="red_glossaryID,red_glossaryOnlySingle,red_glossaryOnPages,red_glossaryTooltip,red_glossaryDiffLinkClass,red_glossaryListTiles,red_glossaryPermalink,red_glossaryFirstOnly,red_glossaryLimitTooltip,red_glossaryFilterTooltip,red_glossaryTermLink,red_glossaryExcerptHover,red_glossaryProtectedTags" />
+    <input type="hidden" name="page_options" value="red_glossaryID,red_glossaryOnlySingle,red_glossaryOnPages,red_glossaryTooltip,red_glossaryDiffLinkClass,red_glossaryListTiles,red_glossaryPermalink,red_glossaryFirstOnly,red_glossaryLimitTooltip,red_glossaryFilterTooltip,red_glossaryTermLink,red_glossaryExcerptHover,red_glossaryProtectedTags,red_glossaryCaseSensitive" />
     <p class="submit">
         <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" name="red_glossarySave" />
     </p>

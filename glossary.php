@@ -3,7 +3,7 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 1.4
+  Version: 1.5
   Author: CreativeMinds based on jatls tooltipglossary
  */
 
@@ -40,6 +40,7 @@ add_option('red_glossaryLimitTooltip', 0); // Limit the tooltip length  ?
 add_option('red_glossaryTermLink', 0); //Remove links to glossary page
 add_option('red_glossaryExcerptHover', 0); //Search for all occurances in a post or only one?
 add_option('red_glossaryProtectedTags', 1); //SAviod the use of Glossary in Protected tags?
+add_option('red_glossaryCaseSensitive', 0); //Case sensitive?
 // Register glossary custom post type
 function red_create_post_types() {
     
@@ -333,8 +334,9 @@ function red_glossary_parse($content) {
                     continue;
                 //old code bug-doesn't take into account href='' takes into account only href="")
                 //$glossary_search = '/\b'.$glossary_title.'s*?\b(?=([^"]*"[^"]*")*[^"]*$)/i';
-                $glossary_title = preg_quote($glossary_title);
-                $glossary_search = '/(^|(?=\s|\b))'.$glossary_title.'((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a>)/i';
+                $glossary_title = preg_quote($glossary_title, '/');
+                $caseSensitive = get_option('red_glossaryCaseSensitive', 0);
+                $glossary_search = '/(^|(?=\s|\b))'.(!$caseSensitive?'(?i)':'').$glossary_title.'((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/[aA]>)/';
                 $glossary_replace = '<a' . $timestamp . '>$0</a' . $timestamp . '>';
 
                 $origContent = $content;
@@ -346,7 +348,7 @@ function red_glossary_parse($content) {
                 }
                 $content_temp = rtrim($content_temp);
 
-                $link_search = '/<a' . $timestamp . '>(' . preg_quote($glossary_item->post_title) . '[A-Za-z]*?)<\/a' . $timestamp . '>/i';
+                $link_search = '/<a' . $timestamp . '>(' . (!$caseSensitive?'(?i)':'').preg_quote($glossary_item->post_title, '/') . '[A-Za-z]*?)<\/a' . $timestamp . '>/u';
                 if (get_option('red_glossaryTooltip') == 1) {
                     if (get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt) {
                         $glossaryItemContent = $glossary_item->post_excerpt;
@@ -557,7 +559,7 @@ function glossary_options() {
         //update the page options
         update_option('red_glossaryID', $_POST["red_glossaryID"]);
         update_option('red_glossaryID', $_POST["red_glossaryPermalink"]);
-        $options_names = array('red_glossaryOnlySingle', 'red_glossaryOnPages', 'red_glossaryTooltip', 'red_glossaryDiffLinkClass', 'red_glossaryListTiles', 'red_glossaryFirstOnly', 'red_glossaryLimitTooltip', 'red_glossaryFilterTooltip', 'red_glossaryTermLink', 'red_glossaryExcerptHover', 'red_glossaryProtectedTags');
+        $options_names = array('red_glossaryOnlySingle', 'red_glossaryOnPages', 'red_glossaryTooltip', 'red_glossaryDiffLinkClass', 'red_glossaryListTiles', 'red_glossaryFirstOnly', 'red_glossaryLimitTooltip', 'red_glossaryFilterTooltip', 'red_glossaryTermLink', 'red_glossaryExcerptHover', 'red_glossaryProtectedTags', 'red_glossaryCaseSensitive');
         foreach ($options_names as $option_name) {
             if ($_POST[$option_name] == 1) {
                 update_option($option_name, 1);

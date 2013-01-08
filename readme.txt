@@ -4,8 +4,8 @@ Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
-Tested up to: 3.4.2
-Stable tag: 1.4
+Tested up to: 3.5
+Stable tag: 1.5
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -75,6 +75,11 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 1. The options available for EnhancedTooltipGlossary in the administration area.
 
 == Changelog ==
+= 1.5 =
+* Added "case-sensitive" option to settings panel
+* Fixed bug when slash character inside glossary term was causing problems
+* Added default z-index:100 to tooltip CSS
+
 = 1.4 =
 * Fixed bug when multiline tooltips were not displayed correctly on Glossary List
 * Fixed bug when glossary list was displayed in the bottom of all pages/posts when Glossary Page ID was not set in Settings
