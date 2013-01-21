@@ -28,6 +28,7 @@ var tooltip=function(){
 				tt.style.filter = 'alpha(opacity=0)';
 				document.onmousemove = this.pos;
 			}
+                        tt.onclick=function() {tt.hide();}
 			tt.style.display = 'block';
 			c.innerHTML = v;
 			tt.style.width = w ? w + 'px' : 'auto';

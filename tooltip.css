@@ -2,3 +2,5 @@
 #tttop {display:block; height:5px; margin-left:5px;}
 #ttcont {display:block; padding:2px 12px 3px 7px; margin-left:5px; background:#666; color:white}
 #ttbot {display:block; height:5px; margin-left:5px;}
+.cm_poweredby {clear:both;float:none;font-size:8px;line-height:1.5;display: inline-block;padding: 3px;margin-top:20px;}
+.cm_poweredby:before {content:'Powered by ';}

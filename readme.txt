@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 1.5
+Stable tag: 1.6
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -75,6 +75,11 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 1. The options available for EnhancedTooltipGlossary in the administration area.
 
 == Changelog ==
+= 1.6 =
+* Added "open glossary description in new window/tab" option to settings panel
+* Added onclick event on tooltip, so if you using touch device, you just need to click on the tooltip to hide it.
+* Changed parsing mechanism
+
 = 1.5 =
 * Added "case-sensitive" option to settings panel
 * Fixed bug when slash character inside glossary term was causing problems

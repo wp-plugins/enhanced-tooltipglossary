@@ -71,10 +71,20 @@
             <td><input type="checkbox" name="red_glossaryCaseSensitive" <?php checked(true, get_option('red_glossaryCaseSensitive')); ?> value="1" /></td>
             <td colspan="2">Select this option if you want glossary terms to be case-sensitive.</td>
         </tr>
+         <tr valign="top">
+            <th scope="row">Open glossary descriptions in a new windows/tab?</th>
+            <td><input type="checkbox" name="red_glossaryInNewPage" <?php checked(true, get_option('red_glossaryInNewPage')); ?> value="1" /></td>
+            <td colspan="2">Select this option if you want glossary descriptions to open in a new window/tab.</td>
+        </tr>
+        <tr valign="top">
+            <th scope="row">Show HTML "title" attribute for glossary links</th>
+            <td><input type="checkbox" name="red_showTitleAttribute" <?php checked(true, get_option('red_showTitleAttribute')); ?> value="1" /></td>
+            <td colspan="2">Select this option if you want to use glossary name as HTML "title" for link</td>
+        </tr>
 
     </table>
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="red_glossaryID,red_glossaryOnlySingle,red_glossaryOnPages,red_glossaryTooltip,red_glossaryDiffLinkClass,red_glossaryListTiles,red_glossaryPermalink,red_glossaryFirstOnly,red_glossaryLimitTooltip,red_glossaryFilterTooltip,red_glossaryTermLink,red_glossaryExcerptHover,red_glossaryProtectedTags,red_glossaryCaseSensitive" />
+    <input type="hidden" name="page_options" value="red_glossaryID,red_glossaryOnlySingle,red_glossaryOnPages,red_glossaryTooltip,red_glossaryDiffLinkClass,red_glossaryListTiles,red_glossaryPermalink,red_glossaryFirstOnly,red_glossaryLimitTooltip,red_glossaryFilterTooltip,red_glossaryTermLink,red_glossaryExcerptHover,red_glossaryProtectedTags,red_glossaryCaseSensitive,red_glossaryInNewPage,red_showTitleAttribute" />
     <p class="submit">
         <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" name="red_glossarySave" />
     </p>
