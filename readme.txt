@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 1.6
+Stable tag: 2.0
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -26,7 +26,7 @@ You can find more information about CM Enhanced Tooltip Glossary at [CreativeMin
 
 **More Plugins by CreativeMinds**
 
-* [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Block users from blacklists domain from registering to your WordPress site.
+* [CM Enhanced ToolTip Glossary](http://wordpress.org/extend/plugins/enhanced-tooltipglossary/) - Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition. 
 
 * [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
 
@@ -72,13 +72,22 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 
 == Screenshots ==
 
-1. The options available for EnhancedTooltipGlossary in the administration area.
+1. List of terms in Glossary
+2. Tooltip for one term inside glossary page
+3. Tooltip for one term inside a post
+4. Glossary terms page in Admin panel
+5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.0 =
+* Minor fix in styling
+* Allow users with "edit_posts" capability to add/edit glossary terms
+
 = 1.6 =
 * Added "open glossary description in new window/tab" option to settings panel
 * Added onclick event on tooltip, so if you using touch device, you just need to click on the tooltip to hide it.
 * Changed parsing mechanism
+* Added www.cminds.com backlink
 
 = 1.5 =
 * Added "case-sensitive" option to settings panel
