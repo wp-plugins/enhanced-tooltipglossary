@@ -19,19 +19,37 @@ The tooltip is created with JavaScript based on the article written by [Michael 
 
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
 
-**More About this Plug**
+**Demo** 
+
+See basic demo of the plug [here](http://www.cminds.com/glossary/)
+
+
+**Pro Version**	
+
+[Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
+
+* Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [Demo](http://jumpstartcto.com/glossary/)
+* Widget - Glossary widget which shows a random number of terms with link to Glossary index [Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
+* Link Style - Ability to change term link style [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Tooltip Style - Ability to change tooltip shape, colors, border [Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Import / Export - Import / Export glossary file to/from CSV format. [image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
+* Internal Links - Option to add a link back to glossary page from each term page [Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
+* Editor Button - Editor button to support glossary exclude. [image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
+* Synonyms - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  [Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
+* Related Post - Show all related posts for each glossary term, this option is cached to enhance performance [image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
+* Multisite - Support Multisite.
+
 	
-You can find more information about CM Enhanced Tooltip Glossary at [CreativeMinds Website](http://www.cminds.com/plugins/).
-
-
 **More Plugins by CreativeMinds**
 
-* [CM Enhanced ToolTip Glossary](http://wordpress.org/extend/plugins/enhanced-tooltipglossary/) - Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition. 
+* [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Block users using blacklists domain from registering to your WordPress site.. 
 
 * [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
 
 * [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
 
+* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allow users to post questions and answers in stackoverflow style. 
 
 == Installation ==
 
@@ -82,6 +100,8 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 = 2.0 =
 * Minor fix in styling
 * Allow users with "edit_posts" capability to add/edit glossary terms
+* Added "/u" (UTF8) flag to regex to force UTF8 encoding
+* Glossary main page is now automatically created upon activation if not exists
 
 = 1.6 =
 * Added "open glossary description in new window/tab" option to settings panel

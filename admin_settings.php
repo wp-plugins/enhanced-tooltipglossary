@@ -2,14 +2,14 @@
     <?php wp_nonce_field('update-options'); ?>
     <table class="form-table">
         <tr valign="top">
-            <th scope="row">Main Glossary Page</th>
+            <th scope="row">Main Glossary Page ID</th>
             <td><input type="text" name="red_glossaryID" value="<?php echo get_option('red_glossaryID'); ?>" /></td>
             <td colspan="2">Enter the page ID of the page you would like to use as the glossary (list of terms).  The page will be generated automatically for you on the specified page (so you should leave the content blank).  This is optional - terms will still be highlighted in relevant posts/pages but there won't be a central list of terms if this is left blank.</td>
         </tr>
         <tr valign="top">
             <th scope="row">Glossary Permalink</th>
             <td><input type="text" name="red_glossaryPermalink" value="<?php echo get_option('red_glossaryPermalink'); ?>" /></td>
-            <td colspan="2">Enter the name you would like to use for the permalink to the glossary.  By default this is glossary, however you can update this if you wish. eg. http://mysite.com/<strong>glossary</strong>/term</td>
+            <td colspan="2">Enter the name you would like to use for the permalink to the glossary.  By default this is glossary, however you can update this if you wish. If you are using a parent please indicate this in path eg. path/glossary, otherwise just leave glossary or the name you choosen </td>
         </tr>
         <tr valign="top">
             <th scope="row">Show tooltip when the user hovers over the term?</th>

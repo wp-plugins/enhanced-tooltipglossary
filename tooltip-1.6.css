@@ -7,11 +7,3 @@
 .cmetg_poweredbylink:link{color:#bbb;text-decoration:none;}
 .cmetg_poweredbylink:visited{color:#bbb;text-decoration:none;}
 .cmetg_poweredbylink:hover{color:#bbb;text-decoration:none;}
-span.glossaryLink, a.glossaryLink {
-    text-decoration:none !important; 
-    border-bottom: dotted 1px !important;
-}
-a.glossaryLink:hover {
-    border-bottom: solid 1px !important;
-    text-decoration:none !important;
-}

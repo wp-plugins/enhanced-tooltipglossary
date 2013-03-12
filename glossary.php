@@ -3,8 +3,8 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 1.6
-  Author: CreativeMinds based on jatls tooltipglossary
+  Version: 2.0
+  Author: CreativeMinds 
  */
 
 /*
@@ -25,6 +25,7 @@
  */
 define('RED_MENU_OPTION', 'red_menu_option');
 define('RED_ABOUT_OPTION', 'red_about');
+define('RED_PRO_OPTION', 'red_pro');
 define('RED_SETTINGS_OPTION', 'red_settings');
 //Add options needed for plugin
 add_option('red_glossaryOnlySingle', 0); //Show on Home and Category Pages or just single post pages?
@@ -44,7 +45,7 @@ add_option('red_glossaryCaseSensitive', 0); //Case sensitive?
 add_option('red_glossaryInNewPage', 0); //In New Page?
 add_option('red_showTitleAttribute', 1); //show HTML title attribute
 // Register glossary custom post type
-
+register_activation_hook(__FILE__, 'red_autoInstallIndexPage');
 function red_create_post_types() {
 
     $glossaryPermalink = get_option('red_glossaryPermalink');
@@ -55,7 +56,7 @@ function red_create_post_types() {
             'edit_item' => 'Edit Glossary Item',
             'view_item' => 'View Glossary Item',
             'singular_name' => 'Glossary Item',
-            'name' => 'CM Glossary',
+            'name' => 'CM Tooltip Glossary',
             'menu_name' => 'Glossary'
         ),
         'description' => '',
@@ -72,12 +73,24 @@ function red_create_post_types() {
 }
 
 add_action('init', 'red_create_post_types');
-
+function red_autoInstallIndexPage() {
+    if (get_option('red_glossaryID') == 0) {
+        $id = wp_insert_post(array(
+            'post_author' => get_current_user_id(),
+            'post_status' => 'publish',
+            'post_title' => 'Glossary',
+            'post_type' => 'page'
+                ));
+        if (is_numeric($id))
+            update_option('red_glossaryID', $id);
+    }
+}
 function red_admin_menu() {
-    $page = add_menu_page('Glossary', 'CM Glossary', 'manage_options', RED_MENU_OPTION, 'red_adminMenu');
-    add_submenu_page(RED_MENU_OPTION, 'Add New', 'Add New', 'manage_options', 'post-new.php?post_type=glossary');
+    $page = add_menu_page('Glossary', 'CM Tooltip Glossary', 'edit_posts', RED_MENU_OPTION, 'red_adminMenu');
+    add_submenu_page(RED_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
     add_submenu_page(RED_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'manage_options', RED_SETTINGS_OPTION, 'glossary_options');
-    add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'manage_options', RED_ABOUT_OPTION, 'red_about');
+    add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'edit_posts', RED_ABOUT_OPTION, 'red_about');
+    add_submenu_page(RED_MENU_OPTION, 'Pro Version', 'Pro Version', 'edit_posts', RED_PRO_OPTION, 'red_pro');
     add_filter('views_edit-glossary', 'red_filter_admin_nav', 10, 1);
 }
 
@@ -95,6 +108,13 @@ function red_about() {
     require 'admin_template.php';
 }
 
+function red_pro () {
+    ob_start();
+    require 'admin_pro.php';
+    $content = ob_get_contents();
+    ob_end_clean();
+    require 'admin_template.php';
+}
 function red_filter_admin_nav($views) {
     global $submenu, $plugin_page, $pagenow;
     $scheme = is_ssl() ? 'https://' : 'http://';
@@ -162,7 +182,7 @@ register_activation_hook(__FILE__, 'glossary_flush_rewrite_rules');
 //Add tooltip stylesheet & javascript to page first
 function red_glossary_js() {
     $glossary_path = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
-    wp_enqueue_script('tooltip-js', $glossary_path . 'tooltip.js');
+    wp_enqueue_script('tooltip-js', $glossary_path . 'tooltip.js', array('jquery'));
 }
 
 add_action('wp_print_scripts', 'red_glossary_js');
@@ -183,12 +203,48 @@ function sortByWPQueryObjectTitleLength($a, $b) {
     }
     return $sortVal;
 }
+
 $foundMatches = array();
+
 function red_glossary_replace_matches($match) {
-    global $foundMatches;
-    $foundMatches[] = $match[0];
-    return '##GLOSSARY'.(count($foundMatches)-1).'##';
+    global $foundMatches, $glossaryLoopCurrentId;
+    $foundMatches[] = array('id'=>$glossaryLoopCurrentId, 'text'=>$match[0]);
+    return '##GLOSSARY' . (count($foundMatches) - 1) . '##';
 }
+
+function red_glossary_filterTooltipContent($glossaryItemContent) {
+    $glossaryItemContent = str_replace('[glossary_exclude]', '', $glossaryItemContent);
+    $glossaryItemContent = str_replace('[/glossary_exclude]', '', $glossaryItemContent);
+
+    if (get_option('red_glossaryFilterTooltip') == 1) {
+        // remove paragraph, bad chars from tooltip text
+        $glossaryItemContent = str_replace(chr(10), "", $glossaryItemContent);
+        $glossaryItemContent = str_replace(chr(13), "", $glossaryItemContent);
+        $glossaryItemContent = str_replace('</p>', '<br/>', $glossaryItemContent);
+        $glossaryItemContent = str_replace('</ul>', '<br/>', $glossaryItemContent);
+        $glossaryItemContent = str_replace('<li>', '<br/>', $glossaryItemContent);
+        $glossaryItemContent = strip_only($glossaryItemContent, '<li>');
+        $glossaryItemContent = strip_only($glossaryItemContent, '<ul>');
+        $glossaryItemContent = strip_only($glossaryItemContent, '<p>');
+        $glossaryItemContent = strip_only($glossaryItemContent, '<img>');
+        $glossaryItemContent = strip_only($glossaryItemContent, '<a>');
+        $glossaryItemContent = htmlspecialchars($glossaryItemContent);
+        $glossaryItemContent = addslashes($glossaryItemContent);
+        $glossaryItemContent = str_replace("color:#000000", "color:#ffffff", $glossaryItemContent);
+        $glossaryItemContent = str_replace('\\[glossary_exclude\\]', '', $glossaryItemContent);
+    } else {
+        $glossaryItemContent = strtr($glossaryItemContent, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />'));
+
+//        $glossaryItemContent = htmlentities($glossaryItemContent);
+    }
+
+    if ((get_option('red_glossaryLimitTooltip') > 30) && (strlen($glossaryItemContent) > get_option('red_glossaryLimitTooltip'))) {
+        $glossaryItemContent = substr($glossaryItemContent, 0, get_option('red_glossaryLimitTooltip')) . '    <strong>   More Details...<strong>';
+    }
+//    $glossaryItemContent = str_replace('\'', '\\\'', $glossaryItemContent);
+    return esc_attr($glossaryItemContent);
+}
+
 function red_glossary_parse($content) {
 
     //Run the glossary parser
@@ -203,7 +259,6 @@ function red_glossary_parse($content) {
                 ));
         // Sort by title length (function above)
         uasort($glossary_index, 'sortByWPQueryObjectTitleLength');
-
         //the tag:[glossary_exclude]+[/glossary_exclude] can be used to mark text will not be taken into account by the glossary
         if ($glossary_index) {
             $timestamp = time();
@@ -345,9 +400,10 @@ function red_glossary_parse($content) {
             }
 
             $replaceRules = array();
-            global $foundMatches;
+            global $foundMatches, $glossaryLoopCurrentId;
             $foundMatches = array();
             foreach ($glossary_index as $glossary_item) {
+                $glossaryLoopCurrentId = $glossary_item->ID;
                 $timestamp++;
                 $glossary_title = $glossary_item->post_title;
                 if ($GLOBALS['post']->post_type == 'glossary' && ($GLOBALS['post']->post_title == $glossary_item->post_title || strpos($GLOBALS['post']->post_title, $glossary_item->post_title) !== false))
@@ -357,7 +413,7 @@ function red_glossary_parse($content) {
                 $glossary_title = preg_quote($glossary_title, '/');
                 $caseSensitive = get_option('red_glossaryCaseSensitive', 0);
                 
-                $glossary_search = '/(^|(?=\s|\b))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/';
+                $glossary_search = '/(*UTF8)(^|(?=\s|\b))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/u';
                 $glossary_replace = '<a' . $timestamp . '>$0</a' . $timestamp . '>';
                 $origContent = $content;
 
@@ -368,63 +424,42 @@ function red_glossary_parse($content) {
                 }
                 $content_temp = rtrim($content_temp);
 
-                $link_search = '/<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '') . preg_quote($glossary_item->post_title, '/') . '[A-Za-z]*?)<\/a' . $timestamp . '>/u';
-                $newWindowsOption = get_option('red_glossaryInNewPage')==1;
+                $link_search = '/(*UTF8)<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '').'(' . preg_quote($glossary_item->post_title, '/') .$addition. ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
+                $newWindowsOption = get_option('red_glossaryInNewPage') == 1;
                 $windowTarget = '';
-                if ($newWindowsOption) $windowTarget = ' target="_new" ';
+                if ($newWindowsOption)
+                    $windowTarget = ' target="_new" ';
                 if (get_option('red_glossaryTooltip') == 1) {
                     if (get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt) {
                         $glossaryItemContent = $glossary_item->post_excerpt;
                     } else {
                         $glossaryItemContent = $glossary_item->post_content;
                     }
-                    $glossaryItemContent = str_replace('[glossary_exclude]', '', $glossaryItemContent);
-                    $glossaryItemContent = str_replace('[/glossary_exclude]', '', $glossaryItemContent);
+                    $glossaryItemContent = red_glossary_filterTooltipContent($glossaryItemContent);
 
-                    if (get_option('red_glossaryFilterTooltip') == 1) {
-                        // remove paragraph, bad chars from tooltip text
-                        $glossaryItemContent = str_replace(chr(10), "", $glossaryItemContent);
-                        $glossaryItemContent = str_replace(chr(13), "", $glossaryItemContent);
-                        $glossaryItemContent = str_replace('</p>', '<br/>', $glossaryItemContent);
-                        $glossaryItemContent = strip_only($glossaryItemContent, '<p>');
-                        $glossaryItemContent = strip_only($glossaryItemContent, '<img>');
-                        $glossaryItemContent = strip_only($glossaryItemContent, '<a>');
-                        $glossaryItemContent = htmlspecialchars($glossaryItemContent);
-                        $glossaryItemContent = addslashes($glossaryItemContent);
-                        $glossaryItemContent = str_replace("color:#000000", "color:#ffffff", $glossaryItemContent);
-                        $glossaryItemContent = str_replace('\\[glossary_exclude\\]', '', $glossaryItemContent);
-                    } else {
-                        $glossaryItemContent = strtr($glossaryItemContent, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />'));
-                        ;
+                    $titleAttr = (get_option('red_showTitleAttribute') == 1) ? ' title="Glossary: ' . esc_attr($glossary_item->post_title) . '" ' : '';
 
-                        $glossaryItemContent = htmlentities($glossaryItemContent);
-                    }
-
-                    if ((get_option('red_glossaryLimitTooltip') > 30) && (strlen($glossaryItemContent) > get_option('red_glossaryLimitTooltip'))) {
-                        $glossaryItemContent = substr($glossaryItemContent, 0, get_option('red_glossaryLimitTooltip')) . '    <strong>   More Details...<strong>';
-                    }
-                    $titleAttr = (get_option('red_showTitleAttribute')==1)?' title="Glossary: '.esc_attr( $glossary_item->post_title).'" ':'';
-                    $glossaryItemContent = str_replace('\'', '\\\'', $glossaryItemContent);
                     if (get_option('red_glossaryTermLink') == 1) {
-                        $link_replace = '<span '.$titleAttr.' onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();" class="glossaryLink">##TITLE##</span>';
+                        $link_replace = '<span ' . $titleAttr . ' data-tooltip="' . $glossaryItemContent . '" class="glossaryLink">##TITLE##</span>';
                     } else {
-                        $link_replace = '<a href="' . get_permalink($glossary_item) . '"'.$titleAttr.' onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();" class="glossaryLink"'.$windowTarget.'>##TITLE##</a>';
+                        $link_replace = '<a href="' . get_permalink($glossary_item) . '"' . $titleAttr . ' data-tooltip="' . $glossaryItemContent . '"  class="glossaryLink"' . $windowTarget . '>##TITLE##</a>';
                     }
                 } else {
                     if (get_option('red_glossaryTermLink') == 1) {
-                        $link_replace = '<span  '.$titleAttr.' class="glossaryLink">##TITLE##</span>';
+                        $link_replace = '<span  ' . $titleAttr . ' class="glossaryLink">##TITLE##</span>';
                     } else {
-                        $link_replace = '<a href="' . get_permalink($glossary_item) . '"'.$titleAttr.' class="glossaryLink"'.$windowTarget.'>##TITLE##</a>';
+                        $link_replace = '<a href="' . get_permalink($glossary_item) . '"' . $titleAttr . ' class="glossaryLink"' . $windowTarget . '>##TITLE##</a>';
                     }
                 }
-                $replaceRules[strtolower($glossary_item->post_title)] = $link_replace;
+                $replaceRules[$glossary_item->ID] = $link_replace;
 //                $content_temp = preg_replace($link_search, $link_replace, $content_temp);
                 $content = $content_temp;
             }
-            foreach ($foundMatches as $number => $title) {
-                $template = $replaceRules[strtolower($title)];
-                $template = str_replace('##TITLE##', $title, $template);
-                $content = str_replace('##GLOSSARY'.$number.'##', $template, $content);
+            
+            foreach ($foundMatches as $number => $data) {
+                $template = $replaceRules[$data['id']];
+                $template = str_replace('##TITLE##', $data['text'], $template);
+                $content = str_replace('##GLOSSARY' . $number . '##', $template, $content);
             }
             
             
@@ -538,16 +573,11 @@ function red_glossaryShowList($content = '') {
                 } else {
                     $glossaryItemContent = $glossary_item->post_content;
                 }
-
-                $glossaryItemContent = htmlspecialchars($glossaryItemContent);
-                $glossaryItemContent = addslashes($glossaryItemContent);
-                $glossaryItemContent = str_replace('[glossary_exclude]', "", $glossaryItemContent);
-                $glossaryItemContent = str_replace('[/glossary_exclude]', "", $glossaryItemContent);
-                $glossaryItemContent = strtr($glossaryItemContent, array("\r\n" => '<br />', "\r" => '<br />', "\n" => '<br />'));
+                   $glossaryItemContent = red_glossary_filterTooltipContent($glossaryItemContent);
                 if (get_option('red_glossaryTermLink') == 1) {
-                    $content .= '<li><span class="' . $glossary_style . '"  onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();">' . $glossary_item->post_title . '</span></li>';
+                    $content .= '<li><span class="' . $glossary_style . '"  data-tooltip="' . $glossaryItemContent . '">' . $glossary_item->post_title . '</span></li>';
                 } else {
-                    $content .= '<li><a class="' . $glossary_style . '" href="' . get_permalink($glossary_item) . '" onmouseover="tooltip.show(\'' . $glossaryItemContent . '\');" onmouseout="tooltip.hide();">' . $glossary_item->post_title . '</a></li>';
+                    $content .= '<li><a class="' . $glossary_style . '" href="' . get_permalink($glossary_item) . '" data-tooltip="' . $glossaryItemContent . '">' . $glossary_item->post_title . '</a></li>';
                 }
             } else {
                 if (get_option('red_glossaryTermLink') == 1) {
@@ -562,7 +592,7 @@ function red_glossaryShowList($content = '') {
         if (get_option('red_glossaryListTiles') == 1)
             $content = '<div class="tiles">' . $content . '</div>';
         // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-        $content.='<div style="display:block;clear:both;"></div><div class="cm_poweredby"><a href="http://www.cminds.com/" target="_new">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/" target="_new">Enhanced Tooltip Glossary</a></div>';
+        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://www.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/plugins/enhanced-tooltipglossary/" target="_new" class="cmetg_poweredbylink">Enhanced Tooltip Glossary</a></span>';
     }
     return $content;
 }
@@ -590,7 +620,7 @@ function red_glossary_createList_scripts() {
 function red_glossary_singlePage($content) {
     if (is_single() && get_query_var('post_type') == 'glossary') {
         // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-        $content.='<div style="display:block;clear:both;"></div><span class="cm_poweredby"><a href="http://www.cminds.com/" target="_new">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/plugins/enhanced-tooltipglossary/" target="_new">Enhanced Tooltip Glossary</a></span>';
+        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://www.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/plugins/enhanced-tooltipglossary/" target="_new" class="cmetg_poweredbylink">Enhanced Tooltip Glossary</a></span>';
     }
     return $content;
 }

@@ -1,0 +1,34 @@
+<?php
+/**
+ * CM Enhanced Tooltip Glossary about page
+ *
+ * @author CreativeMinds (http://www.cminds.com)
+ * @copyright Copyright (c) 2012, CreativeMinds
+ * @package Glossary/View
+ */
+?>
+<p class="clear">
+<br />
+<h1><strong>CM Tooltip Glossary Pro </strong></h1>
+<p>Tooltip Glossary Pro is a Premium version of <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary</a></p>
+<p>This plug adds many more features and functionality to <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
+<h2>Features (Pro Version Only)</h2>
+<p>The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary</p>
+<ul>
+<li><strong>Pagination </strong> - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a>)</li>
+<li><strong>Widget</strong> - Glossary widget which shows a random number of terms with link to Glossary index (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a> (Scroll down and look at the right side for Glossary), (<a href="http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png" target="new">image</a>)</li>
+<li><strong>Link Style</strong> - Ability to change term link style  (Settings:<a href="http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png" target="new">image</a>)</li>
+<li><strong>Tooltip Style</strong> - Ability to change tooltip shape, colors, border (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a> (Highlight any term)) , (Settings:<a href="http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png" target="new">image</a>)</li>
+<li><strong>Import / Export</strong> - Import / Export glossary file to/from CSV format. (<a href="http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png" target="new">image</a>)</li>
+<li><strong>Internal Links</strong> - Option to add a link back to glossary page from each term page (<a href="http://jumpstartcto.com/glossary/minimal-viable-product/" target="new">Demo</a>)</li>
+<li><strong>Editor Button</strong> - Editor button to support glossary exclude. (<a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg" target="new">image</a>)</li>
+<li><strong>Synonyms</strong> - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  (<a href="http://jumpstartcto.com/glossary/minimal-viable-product/" target="new">Demo</a>), (Glossary Term Page: <a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg" target="new">image</a>)</li>
+<li><strong>Related Post</strong> - Show all related posts for each glossary term, this option is cached to enhance performance  (<a href="http://jumpstartcto.com/glossary/minimal-viable-product/" target="new">Demo</a>), (Settings: <a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg" target="new">image</a>)</li>
+<li><strong>Multisite</strong> - Support Multisite</li>
+</ul>
+
+<h1><strong>Purchase </strong></h1>
+<p>The Pro version is only $30. You can purchase the pro version from <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">Here</a></p>
+
+
+</p>
