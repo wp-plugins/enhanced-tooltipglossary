@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.0
+Stable tag: 2.0.1
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 

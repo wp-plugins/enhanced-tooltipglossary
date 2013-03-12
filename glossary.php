@@ -3,7 +3,7 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 2.0
+  Version: 2.0.1
   Author: CreativeMinds 
  */
 
