@@ -68,7 +68,7 @@ function red_create_post_types() {
         'hierarchical' => false,
         'rewrite' => array('slug' => $glossaryPermalink, 'with_front' => false),
         'query_var' => true,
-        'supports' => array('title', 'editor', 'author', 'excerpt'));
+        'supports' => array('title', 'editor', 'author', 'comments','excerpt'));
     register_post_type('glossary', $args);
 }
 
