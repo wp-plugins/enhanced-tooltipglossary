@@ -3,7 +3,7 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 2.0.2
+  Version: 2.0.3
   Author: CreativeMinds 
  */
 
@@ -405,15 +405,16 @@ function red_glossary_parse($content) {
             foreach ($glossary_index as $glossary_item) {
                 $glossaryLoopCurrentId = $glossary_item->ID;
                 $timestamp++;
-                $glossary_title = $glossary_item->post_title;
+
+                $glossary_title = htmlentities(trim($glossary_item->post_title), ENT_QUOTES, 'UTF-8');
+                $glossary_title = str_replace('\'', '&#39;', $glossary_title);
                 if ($GLOBALS['post']->post_type == 'glossary' && ($GLOBALS['post']->post_title == $glossary_item->post_title || strpos($GLOBALS['post']->post_title, $glossary_item->post_title) !== false))
                     continue;
                 //old code bug-doesn't take into account href='' takes into account only href="")
                 //$glossary_search = '/\b'.$glossary_title.'s*?\b(?=([^"]*"[^"]*")*[^"]*$)/i';
                 $glossary_title = preg_quote($glossary_title, '/');
                 $caseSensitive = get_option('red_glossaryCaseSensitive', 0);
-                
-                $glossary_search = '/(*UTF8)(^|(?=\s|\b))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/u';
+                $glossary_search = '/(*UTF8)(^|(?=\s|\b|\W))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/u';
                 $glossary_replace = '<a' . $timestamp . '>$0</a' . $timestamp . '>';
                 $origContent = $content;
 
