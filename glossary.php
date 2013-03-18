@@ -3,8 +3,8 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 2.0.3
-  Author: CreativeMinds 
+  Version: 2.0.4
+  Author: CreativeMinds
  */
 
 /*
@@ -46,6 +46,7 @@ add_option('red_glossaryInNewPage', 0); //In New Page?
 add_option('red_showTitleAttribute', 1); //show HTML title attribute
 // Register glossary custom post type
 register_activation_hook(__FILE__, 'red_autoInstallIndexPage');
+
 function red_create_post_types() {
 
     $glossaryPermalink = get_option('red_glossaryPermalink');
@@ -68,11 +69,12 @@ function red_create_post_types() {
         'hierarchical' => false,
         'rewrite' => array('slug' => $glossaryPermalink, 'with_front' => false),
         'query_var' => true,
-        'supports' => array('title', 'editor', 'author', 'comments','excerpt'));
+        'supports' => array('title', 'editor', 'author', 'comments', 'excerpt'));
     register_post_type('glossary', $args);
 }
 
 add_action('init', 'red_create_post_types');
+
 function red_autoInstallIndexPage() {
     if (get_option('red_glossaryID') == 0) {
         $id = wp_insert_post(array(
@@ -84,7 +86,23 @@ function red_autoInstallIndexPage() {
         if (is_numeric($id))
             update_option('red_glossaryID', $id);
     }
+    update_option('red_afterActivation', 1);
 }
+if (get_option('red_afterActivation', 0)==1) {
+    add_action('admin_notices', 'red_showProMessages');
+}
+function red_showProMessages() {
+
+    // Only show to admins
+    if (current_user_can('manage_options')) {
+        ?>
+        <div id="message" class="updated fade">
+            <p><strong>A Pro version of Tooltip Glossary is available <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/</a>...</strong></p>
+        </div><?php
+        delete_option('red_afterActivation');
+    }
+}
+
 function red_admin_menu() {
     $page = add_menu_page('Glossary', 'CM Tooltip Glossary', 'edit_posts', RED_MENU_OPTION, 'red_adminMenu');
     add_submenu_page(RED_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
@@ -108,13 +126,14 @@ function red_about() {
     require 'admin_template.php';
 }
 
-function red_pro () {
+function red_pro() {
     ob_start();
     require 'admin_pro.php';
     $content = ob_get_contents();
     ob_end_clean();
     require 'admin_template.php';
 }
+
 function red_filter_admin_nav($views) {
     global $submenu, $plugin_page, $pagenow;
     $scheme = is_ssl() ? 'https://' : 'http://';
@@ -208,7 +227,7 @@ $foundMatches = array();
 
 function red_glossary_replace_matches($match) {
     global $foundMatches, $glossaryLoopCurrentId;
-    $foundMatches[] = array('id'=>$glossaryLoopCurrentId, 'text'=>$match[0]);
+    $foundMatches[] = array('id' => $glossaryLoopCurrentId, 'text' => $match[0]);
     return '##GLOSSARY' . (count($foundMatches) - 1) . '##';
 }
 
@@ -414,7 +433,7 @@ function red_glossary_parse($content) {
                 //$glossary_search = '/\b'.$glossary_title.'s*?\b(?=([^"]*"[^"]*")*[^"]*$)/i';
                 $glossary_title = preg_quote($glossary_title, '/');
                 $caseSensitive = get_option('red_glossaryCaseSensitive', 0);
-                $glossary_search = '/(*UTF8)(^|(?=\s|\b|\W))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/u';
+                $glossary_search = '/(^|(?=\s|\b|\W))' . (!$caseSensitive ? '(?i)' : '') . $glossary_title . '((?=\s|\W)|$)(?=([^"]*"[^"]*")*[^"]*$)(?=([^\']*\'[^\']*\')*[^\']*$)(?!<\/a[0-9]+)/u';
                 $glossary_replace = '<a' . $timestamp . '>$0</a' . $timestamp . '>';
                 $origContent = $content;
 
@@ -425,7 +444,7 @@ function red_glossary_parse($content) {
                 }
                 $content_temp = rtrim($content_temp);
 
-                $link_search = '/(*UTF8)<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '').'(' . preg_quote($glossary_item->post_title, '/') .$addition. ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
+                $link_search = '/<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '') . '(' . preg_quote($glossary_item->post_title, '/') . $addition . ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
                 $newWindowsOption = get_option('red_glossaryInNewPage') == 1;
                 $windowTarget = '';
                 if ($newWindowsOption)
@@ -456,14 +475,14 @@ function red_glossary_parse($content) {
 //                $content_temp = preg_replace($link_search, $link_replace, $content_temp);
                 $content = $content_temp;
             }
-            
+
             foreach ($foundMatches as $number => $data) {
                 $template = $replaceRules[$data['id']];
                 $template = str_replace('##TITLE##', $data['text'], $template);
                 $content = str_replace('##GLOSSARY' . $number . '##', $template, $content);
             }
-            
-            
+
+
 //            foreach ($replaceRules as $timestamp => $rule) {
 //                $content = preg_replace($rule['link_search'], $rule['link_replace'], $content);
 //            }
@@ -574,7 +593,7 @@ function red_glossaryShowList($content = '') {
                 } else {
                     $glossaryItemContent = $glossary_item->post_content;
                 }
-                   $glossaryItemContent = red_glossary_filterTooltipContent($glossaryItemContent);
+                $glossaryItemContent = red_glossary_filterTooltipContent($glossaryItemContent);
                 if (get_option('red_glossaryTermLink') == 1) {
                     $content .= '<li><span class="' . $glossary_style . '"  data-tooltip="' . $glossaryItemContent . '">' . $glossary_item->post_title . '</span></li>';
                 } else {

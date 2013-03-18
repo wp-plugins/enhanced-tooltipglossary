@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 
 Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
 
@@ -97,6 +97,10 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.0.4 =
+* Fixed problem with (*UTF8) flag not being recognized on all PHP environments
+* Added one-time admin notice about PRO version
+
 = 2.0.3 =
 * Fixed problem with html entities in glossary term name (ampersand, apostrophe, etc.)
 
