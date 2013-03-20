@@ -1,6 +1,11 @@
 <form method="post" action="options.php">
     <?php wp_nonce_field('update-options'); ?>
+	
     <table class="form-table">
+	<tr>
+    <th scope="row"><strong>Pro Version</strong></th>
+ 	<td colspan="3"><p><strong><a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/" target="new">Upgrade</a></p></td>
+	</tr>
         <tr valign="top">
             <th scope="row">Main Glossary Page ID</th>
             <td><input type="text" name="red_glossaryID" value="<?php echo get_option('red_glossaryID'); ?>" /></td>

@@ -10,7 +10,8 @@
 <p class="clear">
 <br />
 <h1><strong>CM Tooltip Glossary Pro </strong></h1>
-<p>Tooltip Glossary Pro is a Premium version of <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary</a></p>
+ <p><strong>A Pro version of Tooltip Glossary is <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/"  target="new">available here</a></strong></p>
+ <p>Tooltip Glossary Pro is a Premium version of <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary</a></p>
 <p>This plug adds many more features and functionality to <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
 <h2>Features (Pro Version Only)</h2>
 <p>The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary</p>
