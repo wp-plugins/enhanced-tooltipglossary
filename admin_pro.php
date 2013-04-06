@@ -26,6 +26,8 @@
 <li><strong>Synonyms</strong> - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  (<a href="http://jumpstartcto.com/glossary/minimal-viable-product/" target="new">Demo</a>), (Glossary Term Page: <a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg" target="new">image</a>)</li>
 <li><strong>Related Post</strong> - Show all related posts for each glossary term, this option is cached to enhance performance  (<a href="http://jumpstartcto.com/glossary/minimal-viable-product/" target="new">Demo</a>), (Settings: <a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg" target="new">image</a>)</li>
 <li><strong>Multisite</strong> - Support Multisite</li>
+<li><strong>Gratitude Message</strong> - Does not include Gratitude message in the footer.</li>
+<li><strong>Singular and Plural</strong> - Support different variations of a noun - user need to specify each</li>
 </ul>
 
 <h1><strong>Purchase </strong></h1>

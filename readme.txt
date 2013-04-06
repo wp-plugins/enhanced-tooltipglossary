@@ -39,6 +39,8 @@ The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossa
 * Synonyms - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  [Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
 * Related Post - Show all related posts for each glossary term, this option is cached to enhance performance [image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
 * Multisite - Support Multisite.
+* Gratitude Message - Does not include Gratitude message in the footer.
+* Singular and Plural - Support different variations of a noun - user need to specify each
 
 	
 **More Plugins by CreativeMinds**
