@@ -3,7 +3,7 @@
   Plugin Name: CM Enhanced Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description: Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
-  Version: 2.0.5
+  Version: 2.0.7
   Author: CreativeMinds
  */
 
@@ -423,12 +423,20 @@ function red_restrict_manage_posts() {
                     '&#038;',
                     '&#8217;',
                     '&amp;',
-                    '&#39;'
+                    '&#39;',
+                    '&lsquo;',
+                    '&#145;',
+                    '&rsquo;',
+                    '&#146;',
                         ), array(
                     htmlentities('&', ENT_QUOTES, 'UTF-8'),
                     htmlentities('\'', ENT_QUOTES, 'UTF-8'),
                     htmlentities('&', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('\'', ENT_QUOTES, 'UTF-8')
+                    htmlentities('\'', ENT_QUOTES, 'UTF-8'),
+                    htmlentities('‘', ENT_QUOTES, 'UTF-8'),
+                    htmlentities('‘', ENT_QUOTES, 'UTF-8'),
+                    htmlentities('`', ENT_QUOTES, 'UTF-8'),
+                    htmlentities('`', ENT_QUOTES, 'UTF-8')
                         ), $content);
                 $replaceRules = array();
                 global $foundMatches, $glossaryLoopCurrentId;

@@ -29,7 +29,7 @@
 </ul>
 
 <h1><strong>Purchase </strong></h1>
-<p>The Pro version is only $30. You can purchase the pro version from <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">Here</a></p>
+<p>You can purchase the pro version from <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">Here</a></p>
 
 
 </p>
