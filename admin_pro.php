@@ -28,6 +28,7 @@
 <li><strong>Multisite</strong> - Support Multisite</li>
 <li><strong>Gratitude Message</strong> - Does not include Gratitude message in the footer.</li>
 <li><strong>Singular and Plural</strong> - Support different variations of a noun - user need to specify each</li>
+<li><strong>Glossary term supports more post options </strong></li>
 </ul>
 
 <h1><strong>Purchase </strong></h1>

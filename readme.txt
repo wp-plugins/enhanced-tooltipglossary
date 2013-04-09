@@ -41,7 +41,7 @@ The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossa
 * Multisite - Support Multisite.
 * Gratitude Message - Does not include Gratitude message in the footer.
 * Singular and Plural - Support different variations of a noun - user need to specify each
-
+* Glossary term supports more post options 
 	
 **More Plugins by CreativeMinds**
 
