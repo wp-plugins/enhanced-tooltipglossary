@@ -7,17 +7,17 @@ Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.0.7
 
-Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.
+Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. A glossary index with all definition is automatically created
 
 == Description ==
 
-Parses posts for defined glossary terms and adds links to the static glossary page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term.  Based on [automatic-glossary](http://wordpress.org/extend/plugins/automatic-glossary/) and on [TooltipGlossary] (http://wordpress.org/extend/plugins/tooltipglossary/).
-
-The code has been bug fixed based on TooltipGlossary and many new features added. A new tag was introduced to avoid using the Tooltip [glossary_exclude] text [/glossary_exclude].  
+Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term.  
 
 The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
 
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
+
+[youtube http://www.youtube.com/watch?v=D6p95ckrB5s]
 
 **Demo** 
 
