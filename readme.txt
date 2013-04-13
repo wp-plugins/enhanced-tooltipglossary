@@ -8,6 +8,12 @@ Tested up to: 3.5
 Stable tag: 2.0.7
 
 Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. A glossary index with all definition is automatically created
+ 
+ 
+== Description ==
+
+Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term.  
+
 This plug can be used for the following use-cases:
 * Create a dictionary of terms in your site
 * Add tooltip to predefined terms in your site
@@ -15,11 +21,6 @@ This plug can be used for the following use-cases:
 * Build an internal Encyclopedia
 * Keep and display synonyms for terms you are using
 * Build a lexicon of terms
- 
- 
-== Description ==
-
-Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term.  
 
 The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
 
