@@ -30,7 +30,8 @@
 <li><strong>Singular and Plural</strong> - Support different variations of a noun - user need to specify each</li>
 <li><strong>Glossary term supports more post options </strong></li>
 </ul>
-
+<h1><strong>Video Demo </strong></h1>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/D6p95ckrB5s?rel=0" frameborder="0" allowfullscreen></iframe>
 <h1><strong>Purchase </strong></h1>
 <p>You can purchase the pro version from <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">Here</a></p>
 

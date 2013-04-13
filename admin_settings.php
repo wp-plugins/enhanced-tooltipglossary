@@ -4,7 +4,8 @@
     <table class="form-table">
 	<tr>
     <th scope="row"><strong>Pro Version</strong></th>
- 	<td colspan="3"><p><strong><a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/" target="new">Upgrade</a></p></td>
+ 	<td><p><strong><a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/" target="new">Upgrade</a></p></td>
+    <td colspan="2" bgcolor="#00FF00"> Professional version of Tooltip Glossary which adds SEO support, Import/Export tools, Multisite support, Sidebar Widget, Synonyms, Support for huge glossaries, tooltip customization options and much more</td>
 	</tr>
         <tr valign="top">
             <th scope="row">Main Glossary Page ID</th>

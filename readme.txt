@@ -17,8 +17,6 @@ The tooltip is created with JavaScript based on the article written by [Michael 
 
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
 
-[youtube http://www.youtube.com/watch?v=D6p95ckrB5s]
-
 **Demo** 
 
 See basic demo of the plug [here](http://www.cminds.com/glossary/)
@@ -26,7 +24,7 @@ See basic demo of the plug [here](http://www.cminds.com/glossary/)
 
 **Pro Version**	
 
-[Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+[Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
 
 * Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [Demo](http://jumpstartcto.com/glossary/)
@@ -42,6 +40,12 @@ The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossa
 * Gratitude Message - Does not include Gratitude message in the footer.
 * Singular and Plural - Support different variations of a noun - user need to specify each
 * Glossary term supports more post options 
+[Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+
+**Pro Version Video**	
+
+[youtube http://www.youtube.com/watch?v=D6p95ckrB5s]
+
 	
 **More Plugins by CreativeMinds**
 
