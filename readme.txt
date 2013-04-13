@@ -2,13 +2,21 @@
 Name: CM Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary, pages, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip
+Tags: glossary, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip, dictionary,  Encyclopedia,  knowledge base,  index, keywords, terms,  knowledgebase, lexicon, synonyms, plural, singular
 Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.0.7
 
 Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. A glossary index with all definition is automatically created
-
+This plug can be used for the following use-cases:
+* Create a dictionary of terms in your site
+* Add tooltip to predefined terms in your site
+* Create a knowledge base
+* Build an internal Encyclopedia
+* Keep and display synonyms for terms you are using
+* Build a lexicon of terms
+ 
+ 
 == Description ==
 
 Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term.  
@@ -40,6 +48,7 @@ The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossa
 * Gratitude Message - Does not include Gratitude message in the footer.
 * Singular and Plural - Support different variations of a noun - user need to specify each
 * Glossary term supports more post options 
+
 [Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 
 **Pro Version Video**	
