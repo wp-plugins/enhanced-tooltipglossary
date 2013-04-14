@@ -14,7 +14,7 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 
 Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in adition a glossary index is also created.  
 
-This plug can be used for the following use-cases
+This plugin can be used for the following use-cases
 
 * Dictionary - Create a dictionary of terms in your site
 * Tooltip - Add tooltip to predefined terms in your site
@@ -24,17 +24,14 @@ This plug can be used for the following use-cases
 * Lexicon - Build a lexicon of terms
 
 The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
-
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
 
 **Demo** 
-
-See basic demo of the plug [here](http://www.cminds.com/glossary/)
+See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
 
 **Pro Version**	
-
-[Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+[Pro Version](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
 
 * Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [Demo](http://jumpstartcto.com/glossary/)
