@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip, dictionary,  Encyclopedia,  knowledge base,  index, keywords, terms,  knowledgebase, lexicon, synonyms, plural, singular
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.0.7
+Stable tag: 2.0.10
 
 Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
  
