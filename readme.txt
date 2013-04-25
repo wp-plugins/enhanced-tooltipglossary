@@ -2,7 +2,7 @@
 Name: CM Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary, posts, definitions, tooltip, automatic, hints, hint, tip, tool-tip, dictionary,  Encyclopedia,  knowledge base,  index, keywords, terms,  knowledgebase, lexicon, synonyms, plural, singular
+Tags: glossary, posts, definition, definitions, tooltip, automatic, hints, hint, tip, tool-tip, dictionary,  Encyclopedia,  knowledge base,  index, keywords, terms,  knowledgebase, lexicon, synonyms, plural, singular, descriptions, description, explain, explanation, explanatory dictionary, Tooltips, vocabulary, words, word, expression, expressions, appendix, technical terms,  content management,  knowledge management
 Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.0.10
@@ -22,6 +22,8 @@ This plugin can be used for the following use-cases
 * Encyclopedia - Build an internal Encyclopedia
 * Synonyms - Keep and display synonyms for terms you are using
 * Lexicon - Build a lexicon of terms
+* Vocabulary - Build a vocabulary of words and expressions
+* Explain - Explain words in your post or pages
 
 The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
 Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
