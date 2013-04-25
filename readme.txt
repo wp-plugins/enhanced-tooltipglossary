@@ -2,7 +2,7 @@
 Name: CM Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary, posts, definition, definitions, tooltip, automatic, hints, hint, tip, tool-tip, dictionary,  Encyclopedia,  knowledge base,  index, keywords, terms,  knowledgebase, lexicon, synonyms, plural, singular, descriptions, description, explain, explanation, explanatory dictionary, Tooltips, vocabulary, words, word, expression, expressions, appendix, technical terms,  content management,  knowledge management
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management
 Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.0.10
