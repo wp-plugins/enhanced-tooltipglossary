@@ -14,7 +14,7 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 
 Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in adition a glossary index is also created.  
 
-This plugin can be used for the following use-cases
+**Use-Cases**
 
 * Dictionary - Create a dictionary of terms in your site
 * Tooltip - Add tooltip to predefined terms in your site
@@ -25,14 +25,13 @@ This plugin can be used for the following use-cases
 * Vocabulary - Build a vocabulary of words and expressions
 * Explain - Explain words in your post or pages
 
-The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
-Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
-
 **Demo** 
+
 See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
 
 **Pro Version**	
+
 [Pro Version](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
 
@@ -56,15 +55,16 @@ The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossa
 
 [youtube http://www.youtube.com/watch?v=D6p95ckrB5s]
 
+**Code and Style Issues**
+
+The tooltip is created with JavaScript based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) and can be customized and styled through the tooltip.css and tooltip.js files.
+Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
 	
 **More Plugins by CreativeMinds**
 
 * [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Block users using blacklists domain from registering to your WordPress site.. 
-
 * [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
-
 * [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
-
 * [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allow users to post questions and answers in stackoverflow style. 
 
 == Installation ==
