@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.0.10
+Stable tag: 2.1
 
 Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
  
@@ -113,6 +113,9 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.1 =
+* Added revisions to glossary term
+
 = 2.0.7 =
 * Added right single quotation mark to normalization
 
