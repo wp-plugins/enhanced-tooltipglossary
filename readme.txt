@@ -2,7 +2,7 @@
 Name: CM Enhanced Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight
 Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.1
@@ -66,6 +66,7 @@ Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://
 * [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
 * [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
 * [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allow users to post questions and answers in stackoverflow style. 
+* [CM Download manager](http://wordpress.org/support/plugin/cm-download-manager) - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.
 
 == Installation ==
 

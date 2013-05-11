@@ -15,11 +15,12 @@ This plugin was developed by <a href="http://www.cminds.com/" target="new">Creat
 <h3>More Plugins by CreativeMinds</h3>
 
 <ul>
-<li><a href="http://wordpress.org/extend/plugins/enhanced-tooltipglossary/" target="new">CM Enhanced ToolTip Glossary</a> - Parses posts for defined glossary terms and adds links to the static glossary page containing the definition and a tooltip with the definition.</li> 
 <li><a href="http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/" target="new">CM Multi MailChimp List Manager</a> - Allows users to subscribe/unsubscribe from multiple MailChimp lists. </li>
 <li><a href="http://wordpress.org/extend/plugins/cm-invitation-codes/" target="new">CM Invitation Codes</a> - Allows more control over site registration by adding managed groups of invitation codes.</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-email-blacklist/" target="new">CM Email Blacklist</a> - Block users from blacklists domain from registering to your WordPress site.</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-answers/" target="new">CM Answers</a> - Allow users to post questions and answers in stackoverflow style.</li>
+<li><a href="http://wordpress.org/support/plugin/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.</li>
+
 </ul>
 <br />
 <h3>We Expert in Custom Plugin Development</h3>
