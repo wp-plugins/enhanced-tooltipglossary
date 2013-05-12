@@ -19,7 +19,7 @@ This plugin was developed by <a href="http://www.cminds.com/" target="new">Creat
 <li><a href="http://wordpress.org/extend/plugins/cm-invitation-codes/" target="new">CM Invitation Codes</a> - Allows more control over site registration by adding managed groups of invitation codes.</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-email-blacklist/" target="new">CM Email Blacklist</a> - Block users from blacklists domain from registering to your WordPress site.</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-answers/" target="new">CM Answers</a> - Allow users to post questions and answers in stackoverflow style.</li>
-<li><a href="http://wordpress.org/support/plugin/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.</li>
+<li><a href="http://wordpress.org/extend/plugins/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.</li>
 
 </ul>
 <br />
