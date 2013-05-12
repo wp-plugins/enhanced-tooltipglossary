@@ -35,15 +35,15 @@ See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 [Pro Version](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
 
-* Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [Demo](http://jumpstartcto.com/glossary/)
-* Widget - Glossary widget which shows a random number of terms with link to Glossary index [Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
+* Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [See Demo](http://jumpstartcto.com/glossary/)
+* Widget - Glossary widget which shows a random number of terms with link to Glossary index [See Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
 * Link Style - Ability to change term link style [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Tooltip Style - Ability to change tooltip shape, colors, border [Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Import / Export - Import / Export glossary file to/from CSV format. [image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
-* Internal Links - Option to add a link back to glossary page from each term page [Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
-* Editor Button - Editor button to support glossary exclude. [image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
-* Synonyms - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  [Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
-* Related Post - Show all related posts for each glossary term, this option is cached to enhance performance [image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
+* Tooltip Style - Ability to change tooltip shape, colors, border [See Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Import / Export - Import / Export glossary file to/from CSV format. [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
+* Internal Links - Option to add a link back to glossary page from each term page [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
+* Editor Button - Editor button to support glossary exclude. [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
+* Synonyms - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
+* Related Post - Show all related posts for each glossary term, this option is cached to enhance performance [See image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
 * Multisite - Support Multisite.
 * Gratitude Message - Does not include Gratitude message in the footer.
 * Singular and Plural - Support different variations of a noun - user need to specify each
