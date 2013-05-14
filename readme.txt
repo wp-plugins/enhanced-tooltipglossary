@@ -62,11 +62,11 @@ Alphabetical index for glossary list is based on [jQuery ListNav Plugin](http://
 	
 **More Plugins by CreativeMinds**
 
+* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allow users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration.. 
+* [CM Download manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allow users to upload, manage, track and support documents or files in a directory listing structure for others to use and comment.
+* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
 * [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Block users using blacklists domain from registering to your WordPress site.. 
 * [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe/unsubscribe from multiple MailChimp lists. 
-* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows more control over site registration by adding managed groups of invitation codes. 
-* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allow users to post questions and answers in stackoverflow style. 
-* [CM Download manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.
 
 == Installation ==
 

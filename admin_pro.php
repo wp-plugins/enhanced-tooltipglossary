@@ -1,6 +1,6 @@
 <?php
 /**
- * CM Enhanced Tooltip Glossary about page
+ * CM Super Tooltip Glossary about page
  *
  * @author CreativeMinds (http://www.cminds.com)
  * @copyright Copyright (c) 2012, CreativeMinds
@@ -11,10 +11,10 @@
 <br />
 <h1><strong>CM Tooltip Glossary Pro </strong></h1>
  <p><strong>A Pro version of Tooltip Glossary is <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/"  target="new">available here</a></strong></p>
- <p>Tooltip Glossary Pro is a Premium version of <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary</a></p>
-<p>This plug adds many more features and functionality to <a title="Enhanced TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Enhanced Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
+ <p>Tooltip Glossary Pro is a Premium version of <a title="Super TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Super Tooltip Glossary</a></p>
+<p>This plug adds many more features and functionality to <a title="Super TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Super Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
 <h2>Features (Pro Version Only)</h2>
-<p>The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary</p>
+<p>The Pro version adds a layer of powerful features to the Super Tooltip Glossary</p>
 <ul>
 <li><strong>Pagination </strong> - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a>)</li>
 <li><strong>Widget</strong> - Glossary widget which shows a random number of terms with link to Glossary index (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a> (Scroll down and look at the right side for Glossary), (<a href="http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png" target="new">image</a>)</li>

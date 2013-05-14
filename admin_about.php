@@ -1,6 +1,6 @@
 <?php
 /**
- * CM Enhanced Tooltip Glossary about page
+ * CM Super Tooltip Glossary about page
  *
  * @author CreativeMinds (http://www.cminds.com)
  * @copyright Copyright (c) 2012, CreativeMinds
@@ -10,16 +10,16 @@
 <p class="clear">
 <br />
 
-This plugin was developed by <a href="http://www.cminds.com/" target="new">CreativeMinds</a>. You can find more information about CM Enhanced Tooltip Glossary <a href="http://www.cminds.com/plugins/" target="new">here</a>
+This plugin was developed by <a href="http://www.cminds.com/" target="new">CreativeMinds</a>. You can find more information about CM Super Tooltip Glossary <a href="http://www.cminds.com/plugins/" target="new">here</a>
 <br /><br />
 <h3>More Plugins by CreativeMinds</h3>
 
 <ul>
+<li><a href="http://wordpress.org/extend/plugins/cm-answers/" target="new">CM Answers</a> - Allow users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration..</li>
+<li><a href="http://wordpress.org/extend/plugins/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload,manage,track and support documents or files in a directory listing structure for others to use and comment.</li>
 <li><a href="http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/" target="new">CM Multi MailChimp List Manager</a> - Allows users to subscribe/unsubscribe from multiple MailChimp lists. </li>
 <li><a href="http://wordpress.org/extend/plugins/cm-invitation-codes/" target="new">CM Invitation Codes</a> - Allows more control over site registration by adding managed groups of invitation codes.</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-email-blacklist/" target="new">CM Email Blacklist</a> - Block users from blacklists domain from registering to your WordPress site.</li>
-<li><a href="http://wordpress.org/extend/plugins/cm-answers/" target="new">CM Answers</a> - Allow users to post questions and answers in stackoverflow style.</li>
-<li><a href="http://wordpress.org/extend/plugins/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload and manage Downloads in a directory structure for others users to use and comment.</li>
 
 </ul>
 <br />
