@@ -7,7 +7,7 @@ Requires at least: 3.2
 Tested up to: 3.5
 Stable tag: 2.1
 
-Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
+Easily create Glossary, Encyclopedia or Dictionary of your terms and show tooltip in posts and pages while hovering. Many powerful features
  
  
 == Description ==
