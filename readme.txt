@@ -12,7 +12,7 @@ Easily create Glossary, Encyclopedia or Dictionary of your terms and show toolti
  
 == Description ==
 
-Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in adition a glossary index is also created.  
+Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in addition a glossary index is also created.  
 
 **Use-Cases**
 
@@ -24,6 +24,18 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 * Lexicon - Build a lexicon of terms
 * Vocabulary - Build a vocabulary of words and expressions
 * Explain - Explain words in your post or pages
+
+**Features**
+
+* Automatically generates Glossary index  [Example](http://www.cminds.com/glossary/)
+* Ability to show index as tiles [Example] (http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
+* Each glossary term has it's own post [Example](http://www.cminds.com/glossary/functional-requirements/)
+* Includes several filters to clean tooltip and limit length
+* Prevent the glossary from parsing text when needed by using shortcode [glossary_exclude]  text [/glossary_exclude]. 
+* Support Excerpt (if exists) as hover text.
+* Control where tooltip appears (pages, posts, homepage)
+* Control if tooltip appears more than once 
+* Supports UTF8
 
 **Demo** 
 
