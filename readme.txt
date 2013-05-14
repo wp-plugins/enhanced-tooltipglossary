@@ -28,7 +28,7 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 **Features**
 
 * Automatically generates Glossary index  [Example](http://www.cminds.com/glossary/)
-* Ability to show index as tiles [Example] (http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
+* Ability to show index as tiles [Example](http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
 * Each glossary term has it's own post [Example](http://www.cminds.com/glossary/functional-requirements/)
 * Includes several filters to clean tooltip and limit length
 * Prevent the glossary from parsing text when needed by using shortcode [glossary_exclude]  text [/glossary_exclude]. 
