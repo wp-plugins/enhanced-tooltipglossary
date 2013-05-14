@@ -1,5 +1,5 @@
 === Plugin Name ===
-Name: CM Enhanced Tooltip Glossary
+Name: CM Super Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight
@@ -33,7 +33,7 @@ See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 **Pro Version**	
 
 [Pro Version](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
-The Pro version adds a layer of powerful features to the Enhanced Tooltip Glossary
+The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 
 * Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [See Demo](http://jumpstartcto.com/glossary/)
 * Widget - Glossary widget which shows a random number of terms with link to Glossary index [See Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
