@@ -2,10 +2,10 @@
 Name: CM Super Tooltip Glossary
 Contributors: CreativeMinds. Based on jatls TooltipGlossary
 Donate link: http://www.cminds.com/plugins
-Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.1
+Stable tag: 2.2
 
 Easily create Glossary, Encyclopedia or Dictionary of your terms and show tooltip in posts and pages while hovering. Many powerful features
  
@@ -62,6 +62,9 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 * Gratitude Message - Does not include Gratitude message in the footer.
 * Singular and Plural - Support different variations of a noun - user need to specify each
 * Glossary term supports more post options 
+* Related Glossary terms - Related Terms to specific term are displayed based on setting
+* Localization - All labels are external in setting and can be localized easily
+* Custom Characters - Support for custom characters in alphabetical index
 
 [Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 

@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
-  Version: 2.1
+  Version: 2.2
   Author: CreativeMinds
  */
 
