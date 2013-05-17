@@ -31,8 +31,8 @@
 <li><strong>Glossary term supports more post options </strong></li>
 <li><strong>Related Glossary terms</strong> - Related Terms to specific term are displayed based on setting</li>
 <li><strong>Localization</strong> - All labels are external in setting and can be localized easily</li>
-<li><strong>Custom Characters</strong> - Support for custom characters in alphabetical index</li>
-</ul>
+<li><strong>Custom Characters</strong> - Support for custom characters in alphabetical index  (<a href="http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png" target="new">image</a>)</li>
+<li><strong>Definition in Index</strong> - show the terms AND the definitions in Alphabetical index  (<a href="http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png" target="new">image</a>)</li></ul>
 <h1><strong>Video Demo </strong></h1>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/D6p95ckrB5s?rel=0" frameborder="0" allowfullscreen></iframe>
 <h1><strong>Purchase </strong></h1>
