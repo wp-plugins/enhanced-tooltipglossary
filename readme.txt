@@ -65,7 +65,7 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 * Related Glossary terms - Related Terms to specific term are displayed based on setting
 * Localization - All labels are external in setting and can be localized easily
 * Custom Characters - Support for custom characters in alphabetical index [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png)
-* Show the terms AND the definitions in Alphabetical index [See image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
+* Show the terms AND  the definitions in Alphabetical index [See image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
 
 [Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
 
