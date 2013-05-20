@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
-  Version: 2.2.1
+  Version: 2.2.2
   Author: CreativeMinds
  */
 
@@ -429,14 +429,14 @@ function red_restrict_manage_posts() {
                     '&rsquo;',
                     '&#146;',
                         ), array(
-                    htmlentities('&', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('\'', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('&', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('\'', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('‘', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('‘', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('`', ENT_QUOTES, 'UTF-8'),
-                    htmlentities('`', ENT_QUOTES, 'UTF-8')
+                    htmlspecialchars('&', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('\'', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('&', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('\'', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('‘', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('‘', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('`', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('`', ENT_QUOTES, 'UTF-8')
                         ), $content);
                 $replaceRules = array();
                 global $foundMatches, $glossaryLoopCurrentId;
@@ -445,7 +445,7 @@ function red_restrict_manage_posts() {
                     $glossaryLoopCurrentId = $glossary_item->ID;
                     $timestamp++;
 
-                    $glossary_title = htmlentities(trim($glossary_item->post_title), ENT_QUOTES, 'UTF-8');
+                    $glossary_title = htmlspecialchars(trim($glossary_item->post_title), ENT_QUOTES, 'UTF-8');
 //                    $glossary_title = str_replace('\'', '&#39;', $glossary_title);
                     if ($GLOBALS['post']->post_type == 'glossary' && ($GLOBALS['post']->post_title == $glossary_item->post_title || strpos($GLOBALS['post']->post_title, $glossary_item->post_title) !== false))
                         continue;
