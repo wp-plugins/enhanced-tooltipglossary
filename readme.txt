@@ -13,6 +13,7 @@ Easily create Glossary, Encyclopedia or Dictionary of your terms and show toolti
 == Description ==
 
 Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in addition a glossary index is also created.  
+For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
 **Use-Cases**
 
@@ -42,6 +43,7 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 **Demo** 
 
 See basic demo of the plugin [here](http://www.cminds.com/glossary/)
+For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
 
 **Pro Version**	
