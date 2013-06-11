@@ -5,7 +5,7 @@ Donate link: http://www.cminds.com/plugins
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate
 Requires at least: 3.2
 Tested up to: 3.5
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 
 Easily create Glossary, Encyclopedia or Dictionary of your terms and show tooltip in posts and pages while hovering. Many powerful features
  
@@ -14,7 +14,6 @@ Easily create Glossary, Encyclopedia or Dictionary of your terms and show toolti
 
 Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in addition a glossary index is also created.  
 
-For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
 **Use-Cases**
 
@@ -41,7 +40,7 @@ For more information please visit [plugin detailed User Guide](http://www.cminds
 * Control if tooltip appears more than once 
 * Supports UTF8
 
-**Demo** 
+**Demo & User Guide ** 
 
 See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
@@ -136,6 +135,9 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.2.3 =
+* Added user guide
+
 = 2.2.2 =
 * Fixed special characters (e.g. umlauts) parsing
 

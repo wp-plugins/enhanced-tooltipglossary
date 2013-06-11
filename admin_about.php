@@ -15,6 +15,7 @@ This plugin was developed by <a href="http://www.cminds.com/" target="new">Creat
 <h3>More Plugins by CreativeMinds</h3>
 
 <ul>
+<li><a href="http://wordpress.org/extend/plugins/enhanced-tooltipglossary/" target="new">CM Super ToolTip Glossary</a> - Easily create Glossary, Encyclopedia or Dictionary of your terms and show tooltip in posts and pages while hovering. Many powerful features.</li> 
 <li><a href="http://wordpress.org/extend/plugins/cm-answers/" target="new">CM Answers</a> - Allow users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration..</li>
 <li><a href="http://wordpress.org/extend/plugins/cm-download-manager" target="new">CM Download Manager</a> - Allow users to upload,manage,track and support documents or files in a directory listing structure for others to use and comment.</li>
 <li><a href="http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/" target="new">CM Multi MailChimp List Manager</a> - Allows users to subscribe/unsubscribe from multiple MailChimp lists. </li>

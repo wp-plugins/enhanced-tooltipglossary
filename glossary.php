@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
-  Version: 2.2.2
+  Version: 2.2.3
   Author: CreativeMinds
  */
 
@@ -111,6 +111,8 @@ function red_admin_menu() {
     add_submenu_page(RED_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'manage_options', RED_SETTINGS_OPTION, 'glossary_options');
     add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'edit_posts', RED_ABOUT_OPTION, 'red_about');
     add_submenu_page(RED_MENU_OPTION, 'Pro Version', 'Pro Version', 'edit_posts', RED_PRO_OPTION, 'red_pro');
+    global $submenu;
+        $submenu[RED_MENU_OPTION][500] = array('User Guide', 'edit_posts', 'http://www.cminds.com/cm-tooltip-glossary-user-guide/');
     add_filter('views_edit-glossary', 'red_filter_admin_nav', 10, 1);
 }
 
@@ -148,7 +150,7 @@ function red_filter_admin_nav($views) {
         foreach ($thisMenu as $item) {
             $slug = $item[2];
             $isCurrent = ($slug == $plugin_page || strpos($item[2], '.php') === strpos($currentUri, '.php'));
-            $url = (strpos($item[2], '.php') !== false) ? $slug : get_admin_url('', 'admin.php?page=' . $slug);
+            $url = (strpos($item[2], '.php') !== false || strpos($slug, 'http://') !== false) ? $slug : get_admin_url('', 'admin.php?page=' . $slug);
             $submenus[$item[0]] =
                     '<a href="' . $url . '" class="' . ($isCurrent ? 'current' : '') . '">' . $item[0] . '</a>';
         }
@@ -178,7 +180,7 @@ function red_restrict_manage_posts() {
             foreach ($thisMenu as $item) {
                 $slug = $item[2];
                 $isCurrent = $slug == $plugin_page;
-                $url = (strpos($item[2], '.php') !== false) ? $slug : get_admin_url('', 'admin.php?page=' . $slug);
+                $url = (strpos($item[2], '.php') !== false || strpos($slug, 'http://') !== false) ? $slug : get_admin_url('', 'admin.php?page=' . $slug);
                 $submenus[] = array(
                     'link' => $url,
                     'title' => $item[0],
