@@ -40,7 +40,7 @@ Parses posts for defined glossary terms and adds links to the glossary term page
 * Control if tooltip appears more than once 
 * Supports UTF8
 
-**Demo & User Guide ** 
+**Demo & User Guide** 
 
 See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
