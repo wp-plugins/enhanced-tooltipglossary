@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
-  Version: 2.2.3
+  Version: 2.2.4
   Author: CreativeMinds
  */
 
@@ -252,7 +252,7 @@ function red_restrict_manage_posts() {
             $glossaryItemContent = strip_only($glossaryItemContent, '<img>');
             $glossaryItemContent = strip_only($glossaryItemContent, '<a>');
             $glossaryItemContent = htmlspecialchars($glossaryItemContent);
-            $glossaryItemContent = addslashes($glossaryItemContent);
+            $glossaryItemContent = esc_attr($glossaryItemContent);
             $glossaryItemContent = str_replace("color:#000000", "color:#ffffff", $glossaryItemContent);
             $glossaryItemContent = str_replace('\\[glossary_exclude\\]', '', $glossaryItemContent);
         } else {
@@ -423,6 +423,7 @@ function red_restrict_manage_posts() {
                 }
                 $content = str_replace(array(
                     '&#038;',
+                    '&#8216;',
                     '&#8217;',
                     '&amp;',
                     '&#39;',
@@ -432,6 +433,7 @@ function red_restrict_manage_posts() {
                     '&#146;',
                         ), array(
                     htmlspecialchars('&', ENT_QUOTES, 'UTF-8'),
+                    htmlspecialchars('\'', ENT_QUOTES, 'UTF-8'),
                     htmlspecialchars('\'', ENT_QUOTES, 'UTF-8'),
                     htmlspecialchars('&', ENT_QUOTES, 'UTF-8'),
                     htmlspecialchars('\'', ENT_QUOTES, 'UTF-8'),
