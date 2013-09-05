@@ -2,7 +2,7 @@
 /**
  * CM Super Tooltip Glossary about page
  *
- * @author CreativeMinds (http://www.cminds.com)
+ * @author CreativeMinds (http://plugins.cminds.com)
  * @copyright Copyright (c) 2012, CreativeMinds
  * @package Glossary/View
  */
@@ -10,9 +10,9 @@
 <p class="clear">
 <br />
 <h1><strong>CM Tooltip Glossary Pro </strong></h1>
- <p><strong>A Pro version of Tooltip Glossary is <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/"  target="new">available here</a></strong></p>
- <p>Tooltip Glossary Pro is a Premium version of <a title="Super TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Super Tooltip Glossary</a></p>
-<p>This plug adds many more features and functionality to <a title="Super TooltipGlossary" href="http://www.cminds.com/plugins/enhanced-tooltipglossary/">Super Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
+ <p><strong>A Pro version of Tooltip Glossary is <a href="http://tooltip.cminds.com/"  target="new">available here</a></strong></p>
+ <p>Tooltip Glossary Pro is a Premium version of <a title="Super TooltipGlossary" href="http://tooltip.cminds.com/">Super Tooltip Glossary</a></p>
+<p>This plug adds many more features and functionality to <a title="Super TooltipGlossary" href="http://tooltip.cminds.com/">Super Tooltip Glossary plug</a>, giving the admin the power to customize the tooltip behavior, adding support for site SEO and adding strong support for managing large glossaries.</p>
 <h2>Features (Pro Version Only)</h2>
 <p>The Pro version adds a layer of powerful features to the Super Tooltip Glossary</p>
 <ul>
@@ -36,7 +36,7 @@
 <h1><strong>Video Demo </strong></h1>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/D6p95ckrB5s?rel=0" frameborder="0" allowfullscreen></iframe>
 <h1><strong>Purchase </strong></h1>
-<p>You can purchase the pro version from <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/">Here</a></p>
+<p>You can purchase the pro version from <a href="http://tooltip.cminds.com/">Here</a></p>
 
 
 </p>

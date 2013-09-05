@@ -1,9 +1,9 @@
 <?php
 /*
   Plugin Name: CM Super Tooltip Glossary
-  Plugin URI: http://www.cminds.com/plugins/enhanced-tooltipglossary/
+  Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
-  Version: 2.2.5
+  Version: 2.3
   Author: CreativeMinds
  */
 
@@ -99,7 +99,7 @@ function red_showProMessages() {
     if (current_user_can('manage_options')) {
         ?>
         <div id="message" class="updated fade">
-            <p><strong>New !! A Pro version of Tooltip Glossary is <a href="http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/"  target="new">available here</a></strong></p>
+            <p><strong>New !! A Pro version of Tooltip Glossary is <a href="http://tooltip.cminds.com/"  target="new">available here</a></strong></p>
         </div><?php
         delete_option('red_afterActivation');
     }
@@ -636,7 +636,7 @@ function red_restrict_manage_posts() {
             if (get_option('red_glossaryListTiles') == 1)
                 $content = '<div class="tiles">' . $content . '</div>';
             // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-            $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://www.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/plugins/enhanced-tooltipglossary/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
+            $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
         }
         return $content;
     }
@@ -664,7 +664,7 @@ function red_restrict_manage_posts() {
     function red_glossary_singlePage($content) {
         if (is_single() && get_query_var('post_type') == 'glossary') {
             // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-            $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://www.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://www.cminds.com/plugins/enhanced-tooltipglossary/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
+            $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
         }
         return $content;
     }

@@ -1,44 +1,46 @@
 === Plugin Name ===
 Name: CM Super Tooltip Glossary
-Contributors: CreativeMinds. Based on jatls TooltipGlossary
-Donate link: http://www.cminds.com/plugins
-Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate
+Contributors: CreativeMinds http://plugins.cminds.com/. Based on jatls TooltipGlossary
+Donate link: http://tooltip.cminds.com/
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,mirriam-webster,wikipedia
 Requires at least: 3.2
-Tested up to: 3.5.2
-Stable tag: 2.2.5
+Tested up to: 3.6
+Stable tag: 2.3
 
-Easily create Glossary, Encyclopedia or Dictionary of your terms and show tooltip in posts and pages while hovering. Many powerful features
+Easily create a Glossary, Encyclopedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
  
  
 == Description ==
 
-Parses posts for defined glossary terms and adds links to the glossary term page containing the definition.  The plugin also creates a tooltip containing the definition which is displayed when users mouseover the term in addition a glossary index is also created.  
-
+CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or pages for defined glossary terms, by adding links to a glossary term page that contains the definition of the term used.
+The CM Glossary Tooltip plugin, when enabled, also displays a tooltip containing the definition when users hover over the term. 
+CM Tooltip creates a glossary index with all terms used.
 
 **Use-Cases**
 
-* Dictionary - Create a dictionary of terms in your site
-* Tooltip - Add tooltip to predefined terms in your site
-* Knowledge base - Create a knowledge base
-* Encyclopedia - Build an internal Encyclopedia
-* Synonyms - Keep and display synonyms for terms you are using
+* Dictionary - Creates a dictionary of terms in your site
+* Tooltip - Add tooltip as anchors to predefined terms contained in your site
+* Knowledge base - Create a knowledge base of useful terms and definitions
+* Encyclopedia -  Build an internal Encyclopedia for your site
+* Synonyms -  Keeps and displays synonyms of terms that you are using
 * Lexicon - Build a lexicon of terms
-* Vocabulary - Build a vocabulary of words and expressions
-* Explain - Explain words in your post or pages
+* Vocabulary - Build a vocabulary of custom words and expressions
+* Explanations  -  Explain the meanings of words in your posts or pages
+* Translate – Translate terms and definition into any defined language using Google Translate
 
 **Features**
 
-* Automatically generates Glossary index  [Example](http://www.cminds.com/glossary/)
-* Ability to show index as tiles [Example](http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
-* Each glossary term has it's own post [Example](http://www.cminds.com/glossary/functional-requirements/)
-* Tooltip can optionally appear when term is hovered [Example-Check Information Architecture](http://www.cminds.com/whatwedo/)
+* Automatically generates Glossary index of terms  [Example](http://www.cminds.com/glossary/)
+* AAbility to show your glossary index as tiles [Example](http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
+* Each glossary term has its own unique post [Example](http://www.cminds.com/glossary/functional-requirements/)
+* Tooltip window can optionally appear when term is hovered over [Example-Check Information Architecture](http://www.cminds.com/whatwedo/)
 * Term page can optionally be linked directly from posts or pages  [Example-Click on Information Architecture](http://www.cminds.com/whatwedo/)
-* Includes several filters to clean tooltip and limit length
+* Includes several filters to optimize the tooltip window and limit the length displayed
 * Prevent the glossary from parsing text when needed by using shortcode [glossary_exclude]  text [/glossary_exclude]. 
-* Support Excerpt (if exists) as hover text.
-* Control where tooltip appears (pages, posts, homepage)
-* Control if tooltip appears more than once 
-* Supports UTF8
+* Support Excerpt (if exists) as hover-over text that appears in a tooltip.
+* Control the area where the tooltip appears (pages, posts, homepage)
+* Control the settings in cases where the tooltip appears more than once
+* Supports UTF-8
 
 **Demo & User Guide** 
 
@@ -49,32 +51,42 @@ For more information please visit [plugin detailed User Guide](http://www.cminds
 
 **Pro Version**	
 
-[Pro Version](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+[Pro Version](http://tooltip.cminds.com/)
 The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 
-* Pagination - Ability to add pagination for the glossary page in both server side and client side (Support for large glossaries). Admin can also control pagination size [See Demo](http://jumpstartcto.com/glossary/)
-* Widget - Glossary widget which shows a random number of terms with link to Glossary index [See Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
-* Link Style - Ability to change term link style [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Tooltip Style - Ability to change tooltip shape, colors, border [See Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Pagination - The Pro version gives you the ability to add pagination for the glossary page on both server side and the client side of the plugin (Support is provided to speed up large glossaries). Administrators can also control the number of items that appear on each page [See Demo](http://jumpstartcto.com/glossary/)
+* Widget -  The Pro version include a glossary widget that shows a random selection of a number of terms with a link to the Glossary index [See Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
+* Link Style - The Pro version gives you the ability to change term link style [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Tooltip Style - Ability to change tooltip shape, colors and border [See Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
 * Import / Export - Import / Export glossary file to/from CSV format. [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
-* Internal Links - Option to add a link back to glossary page from each term page [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
+* Internal Links - Option to add a link back to your glossary page from each term page [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
 * Editor Button - Editor button to support glossary exclude. [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
-* Synonyms - Can add several Synonyms per each term, tooltip will appear for all Synonyms in posts and glossary index  [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
-* Related Post - Show all related posts for each glossary term, this option is cached to enhance performance [See image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
-* Multisite - Support Multisite.
+* Synonyms - CUsers of the Pro version can add several Synonyms per each term, where the tooltip can be made to appear for all Synonyms in posts/pages and glossary index [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
+* Related Post - SShows all related posts/pages for each glossary term. This option is cached to enhance performance [See image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
+* Multisite - Support for WP Multisite.
 * Gratitude Message - Does not include Gratitude message in the footer.
-* Singular and Plural - Support different variations of a noun - user need to specify each
+* Singular and Plural - Supports different variations of nouns allowing the user to specify a definition for each according to the specific use of the term. The tooltip will appear for all variations in posts/pages
 * Glossary term supports more post options 
 * Related Glossary terms - Related Terms to specific term are displayed based on setting
 * Localization - All labels are external in setting and can be localized easily
 * Custom Characters - Support for custom characters in alphabetical index [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
 * Show the terms AND the definitions in Alphabetical index [See image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
+* Google Translate Integration – Ability to display translated terms and definition using Google Translate API
+* Merriam-Webster Dictionary Integration – Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary in your term page and tooltip
+* Merriam-Webster thesaurus Integration – Ability to display thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your term page and tooltip
+* Glossary Search – Glossary index page is included a local search engine
+* Glossary Categories – Glossary categories are supported and can be used in glossary page and also in glossary shortcode
+* Shortcode – Glossary short code [glossary cat="cat name"] allows you to display terms from a specific category anywhere on your site
+* Search & Replace Tool – Includes an on the fly search and replace tool to replace text or html in post/pages with new content
+* Custom Links – Manually add custom links from term page
+* Exclude Term – Glossary terms can be excluded from the glossary index and tooltip
+* Term Target Link – Term link can be targeted to go to an external or custom link
 
-[Visit Pro Version Page](http://www.cminds.com/downloads/cm-enhanced-tooltip-glossary-premium-version/)
+[Visit Pro Version Page](http://tooltip.cminds.com/)
 
 **Pro Version Video**	
 
-[youtube http://www.youtube.com/watch?v=S4J91WnBmmc]
+[youtube http://www.youtube.com/watch?v=gpo9ticK4Fs]
 
 **Code and Style Issues**
 
@@ -135,6 +147,9 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.3 =
+* Updated plugin site links and about pages
+
 = 2.2.4 =
 * Fixed bug with replacing single quotes with backticks
 * tested with WP 3.5.2
