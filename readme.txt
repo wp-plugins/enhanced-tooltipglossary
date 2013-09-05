@@ -86,7 +86,7 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 
 **Pro Version Video**	
 
-[youtube http://www.youtube.com/watch?v=gpo9ticK4Fs]
+[youtube http://www.youtube.com/watch?v=S4J91WnBmmc]
 
 **Code and Style Issues**
 
