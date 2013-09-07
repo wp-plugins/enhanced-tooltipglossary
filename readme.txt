@@ -74,7 +74,7 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 * Related Glossary terms - Related Terms to specific term are displayed based on setting [View Demo](http://jumpstartcto.com/glossary/javascript)
 * Localization - All labels are external in setting and can be localized easily
 * Custom Characters - Support for custom characters in alphabetical index [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [View Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
-* Definition in Index – show the terms AND the definitions in Alphabetical index [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
+* Definition in Index - Show the terms AND the definitions in Alphabetical index [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
 * Google Translate Integration  -  Ability to display translated terms and definition using Google Translate API [View Demo](http://jumpstartcto.com/javascript/), [View Image from Settings](http://tooltip.cminds.com/wp-content/uploads/edd/image91.png)
 * Merriam-Webster Dictionary Integration  -  Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary in your term page and tooltip [View Demo](http://jumpstartcto.com/alpha/)
 * Merriam-Webster Thesaurus Integration  -  Ability to display thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your term page and tooltip [View Demo](http://jumpstartcto.com/agile/)
