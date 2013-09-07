@@ -54,39 +54,39 @@ For more information please visit [plugin detailed User Guide](http://www.cminds
 [Pro Version](http://tooltip.cminds.com/)
 The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 
-* Optimized for Speed – Parsing engine is optimized for speed and can hold many more terms without slowing down the site
-* Permalink – Tooltip permalink can be changed
-* Anchors inside Tooltip – Tooltip can include anchors which user can click  [Demo – hover over HTML](http://jumpstartcto.com/javascript/)
-* Mobile Friendly – Detect Mobile device and display tooltip once term is clicked. Tooltip includes a link to the term page [Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99S.png)
-* Pagination - The Pro version gives you the ability to add pagination for the glossary page on both server side and the client side of the plugin (Support is provided to speed up large glossaries). Administrators can also control the number of items that appear on each page [See Demo](http://jumpstartcto.com/glossary/)
-* Widget -  The Pro version include a glossary widget that shows a random selection of a number of terms with a link to the Glossary index [See Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
-* Link Style - The Pro version gives you the ability to change term link style [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Tooltip Style - Ability to change tooltip shape, colors and border [See Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Import / Export - Import / Export glossary file to/from CSV format. [See image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
-* Internal Links - Option to add a link back to your glossary page from each term page [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
-* Editor Button - Editor button to support glossary exclude. [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
-* Synonyms - CUsers of the Pro version can add several Synonyms per each term, where the tooltip can be made to appear for all Synonyms in posts/pages and glossary index [See Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
-* Related Post - SShows all related posts/pages for each glossary term. This option is cached to enhance performance [See image](http://jumpstartcto.com/glossary/minimal-viable-product/), [image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
+* Optimized for Speed - Parsing engine is optimized for speed and can hold many more terms without slowing down the site
+* Permalink - Tooltip permalink can be changed
+* Anchors inside Tooltip - Tooltip can include anchors which user can click  [View Demo - Hover over HTML](http://jumpstartcto.com/javascript/)
+* Mobile Friendly - Detect Mobile device and display tooltip once term is clicked. Tooltip includes a link to the term page [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99S.png)
+* Pagination - The Pro version gives you the ability to add pagination for the glossary page on both server side and the client side of the plugin (Support is provided to speed up large glossaries). Administrators can also control the number of items that appear on each page [View Demo](http://jumpstartcto.com/glossary/)
+* Widget -  The Pro version include a glossary widget that shows a random selection of a number of terms with a link to the Glossary index [View Demo](http://jumpstartcto.com/glossary/) (Scroll down and look at the right side for Glossary), [View Image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-40-16.png)
+* Link Style - The Pro version gives you the ability to change term link style [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Tooltip Style - Ability to change tooltip shape, colors and border [View Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* Import / Export - Import / Export glossary file to/from CSV format. [View Image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
+* Internal Links - Option to add a link back to your glossary page from each term page [View Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
+* Editor Button - Editor button to support glossary exclude. [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro11.jpg)
+* Synonyms - CUsers of the Pro version can add several Synonyms per each term, where the tooltip can be made to appear for all Synonyms in posts/pages and glossary index [View Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
+* Related Post - SShows all related posts/pages for each glossary term. This option is cached to enhance performance [View Image](http://jumpstartcto.com/glossary/minimal-viable-product/), [View Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
 * Multisite - Support for WP Multisite.
 * Gratitude Message - Does not include Gratitude message in the footer.
-* Singular and Plural – Supports different variations of nouns allowing the user to specify a definition for each according to the specific use of the term. The tooltip will appear for all variations in posts/pages [Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99D.png)
+* Singular and Plural - Supports different variations of nouns allowing the user to specify a definition for each according to the specific use of the term. The tooltip will appear for all variations in posts/pages [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99D.png)
 * Glossary term supports more post options 
-* Related Glossary terms - Related Terms to specific term are displayed based on setting [Demo](http://jumpstartcto.com/glossary/javascript)
+* Related Glossary terms - Related Terms to specific term are displayed based on setting [View Demo](http://jumpstartcto.com/glossary/javascript)
 * Localization - All labels are external in setting and can be localized easily
-* Custom Characters - Support for custom characters in alphabetical index [See image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
-* Definition in Index – show the terms AND the definitions in Alphabetical index [See image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
-* Google Translate Integration  -  Ability to display translated terms and definition using Google Translate API [Demo](http://jumpstartcto.com/javascript/), [Image from Settings](http://tooltip.cminds.com/wp-content/uploads/edd/image91.png)
-* Merriam-Webster Dictionary Integration  -  Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary in your term page and tooltip [Demo](http://jumpstartcto.com/alpha/)
-* Merriam-Webster Thesaurus Integration  -  Ability to display thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your term page and tooltip [Demo](http://jumpstartcto.com/agile/)
+* Custom Characters - Support for custom characters in alphabetical index [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [View Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
+* Definition in Index – show the terms AND the definitions in Alphabetical index [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
+* Google Translate Integration  -  Ability to display translated terms and definition using Google Translate API [View Demo](http://jumpstartcto.com/javascript/), [View Image from Settings](http://tooltip.cminds.com/wp-content/uploads/edd/image91.png)
+* Merriam-Webster Dictionary Integration  -  Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary in your term page and tooltip [View Demo](http://jumpstartcto.com/alpha/)
+* Merriam-Webster Thesaurus Integration  -  Ability to display thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your term page and tooltip [View Demo](http://jumpstartcto.com/agile/)
 * Glossary Search  -  Glossary index page is included a local search engine [Demo](http://jumpstartcto.com/glossary/)
-* Glossary Categories  -  Glossary categories are supported and can be used in glossary page and also in glossary shortcode [Demo](http://jumpstartcto.com/glossary-shortcode/) , [Categories in Glossary Index](http://jumpstartcto.com/glossary)
-* Shortcode  -  Glossary short code [glossary cat="cat name"] allows you to display terms from a specific category anywhere on your site [Demo](http://jumpstartcto.com/glossary-shortcode/)
-* Search & Replace Tool  -  Includes an on the fly search and replace tool to replace text or html in post/pages with new content [image](http://tooltip.cminds.com/wp-content/uploads/edd/image93.png)
-* Custom Links  -  Manually add custom links from term page [image](http://tooltip.cminds.com/wp-content/uploads/edd/image9.png)
-* Exclude Term  -  Glossary terms can be excluded from the glossary index and tooltip [image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99A.png)
-* Term Target Link  -  Term link can be targeted to go to an external or custom link [Demo – Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
+* Glossary Categories  -  Glossary categories are supported and can be used in glossary page and also in glossary shortcode [View Demo](http://jumpstartcto.com/glossary-shortcode/) , [Categories in Glossary Index](http://jumpstartcto.com/glossary)
+* Shortcode  -  Glossary short code [glossary cat="cat name"] allows you to display terms from a specific category anywhere on your site [View Demo](http://jumpstartcto.com/glossary-shortcode/)
+* Search & Replace Tool  -  Includes an on the fly search and replace tool to replace text or html in post/pages with new content [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/image93.png)
+* Custom Links  -  Manually add custom links from term page [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/image9.png)
+* Exclude Term  -  Glossary terms can be excluded from the glossary index and tooltip [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99A.png)
+* Term Target Link  -  Term link can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * Term page Template - Term page template can be edited and changed
-* Change tooltip font – Select tooltip font from 8 Google available fonts [image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
+* Change tooltip font - Select tooltip font from 8 Google available fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
  
 [Visit Pro Version Page](http://tooltip.cminds.com/)
 
