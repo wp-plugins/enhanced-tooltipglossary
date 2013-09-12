@@ -1,5 +1,18 @@
 <form method="post" action="options.php">
     <?php wp_nonce_field('update-options'); ?>
+
+  <br><br><p>Supported Shortcodes: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    </p>
+	
+	<ul style="display:none;list-style-type:disc;margin-left:20px;">
+	<li><strong>Exclude from parsing</strong> - [glossary_exclude] text [/glossary_exclude]</li>
+	<li><del><strong>Show glossary category index</strong> - [glossary cat="cat name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="new">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
+        <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
+    </ul>
+    <p>Link to Glossary index page: <a href="<?php echo home_url('/'.get_option('red_glossaryPermalink').'/'); ?>" target="new"><?php echo home_url('/'.get_option('red_glossaryPermalink').'/'); ?></a></p>
+
 	
     <table class="form-table">
 	<tr>

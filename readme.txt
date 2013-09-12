@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,mirriam-webster,wikipedia
 Requires at least: 3.2
 Tested up to: 3.6
-Stable tag: 2.3
+Stable tag: 2.3.1
 
 Easily create a Glossary, Encyclopedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
  
@@ -87,7 +87,11 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 * Term Target Link  -  Term link can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * Term page Template - Term page template can be edited and changed
 * Change tooltip font - Select tooltip font from 8 Google available fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
- 
+* Dictionary shortcode - Ability to include on any post or page Merriam-Webster Dictionary. glossary_dictionary term="term name"  [View Demo](http://jumpstartcto.com/tooltip-shortcodes-examples/)
+* Thesaurus shortcode - Ability to include on any post or page Merriam-Webster Thesaurus Shortcode. glossary_thesaurus term="term name"  [View Demo](http://jumpstartcto.com/tooltip-shortcodes-examples-merriam-webster-thesaurus/)
+* Google Translate Shortcode - Ability to include on any post or page Google Translate Shortcode. glossary_translate term="text to translate" source="english" target="spanish" [View Demo](http://jumpstartcto.com/tooltip-shortcodes-examples-google-translate/)
+* Related Terms Widget in Post/Pages - Added a widget to show all related terms at the end of each page/post. [View Demo - look at the bottom of the article](http://jumpstartcto.com/methods-of-working-with-remote-developers/)
+	
 [Visit Pro Version Page](http://tooltip.cminds.com/)
 
 **Pro Version Video**	
@@ -153,6 +157,9 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.3.1 =
+* Added link in setting to glossary index location
+
 = 2.3 =
 * Updated plugin site links and about pages
 

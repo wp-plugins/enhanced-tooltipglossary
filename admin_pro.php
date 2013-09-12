@@ -53,7 +53,10 @@ Includes all free version and the Pro version features with the addition of  the
 <li><strong>Term Target Link</strong> - Term link can be targeted to go to an external or custom link  (<a href="http://jumpstartcto.com/ajax-2/" target="new">Demo - Click on Ajax and you will be taken outside of site</a>)</li>
 <li><strong>Ability to edit term page Template</strong> - Term page template can be edited and changed</li>
 <li><strong>Change tooltip font</strong> - Select tooltip font from 8 Google available fonts (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png" target="new">Image</a>)</li>
-</ul>
+<li><strong>Dictionary shortcode</strong> - Ability to include on any post or page Merriam-Webster Dictionary. [glossary_dictionary term="term name"]  (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples/" target="_blank">View Demo</a>)</li>
+<li><strong>Thesaurus shortcode</strong> - Ability to include on any post or page Merriam-Webster Thesaurus Shortcode. [glossary_thesaurus term="term name"]  (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples-merriam-webster-thesaurus/" target="_blank">View Demo</a>)</li>
+<li><strong>Google Translate Shortcode</strong> - Ability to include on any post or page Google Translate Shortcode. [glossary_translate term="text to translate" source="english" target="spanish"] (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples-google-translate/" target="_blank">View Demo</a>)</li>
+<li><strong>Related Terms Widget in Post/Pages</strong> - Added a widget to show all related terms at the end of each page/post. (<a href="http://jumpstartcto.com/methods-of-working-with-remote-developers/" target="_blank">View Demo</a> - look at the bottom of the article)</li></ul>
 <h1><strong>Video Demo </strong></h1>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/S4J91WnBmmc?rel=0" frameborder="0" allowfullscreen></iframe>
 <h1><strong>Purchase </strong></h1>
