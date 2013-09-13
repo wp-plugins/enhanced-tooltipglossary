@@ -1,6 +1,6 @@
 === Plugin Name ===
 Name: CM Super Tooltip Glossary
-Contributors: creativemindssolutions 
+Contributors: CreativeMindsSolutions 
 Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,mirriam-webster,wikipedia
 Requires at least: 3.2
@@ -28,6 +28,18 @@ CM Tooltip creates a glossary index with all terms used.
 * Explanations  -  Explain the meanings of words in your posts or pages
 * Translate  -  Translate terms and definition into any defined language using Google Translate
 
+**Demo & User Guide** 
+
+Visit [Plugin Site](http://tooltip.cminds.com/)
+
+See basic demo of the plugin [here](http://www.cminds.com/glossary/)
+
+For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
+
+**Pro Version Video**	
+
+[youtube http://www.youtube.com/watch?v=S4J91WnBmmc]
+
 **Features**
 
 * Automatically generates Glossary index of terms  [Example](http://www.cminds.com/glossary/)
@@ -41,12 +53,6 @@ CM Tooltip creates a glossary index with all terms used.
 * Control the area where the tooltip appears (pages, posts, homepage)
 * Control the settings in cases where the tooltip appears more than once
 * Supports UTF-8
-
-**Demo & User Guide** 
-
-See basic demo of the plugin [here](http://www.cminds.com/glossary/)
-
-For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
 
 **Pro Version Features**	
@@ -94,9 +100,6 @@ The Pro version adds a layer of powerful features to the Super Tooltip Glossary
 	
 [Visit Pro Version Page](http://tooltip.cminds.com/)
 
-**Pro Version Video**	
-
-[youtube http://www.youtube.com/watch?v=S4J91WnBmmc]
 
 **Code and Style Issues**
 
