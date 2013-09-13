@@ -4,7 +4,7 @@
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition. 
   Version: 2.3.1
-  Author: CreativeMinds
+  Author: CreativeMindsSolutions
  */
 
 /*
