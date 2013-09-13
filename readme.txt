@@ -43,7 +43,7 @@ For more information please visit [plugin detailed User Guide](http://www.cminds
 **Features**
 
 * Automatically generates Glossary index of terms  [Example](http://www.cminds.com/glossary/)
-* AAbility to show your glossary index as tiles [Example](http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
+* Ability to show your glossary index as tiles [Example](http://www.cminds.com/wp-content/uploads/tooltip-tiles.png)
 * Each glossary term has its own unique post [Example](http://www.cminds.com/glossary/functional-requirements/)
 * Tooltip window can optionally appear when term is hovered over [Example-Check Information Architecture](http://www.cminds.com/whatwedo/)
 * Term page can optionally be linked directly from posts or pages  [Example-Click on Information Architecture](http://www.cminds.com/whatwedo/)
