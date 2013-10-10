@@ -40,7 +40,7 @@ Includes all free version features with the addition of the following features:
 <h2>Pro+ Version</h2>
 Includes all free version and the Pro version features with the addition of  the following:
 <ul>
-	<li><strong>Google Translate Integration</strong> -Ability to display translated words into the language of your choice for all terms and definitions, uses the Google Translate API (<a href="http://jumpstartcto.com/javascript/" target="new">Demo - hover over HTML</a>), (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/image91.png">Image from Settings</a>)</li>
+	<li><strong>Google Translate Integration</strong> -Ability to display translated words into the language of your choice for all terms and definitions, uses the Google Translate API (<a href="http://tooltip.cminds.com/wp-content/uploads/2013/09/12-09-2013-10-49-15.png">Image- hover over HTML</a>), (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/image91.png">Image from Settings</a>)</li>
 	<li><strong>Merriam-Webster Dictionary Integration</strong> -Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary for all words on your Term page and Tooltip. (<a href="http://jumpstartcto.com/alpha/" target="new">Demo</a>)</li>
 	<li><strong>Merriam-Webster thesaurus Integration</strong> - Ability to display the thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your Term page and Tooltip.  (<a href="http://jumpstartcto.com/agile/" target="new">Demo</a>)</li>
 	<li><strong>Glossary Search</strong> - Glossary index page is included within a local search engine. (<a href="http://jumpstartcto.com/glossary/" target="new">Demo</a>)</li>
@@ -54,9 +54,9 @@ Includes all free version and the Pro version features with the addition of  the
 	<li><strong>Change tooltip font</strong> - Select the Tooltip font from 8 available Google fonts (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png" target="new">Image</a>)</li>
 	<li><strong>Dictionary shortcode</strong> - Ability to include on any post or page Merriam-Webster Dictionary. [glossary_dictionary term="term name"]  (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples/" target="_blank">View Demo</a>)</li>
 	<li><strong>Thesaurus shortcode</strong> - Ability to include on any post or page Merriam-Webster Thesaurus Shortcode. [glossary_thesaurus term="term name"]  (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples-merriam-webster-thesaurus/" target="_blank">View Demo</a>)</li>
-	<li><strong>Google Translate Shortcode</strong> - Ability to include on any post or page Google Translate Shortcode. [glossary_translate term="text to translate" source="english" target="spanish"] (<a href="http://jumpstartcto.com/tooltip-shortcodes-examples-google-translate/" target="_blank">View Demo</a>)</li>
+	<li><strong>Google Translate Shortcode</strong> - Ability to include on any post or page Google Translate Shortcode. [glossary_translate term="text to translate" source="english" target="spanish"] (<a href="http://tooltip.cminds.com/wp-content/uploads/2013/09/12-09-2013-10-48-29.png" target="_blank">View Image</a>)</li>
 	<li><strong>Related Terms Widget in Post/Pages</strong> - Added a widget to show all related terms at the end of each page/post. (<a href="http://jumpstartcto.com/methods-of-working-with-remote-developers/" target="_blank">View Demo</a> - look at the bottom of the article)</li>
-</ul>
+	<li><strong>Partial Word terms</strong> - Added Support to partial words term or Asian languages like Japanese which do not have space between words (<a href="http://tooltip.cminds.com/wp-content/uploads/2013/07/25-09-2013-23-24-02.png">Demo in Japanese </a>)</li></ul>
 <h1><strong>Video Demo </strong></h1>
 <iframe width="560" height="315" src="http://www.youtube.com/embed/S4J91WnBmmc?rel=0" frameborder="0" allowfullscreen></iframe>
 <h1><strong>Purchase </strong></h1>
