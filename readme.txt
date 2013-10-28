@@ -1,19 +1,19 @@
 === Plugin Name ===
 Name: CM Super Tooltip Glossary
-Contributors: CreativeMindsSolutions 
+Contributors: CreativeMindsSolutions
 Donate link: http://tooltip.cminds.com/
 Tags:glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia
 Requires at least: 3.3
-Tested up to: 3.6
-Stable tag: 2.3.9
+Tested up to: 3.7
+Stable tag: 2.3.10
 
 Easily create a Glossary, Encyclopedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
- 
- 
+
+
 == Description ==
 
 CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or pages for defined glossary terms, by adding links to a glossary term page that contains the definition of the term used.
-The CM Glossary Tooltip plugin, when enabled, displays a tooltip containing the definition when users hover over the term. 
+The CM Glossary Tooltip plugin, when enabled, displays a tooltip containing the definition when users hover over the term.
 CM Tooltip creates a glossary index with all terms used.
 
 **Use-Cases**
@@ -28,7 +28,7 @@ CM Tooltip creates a glossary index with all terms used.
 * Explanations  -  Explains the meanings of words in your posts or pages.
 * Translate  -  Translates terms and definitions into any defined language using Google Translate.
 
-**Demo & User Guide** 
+**Demo & User Guide**
 
 Visit [Plugin Site](http://tooltip.cminds.com/)
 
@@ -36,7 +36,7 @@ See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
 For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
-**Pro Version Video**	
+**Pro Version Video**
 
 [youtube http://www.youtube.com/watch?v=S4J91WnBmmc]
 
@@ -49,13 +49,13 @@ For more information please visit [plugin detailed User Guide](http://www.cminds
 * Tooltip window can optionally appear when term is hovered over by the cursor. [Example-Check Information Architecture](http://www.cminds.com/whatwedo/)
 * Term page can optionally be linked directly from posts or pages. [Example-Click on Information Architecture](http://www.cminds.com/whatwedo/)
 * Includes several filters to optimize the Tooltip window and limit the length of description displayed.
-* Prevents the glossary from parsing text, when needed, by using a Shortcode [glossary_exclude]  text [/glossary_exclude]. 
+* Prevents the glossary from parsing text, when needed, by using a Shortcode [glossary_exclude]  text [/glossary_exclude].
 * Support Excerpts (if they exist) as a hover-over text that appears in the Tooltip window.
 * Controls the location and area where the Tooltip appears (pages, posts, homepage)
 * Controls the settings in cases where the Tooltip appears more than once.
 * Supports UTF-8
 
-**Pro Version Features**	
+**Pro Version Features**
 
 [Pro Version](http://tooltip.cminds.com/)
 The CM Tooltip Pro version adds a layer of powerful features to the Super Tooltip Glossary plugin.
@@ -76,7 +76,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Multisite - Support for WP Multisite.
 * Gratitude Message - Does not include the CMinds Gratitude message in the footer.
 * Singular and Plural - Supports different variations of nouns that allow the user to specify a definition for each term according to the specific use of the word. The Tooltip will appear for all variations in all posts and pages. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99D.png)
-* Glossary term supports more posting options. 
+* Glossary term supports more posting options.
 * Related Glossary terms - Relates Glossary terms to a specified term which is displayed according to control settings. [View Demo](http://jumpstartcto.com/glossary/javascript)
 * Localization - All labels are external in the settings and can be localized easily.
 * Custom Characters - Support for custom characters in alphabetical index [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [View Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
@@ -93,7 +93,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Term Target Link  -  Terms are linked and can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * Term page Template - Term page uses a template that can be edited and changed.
 * Change tooltip font - Select the Tooltip font from 8 available Google fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
- 
+
 [Visit Pro Version Page](http://tooltip.cminds.com/)
 
 
@@ -101,14 +101,14 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 
 The Tooltip is created with JavaScript and is based on the article written by [Michael Leigeber](http://www.leigeber.com/author/michael/) [here](http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/) The Tooltip can be customized and styled through the tooltip.css and tooltip.js files.
 Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](http://www.ihwy.com/labs/jquery-listnav-plugin.aspx)
-	
+
 **More Plugins by CreativeMinds**
 
-* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration.. 
+* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration..
 * [CM Download manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allows users to upload, manage, track and support documents or files in a directory listing structure that others can use and comment upon.
-* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows for more control over site registration by adding managed groups of invitation codes. 
-* [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Blocks users that used blacklisted domains from registering to your WordPress site. 
-* [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe and unsubscribe from multiple MailChimp lists. 
+* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows for more control over site registration by adding managed groups of invitation codes.
+* [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Blocks users that used blacklisted domains from registering to your WordPress site.
+* [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe and unsubscribe from multiple MailChimp lists.
 
 == Installation ==
 
@@ -141,7 +141,7 @@ Just add it and then change it.  The links for your glossary terms are added to 
 
 = How do I prevent the glossary from parsing a paragraph? =
 
-Just wrap the paragraph with [glossary_exclude] paragraph text [/glossary_exclude].  
+Just wrap the paragraph with [glossary_exclude] paragraph text [/glossary_exclude].
 
 = How do I define the Glossary link style? =
 
@@ -156,6 +156,9 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.3.10 =
+* Fixed a PHP bug which happened when post_title was empty
+
 = 2.3.1 =
 * Added link in setting to glossary index location
 
