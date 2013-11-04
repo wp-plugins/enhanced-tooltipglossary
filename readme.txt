@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags:glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia
 Requires at least: 3.3
 Tested up to: 3.7
-Stable tag: 2.3.10
+Stable tag: 2.3.11
 
 Easily create a Glossary, Encyclopedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -15,8 +15,7 @@ Easily create a Glossary, Encyclopedia or Dictionary of your terms and show tool
 CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or pages for defined glossary terms, by adding links to a glossary term page that contains the definition of the term used.
 The CM Glossary Tooltip plugin, when enabled, displays a tooltip containing the definition when users hover over the term.
 CM Tooltip creates a glossary index with all terms used.
-
-[youtube http://www.youtube.com/watch?v=WN3HLZ6ZuBM]
+[youtube http://youtu.be/WN3HLZ6ZuBM]
 
 **Use-Cases**
 
