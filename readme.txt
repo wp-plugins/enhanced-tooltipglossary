@@ -16,7 +16,7 @@ CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or
 The CM Glossary Tooltip plugin, when enabled, displays a tooltip containing the definition when users hover over the term.
 CM Tooltip creates a glossary index with all terms used.
 
-[youtubehttp://www.youtube.com/watch?v=WN3HLZ6ZuBM]
+[youtube http://www.youtube.com/watch?v=WN3HLZ6ZuBM]
 
 **Use-Cases**
 
