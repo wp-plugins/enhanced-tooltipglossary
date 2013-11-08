@@ -1,25 +1,25 @@
 <form method="post" action="options.php">
     <?php wp_nonce_field('update-options'); ?>
 
-  <br><br><p>Supported Shortcodes: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    <br><br><p>Supported Shortcodes: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
     </p>
-	
-	<ul style="display:none;list-style-type:disc;margin-left:20px;">
-	<li><strong>Exclude from parsing</strong> - [glossary_exclude] text [/glossary_exclude]</li>
-	<li><del><strong>Show glossary category index</strong> - [glossary cat="cat name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
-        <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="new">Pro+</a></li>
-        <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
-        <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="new">Pro+</a></li>
-    </ul>
-    <p>Link to Glossary index page: <a href="<?php echo home_url('/'.get_option('red_glossaryPermalink').'/'); ?>" target="new"><?php echo home_url('/'.get_option('red_glossaryPermalink').'/'); ?></a></p>
 
-	
+    <ul style="display:none;list-style-type:disc;margin-left:20px;">
+        <li><strong>Exclude from parsing</strong> - [glossary_exclude] text [/glossary_exclude]</li>
+        <li><del><strong>Show glossary category index</strong> - [glossary cat="cat name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="_blank">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+    </ul>
+    <p>Link to Glossary index page: <a href="<?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?>" target="_blank"><?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?></a></p>
+
+
     <table class="form-table">
-	<tr>
-    <th scope="row"><strong>Pro Version</strong></th>
- 	<td><p><strong><a href="http://tooltip.cminds.com/" target="new">Upgrade</a></p></td>
-    <td colspan="2" bgcolor="#CCFFCC"> Professional version of CM Super Glossary Pro which which adds SEO support, Import/Export tools, Multisite support, Sidebar Widget, Synonyms, Support for huge glossaries, tooltip customization options and much more</td>
-	</tr>
+        <tr>
+            <th scope="row"><strong>Pro Version</strong></th>
+            <td><p><strong><a href="http://tooltip.cminds.com/" target="_blank">Upgrade</a></p></td>
+            <td colspan="2" bgcolor="#CCFFCC"> Professional version of CM Super Glossary Pro which which adds SEO support, Import/Export tools, Multisite support, Sidebar Widget, Synonyms, Support for huge glossaries, tooltip customization options and much more</td>
+        </tr>
         <tr valign="top">
             <th scope="row">Main Glossary Page ID</th>
             <td><input type="text" name="red_glossaryID" value="<?php echo get_option('red_glossaryID'); ?>" /></td>
@@ -85,12 +85,12 @@
             <td><input type="checkbox" name="red_glossaryProtectedTags" <?php checked(true, get_option('red_glossaryProtectedTags')); ?> value="1" /></td>
             <td colspan="2">Select this option if you want to avoid using the glossary for the following tags: Script, A, H1, H2, H3, PRE, Object.</td>
         </tr>
-                <tr valign="top">
+        <tr valign="top">
             <th scope="row">Terms case-sensitive?</th>
             <td><input type="checkbox" name="red_glossaryCaseSensitive" <?php checked(true, get_option('red_glossaryCaseSensitive')); ?> value="1" /></td>
             <td colspan="2">Select this option if you want glossary terms to be case-sensitive.</td>
         </tr>
-         <tr valign="top">
+        <tr valign="top">
             <th scope="row">Open glossary descriptions in a new windows/tab?</th>
             <td><input type="checkbox" name="red_glossaryInNewPage" <?php checked(true, get_option('red_glossaryInNewPage')); ?> value="1" /></td>
             <td colspan="2">Select this option if you want glossary descriptions to open in a new window/tab.</td>

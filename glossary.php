@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.3.11
+  Version: 2.4.1
   Author: CreativeMindsSolutions
  */
 
@@ -53,7 +53,7 @@ function red_create_post_types()
     $args              = array(
         'label' => 'Glossary',
         'labels' => array(
-            'add_new_item' => 'Add New Glossary Item',
+            'add_blank_item' => 'Add New Glossary Item',
             'edit_item' => 'Edit Glossary Item',
             'view_item' => 'View Glossary Item',
             'singular_name' => 'Glossary Item',
@@ -103,7 +103,7 @@ function red_showProMessages()
     {
         ?>
         <div id="message" class="updated fade">
-            <p><strong>New !! A Pro version of Tooltip Glossary is <a href="http://tooltip.cminds.com/"  target="new">available here</a></strong></p>
+            <p><strong>New !! A Pro version of Tooltip Glossary is <a href="http://tooltip.cminds.com/"  target="_blank">available here</a></strong></p>
         </div><?php
         delete_option('red_afterActivation');
     }
@@ -525,7 +525,7 @@ function red_glossary_parse($content)
                 $link_search      = '/<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '') . '(' . preg_quote($glossary_item->post_title, '/') . $addition . ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
                 $newWindowsOption = get_option('red_glossaryInNewPage') == 1;
                 $windowTarget     = '';
-                if($newWindowsOption) $windowTarget     = ' target="_new" ';
+                if($newWindowsOption) $windowTarget     = ' target="_blank" ';
                 if(get_option('red_glossaryTooltip') == 1)
                 {
                     if(get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt)
@@ -736,7 +736,7 @@ function red_glossaryShowList($content = '')
         $content.='<script>jQuery(document).ready(function($){ $("#glossaryList").listnav();});</script>';
         if(get_option('red_glossaryListTiles') == 1) $content = '<div class="tiles">' . $content . '</div>';
         // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
+        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_blank" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_blank" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
     }
     return $content;
 }
@@ -770,7 +770,7 @@ function red_glossary_singlePage($content)
     if(is_single() && get_query_var('post_type') == 'glossary')
     {
         // By leaving following snippet in the code, you're expressing your gratitude to creators of this plugin. Thank You! //
-        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_new" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_new" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
+        $content.='<div style="display:block;clear:both;"></div><span class="cmetg_poweredby"><a href="http://plugins.cminds.com/" target="_blank" class="cmetg_poweredbylink">CreativeMinds WordPress Plugin</a> <a href="http://tooltip.cminds.com/" target="_blank" class="cmetg_poweredbylink">Super Tooltip Glossary</a></span>';
     }
     return $content;
 }
