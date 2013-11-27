@@ -101,11 +101,9 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 
 **More Plugins by CreativeMinds**
 
-* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a stackoverflow style forum which is easy to use, customize and install. w Social integration..
-* [CM Download manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allows users to upload, manage, track and support documents or files in a directory listing structure that others can use and comment upon.
-* [CM Invitation Codes](http://wordpress.org/extend/plugins/cm-invitation-codes/) - Allows for more control over site registration by adding managed groups of invitation codes.
-* [CM Email Blacklist](http://wordpress.org/extend/plugins/cm-email-blacklist/) - Blocks users that used blacklisted domains from registering to your WordPress site.
-* [CM Multi MailChimp List Manager](http://wordpress.org/extend/plugins/multi-mailchimp-list-manager/) - Allows users to subscribe and unsubscribe from multiple MailChimp lists.
+* [CM Ad Changer](http://wordpress.org/plugins/cm-ad-changer/) - Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn your WP into an Ad Server
+* [CM Download Manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allows users to upload, manage, track and support documents or files in a download directory listing database for others to contribute, use and comment upon.
+* [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a Stack-overflow style community forum which is easy to use, customize and install. Comes with Social integration Shortcodes.
 
 == Installation ==
 
