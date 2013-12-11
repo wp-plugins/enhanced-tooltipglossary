@@ -10,5 +10,5 @@
 .tiles { width:650px }
 .tiles ul {list-style-type:none;margin:0;}
 .tiles ul li { float:left; }
-.tiles ul a { display:block; text-align:center; min-width:85px; width:85px; word-wrap:break-word;border:1px solid silver; padding:10px; margin:0 10px 10px 0; text-decoration:none; white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.tiles ul a, .tiles ul span { display:block; text-align:center; min-width:85px; width:85px; word-wrap:break-word;border:1px solid silver; padding:10px; margin:0 10px 10px 0; text-decoration:none; white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
 .tiles ul a:hover { background-color:#eee;z-index:0;white-space:normal;width:auto; }
