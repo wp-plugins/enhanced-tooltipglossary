@@ -36,7 +36,7 @@ Visit [Plugin Site](http://tooltip.cminds.com/)
 
 See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
-For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
+For more information please visit [plugin detailed User Guide](http://wordpress.org/plugins/enhanced-tooltipglossary/).
 
 **Features**
 
