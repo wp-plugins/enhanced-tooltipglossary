@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.4.6
+  Version: 2.4.7
   Author: CreativeMindsSolutions
  */
 
@@ -117,7 +117,7 @@ function red_admin_menu()
     add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'edit_posts', RED_ABOUT_OPTION, 'red_about');
     add_submenu_page(RED_MENU_OPTION, 'Pro Version', 'Pro Version', 'edit_posts', RED_PRO_OPTION, 'red_pro');
     global $submenu;
-    $submenu[RED_MENU_OPTION][500] = array('User Guide', 'edit_posts', 'http://www.cminds.com/cm-tooltip-glossary-user-guide/');
+    $submenu[RED_MENU_OPTION][500] = array('User Guide', 'edit_posts', 'http://tooltip.cminds.com/cm-tooltip-user-guide/');
     add_filter('views_edit-glossary', 'red_filter_admin_nav', 10, 1);
 }
 
@@ -522,10 +522,14 @@ function red_glossary_parse($content)
                 }
                 $content_temp = rtrim($content_temp);
 
-                $link_search = '/<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '') . '(' . preg_quote($glossary_item->post_title, '/') . $addition . ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
+//                $addition = '';
+//                $link_search = '/<a' . $timestamp . '>(' . (!$caseSensitive ? '(?i)' : '') . '(' . preg_quote($glossary_item->post_title, '/') . $addition . ')[A-Za-z]*?)<\/a' . $timestamp . '>/u';
                 $newWindowsOption = get_option('red_glossaryInNewPage') == 1;
                 $windowTarget = '';
-                if( $newWindowsOption ) $windowTarget = ' target="_blank" ';
+                if( $newWindowsOption )
+                {
+                    $windowTarget = ' target="_blank" ';
+                }
                 if( get_option('red_glossaryTooltip') == 1 )
                 {
                     if( get_option('red_glossaryExcerptHover') && $glossary_item->post_excerpt )
@@ -567,8 +571,7 @@ function red_glossary_parse($content)
 
             foreach($foundMatches as $number => $data)
             {
-                $template = $replaceRules[$data['id']];
-                $template = str_replace('##TITLE##', $data['text'], $template);
+                $template = str_replace('##TITLE##', $data['text'], $replaceRules[$data['id']]);
                 $content = str_replace('##GLOSSARY' . $number . '##', $template, $content);
             }
 
@@ -586,8 +589,7 @@ function red_glossary_parse($content)
                     $i++;
                 }
                 //remove all the exclude signs
-                $content = str_replace('[glossary_exclude]', "", $content);
-                $content = str_replace('[/glossary_exclude]', "", $content);
+                $content = str_replace('[/glossary_exclude]', "", str_replace('[glossary_exclude]', "", $content));
             }
 
 
