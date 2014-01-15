@@ -13,6 +13,13 @@
     </ul>
     <p>Link to Glossary index page: <a href="<?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?>" target="_blank"><?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?></a></p>
 
+<?php
+// check permalink settings 
+if (get_option('permalink_structure') == '') {
+      echo '<span style="color:red">Your WordPress Permalinks needs to be set to allow plugin to work correctly. Please Go to <a href="'.admin_url().'options-permalink.php" target="new">Settings->Permalinks</a> to set Permalinks to Post Name.</span><br><br>';
+}
+
+?>
 
     <table class="form-table">
         <tr>
