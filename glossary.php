@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.4.9
+  Version: 2.4.10
   Author: CreativeMindsSolutions
  */
 
@@ -51,8 +51,8 @@ function red_create_post_types()
 {
     $glossaryPermalink = get_option('red_glossaryPermalink');
     $args = array(
-        'label'           => 'Glossary',
-        'labels'          => array(
+        'label'               => 'Glossary',
+        'labels'              => array(
             'add_blank_item' => 'Add New Glossary Item',
             'edit_item'      => 'Edit Glossary Item',
             'view_item'      => 'View Glossary Item',
@@ -60,16 +60,20 @@ function red_create_post_types()
             'name'           => 'CM Tooltip Glossary',
             'menu_name'      => 'Glossary'
         ),
-        'description'     => '',
-        'public'          => true,
-        'show_ui'         => true,
-        'show_in_menu'    => RED_MENU_OPTION,
-        '_builtin'        => false,
-        'capability_type' => 'post',
-        'hierarchical'    => false,
-        'rewrite'         => array('slug' => $glossaryPermalink, 'with_front' => false),
-        'query_var'       => true,
-        'supports'        => array('title', 'editor', 'author', 'comments', 'excerpt', 'revisions'));
+        'description'         => '',
+        'map_meta_cap'        => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => false,
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_admin_bar'   => true,
+        'show_in_menu'        => RED_MENU_OPTION,
+        '_builtin'            => false,
+        'capability_type'     => 'post',
+        'hierarchical'        => false,
+        'rewrite'             => array('slug' => $glossaryPermalink, 'with_front' => false),
+        'query_var'           => true,
+        'supports'            => array('title', 'editor', 'author', 'comments', 'excerpt', 'revisions'));
     register_post_type('glossary', $args);
 }
 
@@ -111,7 +115,9 @@ function red_showProMessages()
 
 function red_admin_menu()
 {
-    $page = add_menu_page('Glossary', 'CM Tooltip Glossary', 'edit_posts', RED_MENU_OPTION, 'red_adminMenu');
+    $page = add_menu_page('Glossary', 'CM Tooltip Glossary', 'edit_posts', RED_MENU_OPTION, 'edit.php?post_type=glossary');
+
+    add_submenu_page(RED_MENU_OPTION, 'Trash', 'Trash', 'edit_posts', 'edit.php?post_status=trash&post_type=glossary');
     add_submenu_page(RED_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
     add_submenu_page(RED_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'manage_options', RED_SETTINGS_OPTION, 'glossary_options');
     add_submenu_page(RED_MENU_OPTION, 'About', 'About', 'edit_posts', RED_ABOUT_OPTION, 'red_about');
@@ -122,11 +128,6 @@ function red_admin_menu()
 }
 
 add_action('admin_menu', 'red_admin_menu');
-
-function red_adminMenu()
-{
-
-}
 
 function red_about()
 {
@@ -826,3 +827,16 @@ function strip_only($str, $tags, $stripContent = false)
     }
     return $str;
 }
+
+/**
+ * BuddyPress record custom post type comments
+ * @param array $post_types
+ * @return string
+ */
+function glossary_bp_record_my_custom_post_type_comments($post_types)
+{
+    $post_types[] = 'glossary';
+    return $post_types;
+}
+
+add_filter('bp_blogs_record_comment_post_types', 'glossary_bp_record_my_custom_post_type_comments');

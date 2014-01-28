@@ -47,7 +47,8 @@ var tooltip=function(opts){
         pos:function(e){
             var u = ie ? event.clientY + document.documentElement.scrollTop : e.pageY;
             var l = ie ? event.clientX + document.documentElement.scrollLeft : e.pageX;
-            tt.style.top = (u - h) + 'px';
+            var x = (u - h) > 28 ? (u - h / 2) : 28;
+            tt.style.top = x + 'px';
             tt.style.left = (l + opts.left) + 'px';
         },
         fade:function(d){
