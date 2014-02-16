@@ -115,7 +115,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Multisite - Support for WP Multisite.
 * Gratitude Message - Does not include the CMinds Gratitude message in the footer.
 * **Localization** - All labels are external in the settings and can be localized easily.
-* Shortcodes  -  Many shortcoes to support glossary operation and embed within post or pages.
+* Shortcodes  -  Many shortcoes to support glossary operation and embed within post or pages. [List of supported shortcodes](http://tooltip.cminds.com/faqs/what-shortcodes-are-supported/)
 * Custom Links  -  Manually add custom links from your Term page [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/image9.png)
 recommendation in the tooltip once hovering a term  (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom7.jpg" target="_blank">View Image of Back-end</a>),  (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom6.jpg" target="_blank">View Image of front-end</a>)</li>
 
