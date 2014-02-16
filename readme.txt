@@ -67,11 +67,11 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Support for **Wikipedia** - We are now support embedding content from Wikipedia on the term page and on the tooltip. You can also use a shortcode to inset a wikipedia content on any page or post. Wikipedia content can be taken from any language which has a Wikipedia. [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom3.jpg)
 * Support for **Audio** files with tooltip - You can attach an audio file to each term and customize the look and feel of the play button.  [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom5.jpg)
 * Support for **Video** files with tooltip - you can embed a video file taken from YouTube or Vimeo or other video sharing sites and show it in the tooltip. The tooltip can also be transparent to show no background behind the video. [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom4.jpg)
- **Google Translate** Integration  -  Ability to display translated words into the language of your choice for all terms and definitions, uses the Google Translate API [View Image](http://tooltip.cminds.com/wp-content/uploads/2013/09/12-09-2013-10-49-15.png), [View Image from Settings](http://tooltip.cminds.com/wp-content/uploads/edd/image91.png)
+* **Google Translate** Integration  -  Ability to display translated words into the language of your choice for all terms and definitions, uses the Google Translate API [View Image](http://tooltip.cminds.com/wp-content/uploads/2013/09/12-09-2013-10-49-15.png), [View Image from Settings](http://tooltip.cminds.com/wp-content/uploads/edd/image91.png)
 * **Merriam-Webster Dictionary** Integration  -  Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary for all words on your Term page and Tooltip. [View Demo](http://jumpstartcto.com/alpha/)
 * **Merriam-Webster Thesaurus** Integration  -  Ability to display the thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your Term page and Tooltip. [View Demo](http://jumpstartcto.com/agile/)
 * Support for **Amazon Product Recommendations** - You can choose from one of many Amazon categories and show a product recommendation widget matching the selected term. The link to the product also includes your Amazon Associate ID.  [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom1.jpg)
-* Featured image for each term - A term can have a featured image associated with it. It will show on both the tooltip and the term page. The image size can be defined in the term page settings. 
+* **Featured image** for each term - A term can have a featured image associated with it. It will show on both the tooltip and the term page. The image size can be defined in the term page settings. 
 
 **Pro Version Features - Language Tools**
 
@@ -79,22 +79,23 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * **Synonyms** - Users of the CM Tooltip Pro can add several Synonyms for each term, so that the Tooltip is be made to appear for all Synonyms in posts or pages that are listed in the Glossary index [View Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
 * **Singular and Plural** - Supports different variations of nouns that allow the user to specify a definition for each term according to the specific use of the word. The Tooltip will appear for all variations in all posts and pages. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99D.png)
 * Related Glossary terms - Relates Glossary terms to a specified term which is displayed according to control settings. [View Demo](http://jumpstartcto.com/glossary/javascript)
-* Definition in Index - Show the Terms AND the Definitions in an Alphabetically sorted index. [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
 * **Glossary Search**  -  Glossary index page is included within a local search engine. [Demo](http://jumpstartcto.com/glossary/)
 * Glossary **Categories**  -  Glossary categories are supported and can be used in glossary page, also set with a Shortcode. [View Demo](http://jumpstartcto.com/glossary-shortcode/) , [Categories in Glossary Index](http://jumpstartcto.com/glossary)
 * **Tags** - Tooltip Glossary now supports tags per each term. Tags are shown also on the Glossary index page and allow easy filtering of terms. 
 * Exclude Term  -  Glossary terms can be excluded from the Glossary index and Tooltip. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99A.png)
-* Term Target Link  -  Terms are linked and can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
+* **Term Target Link**  -  Terms are linked and can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * **Custom Characters** - Support for custom characters in alphabetical index [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [View Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
 
 **Pro Version Features - Customization**
 
-* Link Style - The Pro version of the CM ToolTip gives you the ability to change term link style. [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Tooltip Style - Ability to change Tooltip shape, color and border. [View Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
-* Term page Template - Term page uses a template that can be edited and changed.
-* Change tooltip font - Select the Tooltip font from 8 available Google fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
-* Transparent tooltip background - Tooltip can now have a transparent background. This supports showing images and videos. 
-*
+* **Link Style** - The Pro version of the CM ToolTip gives you the ability to change term link style. [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* **Tooltip Style** - Ability to change Tooltip shape, color and border. [View Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
+* **Term page Template** - Term page uses a template that can be edited and changed.
+* **Change tooltip font** - Select the Tooltip font from 8 available Google fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
+* **Transparent tooltip** background - Tooltip can now have a transparent background. This supports showing images and videos. 
+* **Index page style** - Show the Terms AND the Definitions in an Alphabetically sorted index. [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
+
+
 **Pro Version Features - Benefits**
 
 * Anchors inside Tooltip - Tooltip can include anchors which the user can click. [View Demo - Hover over HTML](http://jumpstartcto.com/javascript/)
@@ -128,7 +129,7 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 
 **More Plugins by CreativeMinds**
 
-* [CM Ad Changer](http://wordpress.org/plugins/cm-ad-changer/) - Manage, Track and Report Advertising Campaigns Across Sites. Can turn your Turn your WP into an Ad Server
+* [CM Ad Changer](http://wordpress.org/plugins/cm-ad-changer/) - Manage, Track and Report Advertising Campaigns Across Sites. Can turn your WP into an Ad Server
 * [CM Download Manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allows users to upload, manage, track and support documents or files in a download directory listing database for others to contribute, use and comment upon.
 * [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a Stack-overflow style community forum which is easy to use, customize and install. Comes with Social integration Shortcodes.
 
