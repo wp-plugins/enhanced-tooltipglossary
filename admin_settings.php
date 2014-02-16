@@ -1,7 +1,7 @@
 <form method="post" action="options.php">
     <?php wp_nonce_field('update-options'); ?>
 
-    <br><br><p>Supported Shortcodes: <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    <br><br><p><strong>Supported Shortcodes:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
     </p>
 
     <ul style="display:none;list-style-type:disc;margin-left:20px;">
@@ -10,8 +10,22 @@
         <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="_blank">Pro+</a></li>
         <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
         <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+		<li><del><strong>Custom glossary tooltip</strong> - [glossary_tooltip content="text"] term [/glossary_tooltip]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</li>
+        <li><del><strong>Apply tooltip</strong> - [cm_tooltip_parse] text [/cm_tooltip_parse] <sup>1</sup></del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</li>
+        <li><del><strong>Wikipedia</strong> - [glossary_wikipedia term="term name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Ecommerce version</a></li>
+		</ul>
+ 	   <p>
+        <strong>Upgrade Options:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    </p>
+
+    <ul style="display:none;list-style-type:disc;margin-left:20px;">
+         <li><strong><a href="http://tooltip.cminds.com/pricing/" target="new">Pro Version</a></strong> - 50% of the Pro license cost and 1 year of free updates</li>
+        <li><strong><a href="http://tooltip.cminds.com/pricing/" target="new">Pro+ Version</a></strong> - 50% of the Pro+ license cost and 1 year of free updates</li>
+        <li><strong><a href="http://tooltip.cminds.com/pricing/" target="new">Ecommerce Version</a></strong> - 50% of the Ecommerce license cost and 1 year of free updates</li>
+        <li>Coming Soon - Glossary Server (share your glossary items)</li>
     </ul>
-    <p>Link to Glossary index page: <a href="<?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?>" target="_blank"><?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?></a></p>
+
+		<p><strong>Link to the Glossary index page:</strong> <a href="<?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?>" target="_blank"><?php echo home_url('/' . get_option('red_glossaryPermalink') . '/'); ?></a></p>
 
 <?php
 // check permalink settings 

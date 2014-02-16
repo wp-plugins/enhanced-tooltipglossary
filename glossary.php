@@ -3,7 +3,7 @@
   Plugin Name: CM Super Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create Glossary, Encyclopedia or Dictionary of your custom terms and show tooltip in posts and pages while hovering. Many powerful features Parses posts for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.4.10
+  Version: 2.5.0
   Author: CreativeMindsSolutions
  */
 
@@ -750,8 +750,9 @@ function red_glossaryShowList($content = '')
 //create the actual glossary
 function red_glossary_createList($content)
 {
+    $currentPost = get_post();
     $glossaryPageID = get_option('red_glossaryID');
-    if( is_numeric($glossaryPageID) && is_page($glossaryPageID) && $glossaryPageID > 0 )
+    if( is_numeric($glossaryPageID) && is_page($glossaryPageID) && $glossaryPageID > 0  && $currentPost && $currentPost->ID == $glossaryPageID)
     {
         $content = red_glossaryShowList($content);
     }
