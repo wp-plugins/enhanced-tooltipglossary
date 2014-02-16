@@ -2,7 +2,7 @@
 Name: CM Super Tooltip Glossary
 Contributors: CreativeMindsSolutions
 Donate link: http://tooltip.cminds.com/
-Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopedia,knowledge base,index,keywords,terms,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.8
 Stable tag: 2.5.0
@@ -23,12 +23,17 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 * Dictionary - Creates a dictionary of specifically used terms on your site.
 * Tooltip - Adds tooltip as an anchor to predefined terms that are contained in your site.
 * Knowledge base - Creates a knowledge base of useful terms and definitions.
-* Encyclopedia -  Builds an internal Encyclopedia for your site.
+* Encyclopaedia -  Builds an internal Encyclopaedia for your site.
 * Synonyms -  Keeps and displays synonyms of terms that you are using
 * Lexicon - Builds a lexicon of terms.
 * Vocabulary - Builds a vocabulary of custom words and expressions.
 * Explanations  -  Explains the meanings of words in your posts or pages.
 * Translate  -  Translates terms and definitions into any defined language using Google Translate.
+* WikiPedia - Add Wikipedia content to your site.
+* YouTube - Show YouTube / Vimeo videos once hovering over a term
+* Music - Include mp3 voice or music file for each tooltip
+* Amazon - Enhance your site with Tooltips including Amazon product recommendation
+
 
 **Demo & User Guide**
 
@@ -90,7 +95,16 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Term Target Link  -  Terms are linked and can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * Term page Template - Term page uses a template that can be edited and changed.
 * Change tooltip font - Select the Tooltip font from 8 available Google fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
-
+recommendation in the tooltip once hovering a term  (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom7.jpg" target="_blank">View Image of Back-end</a>),  (<a href="http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom6.jpg" target="_blank">View Image of front-end</a>)</li>
+* Support for Amazon Product Recommendations - You can choose from one of many Amazon categories and show a product recommendation widget matching the selected term. The link to the product also includes your Amazon Associate ID.  [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom1.jpg)
+* Support for double click on any word in a post or page - Any word on any page or post can be double clicked to retrieve information from Wikipedia / Amazon Products Recommendations / Merriam Webster Dictionary or Thesaurus. You can double click on any word on this post to see this in action ! [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom2.jpg)
+* Support for more shortcodes - We have added shortcodes to cover Wikipedia and also creating a tooltip without a defined term in the glossary.  The glossary_tooltip will show tooltip for a defined term.
+* Support for Wikipedia - We are now support embedding content from Wikipedia on the term page and on the tooltip. You can also use a shortcode to inset a wikipedia content on any page or post. Wikipedia content can be taken from any language which has a Wikipedia. [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom3.jpg)
+* Support for Audio files with tooltip - You can attach an audio file to each term and customize the look and feel of the play button.  [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom5.jpg)
+* Support for Video files with tooltip - you can embed a video file taken from YouTube or Vimeo or other video sharing sites and show it in the tooltip. The tooltip can also be transparent to show no background behind the video. [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom4.jpg)
+* Transparent tooltip background - Tooltip can now have a transparent background. This supports showing images and videos. 
+* Featured image for each term - A term can have a featured image associated with it. It will show on both the tooltip and the term page. The image size can be defined in the term page settings. 
+* Tags - Tooltip Glossary now supports tags per each term. Tags are shown also on the Glossary index page and allow easy filtering of terms. 
 [Visit Pro Version Page](http://tooltip.cminds.com/)
 
 
