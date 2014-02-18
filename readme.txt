@@ -4,7 +4,7 @@ Contributors: CreativeMindsSolutions
 Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
-Tested up to: 3.8
+Tested up to: 3.8.1
 Stable tag: 2.5.0
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
@@ -103,7 +103,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * **Import / Export** - Import and Export your glossary file to and from .CSV format. [View Image](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-41-33.png)
 * Internal Links - Options to add a link back to your glossary page from each term page. [View Demo](http://jumpstartcto.com/glossary/minimal-viable-product/)
 * **Search & Replace Tool**  -  Includes an on the fly search and replace tool to replace text or html code in your posts and pages with newly replaced content. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/image93.png)
-* Support for **double click** on any word in a post or page - Any word on any page or post can be double clicked to retrieve information from Wikipedia / Amazon Products Recommendations / Merriam Webster Dictionary or Thesaurus. You can double click on any word on this post to see this in action ! [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom2.jpg)
+* Support for **double click** on any word in a post or page - Any word on any page or post can be double clicked to retrieve information from Wikipedia / Amazon Products Recommendations / Merriam Webster Dictionary or Thesaurus. [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom2.jpg)
 
 **Pro Version Features - Settings**
 
