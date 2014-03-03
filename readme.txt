@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 2.5.0
+Stable tag: 2.6.0
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -179,6 +179,16 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.6.0 =
+* Completely redesinged the settings page
+* Refreshed tooltip looks
+* Changed the names of the options
+
+= 2.5.2 =
+* Added the "mbstring" check to the System Information tab
+* Fixed the conflict with "NextGen Gallery"
+* Fixed the bug with "&amp;" character in synonyms
+
 = 2.5.0 =
 * Fixed the conditions in "the_content" filters
 
