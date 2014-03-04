@@ -34,6 +34,10 @@ CM Tooltip creates a glossary index with all terms used. [Visit Plugin Site](htt
 * Music - Include mp3 voice or music file for each tooltip
 * Amazon - Enhance your site with Tooltips including Amazon product recommendation
 
+**Related Plugins**
+
+[CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
+
 
 **Demo & User Guide**
 
