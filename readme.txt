@@ -38,6 +38,8 @@ CM Tooltip creates a glossary index with all terms used. [Visit Plugin Site](htt
 
 [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
 
+[CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
+
 
 **Demo & User Guide**
 
