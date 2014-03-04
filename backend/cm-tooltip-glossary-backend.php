@@ -38,9 +38,10 @@ class CMTooltipGlossaryBackend
 
         add_action('restrict_manage_posts', array(self::$calledClassName, 'cmtt_restrict_manage_posts'));
         add_action('admin_notices', array(self::$calledClassName, 'cmtt_glossary_admin_notice_wp33'));
+        add_action('admin_notices', array(self::$calledClassName, 'cmtt_glossary_admin_notice_mbstring'));
 
-        add_action('save_post', array(self::$calledClassName, 'cmtt_save_postdata'));
-        add_action('update_post', array(self::$calledClassName, 'cmtt_save_postdata'));
+//        add_action('save_post', array(self::$calledClassName, 'cmtt_save_postdata'));
+//        add_action('update_post', array(self::$calledClassName, 'cmtt_save_postdata'));
     }
 
     /**
@@ -436,7 +437,23 @@ class CMTooltipGlossaryBackend
         if( version_compare($wp_version, '3.3', '<') )
         {
             $message = __('CM Tooltip Glossary requires Wordpress version 3.3 or higher to work properly.');
-            showMessage($message, true);
+            cminds_show_message($message, true);
+        }
+    }
+
+    /**
+     * Adds a notice about mbstring not being installed
+     * @global type $wp_version
+     */
+    public static function cmtt_glossary_admin_notice_mbstring()
+    {
+        $mb_support = function_exists('mb_strtolower');
+
+        if( !$mb_support )
+        {
+            $message = __('CM Tooltip Glossary since version 2.6.0 requires "mbstring" PHP extension to work! ');
+            $message .= '<a href="http://www.php.net/manual/en/mbstring.installation.php" target="_blank">('.__('Installation instructions.').')</a>';
+            cminds_show_message($message, true);
         }
     }
 

@@ -107,8 +107,8 @@ class CMTooltipGlossaryFrontend
             wp_enqueue_style('jquery-listnav-style', self::$cssPath . 'jquery.listnav.css');
 
             $listnavArgs = array(
-                'includeAll'  => false,
-                'includeNums' => false,
+                'includeAll'  => true,
+                'includeNums' => true,
             );
             $tooltipData['listnav'] = $listnavArgs;
             $tooltipData['list_id'] = 'glossaryList' . (isset($_POST['isshortcode']) && isset($_POST["gcat_id"]) ? '_' . $_POST["gcat_id"] : '');
