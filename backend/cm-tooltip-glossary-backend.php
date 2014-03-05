@@ -131,7 +131,10 @@ class CMTooltipGlossaryBackend
             {
                 if( !isset($_POST[$option_name]) )
                 {
-                    delete_option($option_name);
+//                    if( strpos($option_name, 'tooltip3RD') === FALSE )
+//                    {
+//                        delete_option($option_name);
+//                    }
                 }
                 else
                 {
@@ -347,9 +350,11 @@ class CMTooltipGlossaryBackend
             {
                 $slug = $item[2];
                 $isCurrent = ($slug == $plugin_page || strpos($item[2], '.php') === strpos($currentUri, '.php'));
-                $isExternalPage = strpos($item[2], 'http') !== FALSE || strpos($item[2], '.php') !== FALSE;
-                $url = $isExternalPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
-                $submenus[$item[0]] = '<a href="' . $url . '" class="' . ($isCurrent ? 'current' : '') . '">' . $item[0] . '</a>';
+                $isExternalPage = strpos($item[2], 'http') !== FALSE;
+                $isNotSubPage = $isExternalPage || strpos($item[2], '.php') !== FALSE;
+                $url = $isNotSubPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
+                $target = $isExternalPage ? '_blank' : '';
+                $submenus[$item[0]] = '<a href="' . $url . '" target="'.$target.'" class="' . ($isCurrent ? 'current' : '') . '">' . $item[0] . '</a>';
             }
         }
         return $submenus;
@@ -395,8 +400,9 @@ class CMTooltipGlossaryBackend
             {
                 $slug = $item[2];
                 $isCurrent = ($slug == $plugin_page || strpos($item[2], '.php') === strpos($currentUri, '.php'));
-                $isExternalPage = strpos($item[2], 'http') !== FALSE || strpos($item[2], '.php') !== FALSE;
-                $url = $isExternalPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
+                $isExternalPage = strpos($item[2], 'http') !== FALSE;
+                $isNotSubPage = $isExternalPage || strpos($item[2], '.php') !== FALSE;
+                $url = $isNotSubPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
                 $submenus[] = array(
                     'link'    => $url,
                     'title'   => $item[0],
@@ -452,7 +458,7 @@ class CMTooltipGlossaryBackend
         if( !$mb_support )
         {
             $message = __('CM Tooltip Glossary since version 2.6.0 requires "mbstring" PHP extension to work! ');
-            $message .= '<a href="http://www.php.net/manual/en/mbstring.installation.php" target="_blank">('.__('Installation instructions.').')</a>';
+            $message .= '<a href="http://www.php.net/manual/en/mbstring.installation.php" target="_blank">(' . __('Installation instructions.') . ')</a>';
             cminds_show_message($message, true);
         }
     }

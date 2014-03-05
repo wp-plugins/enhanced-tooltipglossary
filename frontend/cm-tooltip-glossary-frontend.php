@@ -526,6 +526,7 @@ class CMTooltipGlossaryFrontend
         /*
          * Open in new window
          */
+        $showTitleAttribute = get_option('cmtt_showTitleAttribute');
         $windowTarget = (get_option('cmtt_glossaryInNewPage') == 1) ? ' target="_blank" ' : '';
         $titleAttr = (get_option('cmtt_showTitleAttribute') == 1) ? ' title="Glossary: ' . esc_attr($glossary_item->post_title) . '" ' : '';
 
