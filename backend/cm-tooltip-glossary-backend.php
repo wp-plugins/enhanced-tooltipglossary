@@ -423,7 +423,7 @@ class CMTooltipGlossaryBackend
         global $wp_rewrite;
         // First, we "add" the custom post type via the above written function.
 
-        self::cmtt_create_post_types();
+        CMTooltipGlossaryShared::cmtt_create_post_types();
 
         // Clear the permalinks
         flush_rewrite_rules();

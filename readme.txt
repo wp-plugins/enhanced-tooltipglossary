@@ -1,11 +1,11 @@
 === Plugin Name ===
-Name: CM Super Tooltip Glossary
+Name: CM Tooltip Glossary
 Contributors: CreativeMindsSolutions
 Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 2.6.2
+Stable tag: 2.6.3
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -14,7 +14,7 @@ Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show too
 
 CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or pages for defined glossary terms, by adding links to a glossary term page that contains the definition of the term used.
 The CM Glossary Tooltip plugin, when enabled, displays a tooltip containing the definition when users hover over the term.
-CM Tooltip creates a glossary index with all terms used. [Visit Plugin Site](http://tooltip.cminds.com/) or [view the plugin video review](http://www.youtube.com/watch?v=WN3HLZ6ZuBM)
+CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](http://tooltip.cminds.com/) or [view the plugin video review](http://www.youtube.com/watch?v=WN3HLZ6ZuBM)
 
 [youtube http://www.youtube.com/watch?v=WN3HLZ6ZuBM]
 
@@ -34,19 +34,14 @@ CM Tooltip creates a glossary index with all terms used. [Visit Plugin Site](htt
 * Music - Include mp3 voice or music file for each tooltip
 * Amazon - Enhance your site with Tooltips including Amazon product recommendation
 
-**Related Plugins**
-
-* [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
-* [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
-
 
 **Demo & User Guide**
 
 Visit [Plugin Site](http://tooltip.cminds.com/)
 
-See basic demo of the plugin [here](http://jumpstartcto.com/glossary/)
+See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 
-For more information please visit [plugin detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
+For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
 
 **Features**
 
@@ -76,7 +71,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * **Merriam-Webster Dictionary** Integration  -  Ability to display the dictionary definition of a term from the Merriam-Webster Online Dictionary for all words on your Term page and Tooltip. [View Demo](http://jumpstartcto.com/alpha/)
 * **Merriam-Webster Thesaurus** Integration  -  Ability to display the thesaurus synonyms and antonyms from the online Merriam-Webster Thesaurus in your Term page and Tooltip. [View Demo](http://jumpstartcto.com/agile/)
 * Support for **Amazon Product Recommendations** - You can choose from one of many Amazon categories and show a product recommendation widget matching the selected term. The link to the product also includes your Amazon Associate ID.  [View Image of back-end](http://tooltip.cminds.com/wp-content/uploads/edd/tooltipecom1.jpg)
-* **Featured image** for each term - A term can have a featured image associated with it. It will show on both the tooltip and the term page. The image size can be defined in the term page settings. 
+* **Featured image** for each term - A term can have a featured image associated with it. It will show on both the tooltip and the term page. The image size can be defined in the term page settings.
 
 **Pro Version Features - Language Tools**
 
@@ -86,7 +81,7 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * Related Glossary terms - Relates Glossary terms to a specified term which is displayed according to control settings. [View Demo](http://jumpstartcto.com/glossary/javascript)
 * **Glossary Search**  -  Glossary index page is included within a local search engine. [Demo](http://jumpstartcto.com/glossary/)
 * Glossary **Categories**  -  Glossary categories are supported and can be used in glossary page, also set with a Shortcode. [View Demo](http://jumpstartcto.com/glossary-shortcode/) , [Categories in Glossary Index](http://jumpstartcto.com/glossary)
-* **Tags** - Tooltip Glossary now supports tags per each term. Tags are shown also on the Glossary index page and allow easy filtering of terms. 
+* **Tags** - Tooltip Glossary now supports tags per each term. Tags are shown also on the Glossary index page and allow easy filtering of terms.
 * Exclude Term  -  Glossary terms can be excluded from the Glossary index and Tooltip. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99A.png)
 * **Term Target Link**  -  Terms are linked and can be targeted to go to an external or custom link [View Demo - Click on Ajax and you will be taken outside of site](http://jumpstartcto.com/ajax-2/)
 * **Custom Characters** - Support for custom characters in alphabetical index [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro19.png) [View Demo in Finnish](http://finnished.com/glossary/) [More in Finnish](http://finnished.com/meet-bingo/)
@@ -97,9 +92,8 @@ The CM Tooltip Pro version adds a layer of powerful features to the Super Toolti
 * **Tooltip Style** - Ability to change Tooltip shape, color and border. [View Demo](http://jumpstartcto.com/glossary/) (Highlight any term) , [See Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/04-03-2013-15-42-01.png)
 * **Term page Template** - Term page uses a template that can be edited and changed.
 * **Change tooltip font** - Select the Tooltip font from 8 available Google fonts [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99B.png)
-* **Transparent tooltip** background - Tooltip can now have a transparent background. This supports showing images and videos. 
+* **Transparent tooltip** background - Tooltip can now have a transparent background. This supports showing images and videos.
 * **Index page style** - Show the Terms AND the Definitions in an Alphabetically sorted index. [View Image](http://www.cminds.com/wp-content/uploads/edd/glossarypro18.png)
-
 
 **Pro Version Features - Benefits**
 
@@ -184,8 +178,11 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.6.3 =
+* Fixed the bug with Permalinks not being changed on Settings save
+
 = 2.6.2 =
-* Fixed the bug which disabled the Woocommerce/Amazon support after save
+* Fixed the bug which disabled the Woocommerce support after save
 * Fixed saving the settings
 
 = 2.6.1 =
