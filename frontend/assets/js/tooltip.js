@@ -51,12 +51,17 @@ CM_Tooltip.gtooltip = function (opts) {
                 tooltipWrapper.style.opacity = 0;
                 tooltipWrapper.style.filter = 'alpha(opacity=0)';
 
+                /*
+                 * If the tooltip is not clickable we shouldn't be able to hover it
+                 */
+                if (opts.clickable !== 0) {
                 jQuery(tooltipWrapper).mouseover(function () {
                     clearTimeout(CM_Tooltip.timeoutId);
                     if (jQuery(this).is(':animated')) {
                         jQuery(this).stop().fadeTo(tooltipWrapper.timer, (opts.endalpha / 100));
                     }
                 });
+                }
 
                 jQuery(tooltipWrapper).mouseleave(function () {
                     if (!jQuery(this).is(':animated')) {

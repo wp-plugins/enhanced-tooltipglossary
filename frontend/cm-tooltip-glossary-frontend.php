@@ -48,6 +48,11 @@ class CMTooltipGlossaryFrontend
          * Filter for the BuddyPress record
          */
         add_filter('bp_blogs_record_comment_post_types', array(self::$calledClassName, 'cmtt_bp_record_my_custom_post_type_comments'));
+
+        /*
+         *  We need to redirect the queries to the archive
+         */
+        add_action('template_redirect', array(self::$calledClassName, 'cmtt_templateRedirect'));
     }
 
     /**
@@ -857,6 +862,67 @@ class CMTooltipGlossaryFrontend
         $authorUrl .= '</span><div style="display:block;clear:both;">';
 
         return $authorUrl;
+    }
+
+    /**
+     * We redirect the query for "glossary" archive to the glossary index page or homepage if it doesn't exist
+     * @global type $wp_query
+     * @global type $post
+     */
+    public static function cmtt_templateRedirect()
+    {
+        global $wp_query;
+
+        if( (is_archive() || is_home()) && !is_feed() && $wp_query->query['post_type'] == 'glossary' )
+        {
+            $glossaryPageID = get_option('cmtt_glossaryID');
+            $glossaryPageLink = get_page_link($glossaryPageID);
+            $glossaryArchivePermalink = trailingslashit(home_url(get_option('cmtt_glossaryPermalink')));
+
+            if( is_numeric($glossaryPageID) && $glossaryPageID > 0 )
+            {
+                if( $glossaryArchivePermalink !== $glossaryPageLink )
+                {
+                    wp_redirect($glossaryPageLink);
+                    exit();
+                }
+
+                query_posts(array(
+                    'p'         => $glossaryPageID,
+                    'post_type' => array('page')
+                ));
+
+                $wp_query->is_page = true;
+
+                add_filter('template_include', 'glossary_index_page_template', 99);
+
+                function glossary_index_page_template($template)
+                {
+                    /*
+                     * Make 100% sure it only loads once
+                     */
+                    remove_filter('template_include', 'glossary_index_page_template', 99);
+
+                    global $wp_query;
+                    $glossaryPageID = get_option('cmtt_glossaryID');
+                    if( is_page() && $wp_query->post->ID == $glossaryPageID )
+                    {
+                        $new_template = locate_template(array('page.php', 'single.php'));
+                        if( '' != $new_template )
+                        {
+                            return $new_template;
+                        }
+                    }
+
+                    return $template;
+                }
+            }
+            else
+            {
+                wp_redirect(home_url());
+                exit();
+            }
+        }
     }
 
 }

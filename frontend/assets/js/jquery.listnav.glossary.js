@@ -56,15 +56,19 @@
                 $(':last', $letters).addClass('ln-last');
                 if ($.cookie && (opts.cookieName != null)) {
                     var cookieLetter = $.cookie(opts.cookieName);
-                    if (cookieLetter != null)
+                    if (cookieLetter !== null)
                         opts.initLetter = cookieLetter;
                 }
-//				if (opts.initLetter != '') { firstClick = true; $('.' + opts.initLetter.toLowerCase(), $letters).slice(0, 1).click(); }
+                if (opts.initLetter !== '') {
+                    firstClick = true;
+                    $('.lnletter-' + opts.initLetter.toLowerCase(), $letters).slice(0, 1).click();
+                }
                 else {
-                    if (opts.includeAll)
+                    if (opts.includeAll) {
                         $('.all', $letters).addClass('ln-selected');
+                    }
                     else {
-                        for(var i = ((opts.includeNums) ? 0 : 1); i < letters.length; i++){
+                        for(var i = ((opts.includeNums) ? 1 : 0); i < letters.length; i++){
                             if (counts[letters[i]] > 0) {
                                 firstClick = true;
                                 $('.ln-' + i, $letters).slice(0, 1).click();
@@ -207,7 +211,7 @@
                     {
                         continue;
                     }
-                    html.push('<a class="ln-' + (letters[i] === '-' ? '-' : i) + '" href="#">' + ((letters[i] === '-') ? '...' : letters[i].toUpperCase()) + '</a>');
+                    html.push('<a class="ln-' + (letters[i] === '-' ? '-' : i) + ' lnletter-' + letters[i].toLowerCase() + '" href="#">' + ((letters[i] === '-') ? '...' : letters[i].toUpperCase()) + '</a>');
                 }
                 return '<div class="ln-letters">' + html.join('') + '</div>' + ((opts.showCounts) ? '<div class="ln-letter-count" style="display:none; position:absolute; top:0; left:0; width:20px;">0</div>' : '');
             }
