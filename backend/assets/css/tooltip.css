@@ -40,6 +40,10 @@ div.glossary_synonyms_title {margin: 10px 0;}
     clear: none;
 }
 
+.floated-form-table tr.whole-line{
+    width: 99%;
+}
+
 .glossarySettingsTabs table th{
     position: relative;
     padding-right: 25px;
@@ -155,3 +159,7 @@ div.scnt {margin-top: 1em}
 .cmtt-post-tags a{
     cursor: pointer;
 }
+
+.server-info-table td:nth-child(3) {}
+.server-info-table span {color: green; font-weight: bold;}
+.server-info-table strong {color: red; font-weight: bold;}

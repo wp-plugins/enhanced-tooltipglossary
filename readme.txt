@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 2.6.4
+Stable tag: 2.6.6
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -178,6 +178,18 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+= 2.6.6 =
+* Fixed the unclosed div bug
+* Fixed the title of the Glossary Index Page when there's permalink conflict
+* Displaying "Glossary Index Page ID" settings in separate line
+* Fixed the setting "Avoid parsing protected tags?" 
+
+= 2.6.5 =
+* Changed the "Glossary Index Page ID" input from textbox to select
+* Updated the descriptions of "Glossary Index Page ID" and "Glossary Index Page Permalink"
+* Added option to generate the "Glossary Index Page"
+* Added new column in "System Information" with information if the setting is OK
+
 = 2.6.4 =
 * Fixed the bug with 'persistent' tooltip
 

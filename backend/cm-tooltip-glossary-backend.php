@@ -74,6 +74,9 @@ class CMTooltipGlossaryBackend
      */
     public static function cmtt_admin_options()
     {
+        $_POST = array_map('stripslashes_deep', $_POST);
+        CMTooltipGlossaryShared::tryResetOldOptions();
+
         wp_enqueue_script('jquery-ui-tabs');
         wp_enqueue_style('jquery-ui-tabs-css', self::$cssPath . 'jquery-ui-1.10.3.custom.css');
 
@@ -84,6 +87,8 @@ class CMTooltipGlossaryBackend
              * Update the page options
              */
             update_option('cmtt_glossaryID', $_POST["cmtt_glossaryID"]);
+            CMTooltipGlossaryShared::tryGenerateGlossaryIndexPage();
+
             if( $_POST["cmtt_glossaryPermalink"] !== get_option('cmtt_glossaryPermalink') )
             {
                 /*

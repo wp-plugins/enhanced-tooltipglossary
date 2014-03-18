@@ -47,9 +47,9 @@
         <div class="glossary_loading"></div>
 
         <?php
-            CMTooltipGlossaryBackend::renderSettingsTabsControls();
+        CMTooltipGlossaryBackend::renderSettingsTabsControls();
 
-            CMTooltipGlossaryBackend::renderSettingsTabs();
+        CMTooltipGlossaryBackend::renderSettingsTabs();
         ?>
 
         <div  id="tabs-1">
@@ -61,15 +61,18 @@
                         <td><p><strong><a href="http://tooltip.cminds.com/" target="_blank">Upgrade</a></p></td>
                         <td colspan="2" class="cmtt_field_help_container"> Professional version of CM Super Glossary Pro which which adds SEO support, Import/Export tools, Multisite support, Sidebar Widget, Synonyms, Support for huge glossaries, tooltip customization options and much more</td>
                     </tr>
-                    <tr valign="top">
+                    <tr valign="top" class="whole-line">
                         <th scope="row">Glossary Index Page ID</th>
-                        <td><input type="text" name="cmtt_glossaryID" value="<?php echo get_option('cmtt_glossaryID'); ?>" /></td>
-                        <td colspan="2" class="cmtt_field_help_container">Enter the page ID of the page you would like to use as the glossary index (list of terms).  The page will be generated automatically on the specified page ID (so you should leave the content blank).  This is optional - terms will still be highlighted in relevant posts/pages but there won't be a central list of terms (Glossary Index) if this is left blank.</td>
+                        <td>
+                            <?php wp_dropdown_pages(array('name' => 'cmtt_glossaryID', 'selected' => (int) get_option('cmtt_glossaryID', -1), 'show_option_none' => '-None-', 'option_none_value' => '0')) ?>
+                            <br/><input type="checkbox" name="cmtt_glossaryID" value="-1" /> Generate page for Glossary Index
+                        </td>
+                        <td colspan="2" class="cmtt_field_help_container">Select the page ID of the page you would like to use as the Glossary Index Page. If you select "-None-" terms will still be highlighted in relevant posts/pages but there won't be a central list of terms (Glossary Index Page). If you check the checkbox a new page would be generated automatically. WARNING! You have to manually remove old pages!</td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">Glossary Index Page Permalink</th>
                         <td><input type="text" name="cmtt_glossaryPermalink" value="<?php echo get_option('cmtt_glossaryPermalink'); ?>" /></td>
-                        <td colspan="2" class="cmtt_field_help_container">Enter the name you would like to use for the permalink to the glossary.  By default this is glossary, however you can update this if you wish. If you are using a parent please indicate this in path eg. /path/glossary, otherwise just leave glossary or the name you choosen </td>
+                        <td colspan="2" class="cmtt_field_help_container">Enter the name you would like to use for the permalink to the Glossary Index Page and glossary terms.  By default this is glossary, however you can update this if you wish. If you are using a parent please indicate this in path eg. /path/glossary, otherwise just leave glossary or the name you have chosen. WARNING! If you already use this permalink the plugins behavior may be unpredictable.</td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">Only show terms on single posts/pages (not Homepage, authors etc.)?</th>
@@ -258,30 +261,46 @@
                     Cm Tooltip is a mix of  JavaScript application and a parsing engine.
                     This information is useful to check if CM Tooltip might have some incompabilities with you server
                 </span>
-                <table class="form-table">
+                <table class="form-table server-info-table">
                     <tr>
                         <td>PHP Version</td>
                         <td><?php echo phpversion(); ?></td>
+                        <td><?php if( version_compare(phpversion(), '5.3.0', '<') ): ?><strong>Recommended 5.3 or higher</strong><?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>
                     <tr>
                         <td>mbstring support</td>
                         <td><?php echo $mb_support; ?></td>
-                    </tr>
-                    <tr>
-                        <td>PHP Max Upload Size</td>
-                        <td><?php echo $upload_max; ?></td>
-                    </tr>
-                    <tr>
-                        <td>PHP Max Post Size</td>
-                        <td><?php echo $post_max; ?></td>
+                        <td><?php if( $mb_support == 'Off' ): ?>
+                                <strong>"mbstring" library is required for plugin to work.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>
                     <tr>
                         <td>PHP Memory Limit</td>
                         <td><?php echo $memory_limit; ?></td>
+                        <td><?php if( cminds_units2bytes($memory_limit) < 1024 * 1024 * 128 ): ?>
+                                <strong>This value can be too low for a site with big glossary.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>
                     <tr>
-                        <td>PHP cURL</td>
+                        <td>PHP Max Upload Size (Pro, Pro+, Ecommerce)</td>
+                        <td><?php echo $upload_max; ?></td>
+                        <td><?php if( cminds_units2bytes($upload_max) < 1024 * 1024 * 5 ): ?>
+                                <strong>This value can be too low to import large files.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
+                    </tr>
+                    <tr>
+                        <td>PHP Max Post Size (Pro, Pro+, Ecommerce)</td>
+                        <td><?php echo $post_max; ?></td>
+                        <td><?php if( cminds_units2bytes($post_max) < 1024 * 1024 * 5 ): ?>
+                                <strong>This value can be too low to import large files.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
+                    </tr>
+                    <tr>
+                        <td>PHP cURL (Ecommerce only)</td>
                         <td><?php echo $cURL; ?></td>
+                        <td><?php if( $cURL == 'Off' ): ?>
+                                <strong>cURL library is required to check if remote audio file exists.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>
 
                     <?php

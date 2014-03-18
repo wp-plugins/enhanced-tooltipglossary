@@ -353,7 +353,16 @@ class CMTooltipGlossaryFrontend
             }
             $xpath = new DOMXPath($dom);
 
-            foreach($xpath->query('//text()[not(ancestor::script)][not(ancestor::a)][not(ancestor::pre)][not(ancestor::object)][not(ancestor::h1)][not(ancestor::h2)][not(ancestor::h3)]') as $node)
+            /*
+             * Base query NEVER parse in scripts
+             */
+            $query = '//text()[not(ancestor::script)]';
+            if(get_option('cmtt_glossaryProtectedTags') == 1)
+            {
+                $query .= '[not(ancestor::a)][not(ancestor::pre)][not(ancestor::object)][not(ancestor::h1)][not(ancestor::h2)][not(ancestor::h3)][not(ancestor::h4)][not(ancestor::h5)][not(ancestor::h6)]';
+            }
+
+            foreach($xpath->query($query) as $node)
             {
                 /* @var $node DOMText */
                 $replaced = preg_replace_callback($glossarySearchString, array(self::$calledClassName, 'cmtt_replace_matches'), htmlspecialchars($node->wholeText, ENT_COMPAT));
@@ -859,7 +868,7 @@ class CMTooltipGlossaryFrontend
         $authorUrl .= '<a href="http://cminds.com/" target="_blank" class="cmetg_poweredbylink">CreativeMinds WordPress</a>';
         $authorUrl .= ' <a href="http://plugins.cminds.com/" target="_blank" class="cmetg_poweredbylink">Plugin</a>';
         $authorUrl .= ' <a href="http://tooltip.cminds.com/" target="_blank" class="cmetg_poweredbylink">' . CMTT_NAME . '</a>';
-        $authorUrl .= '</span><div style="display:block;clear:both;">';
+        $authorUrl .= '</span><div style="display:block;clear:both;"></div>';
 
         return $authorUrl;
     }
@@ -871,13 +880,18 @@ class CMTooltipGlossaryFrontend
      */
     public static function cmtt_templateRedirect()
     {
-        global $wp_query;
+        global $wp_query, $post, $wp_the_query;
 
-        if( (is_archive() || is_home()) && !is_feed() && $wp_query->query['post_type'] == 'glossary' )
+        $glossaryPageID = get_option('cmtt_glossaryID');
+        $glossaryPermalink = get_option('cmtt_glossaryPermalink');
+
+        $otherPageWithSamePermalink = is_page() && $wp_query->queried_object_id != $glossaryPageID && $wp_query->query['pagename'] === $glossaryPermalink;
+        $archiveOrHome = (is_archive() || is_home()) && !is_feed() && $wp_query->query['post_type'] == 'glossary';
+
+        if( $otherPageWithSamePermalink || $archiveOrHome )
         {
-            $glossaryPageID = get_option('cmtt_glossaryID');
             $glossaryPageLink = get_page_link($glossaryPageID);
-            $glossaryArchivePermalink = trailingslashit(home_url(get_option('cmtt_glossaryPermalink')));
+            $glossaryArchivePermalink = trailingslashit(home_url($glossaryPermalink));
 
             if( is_numeric($glossaryPageID) && $glossaryPageID > 0 )
             {
@@ -888,11 +902,14 @@ class CMTooltipGlossaryFrontend
                 }
 
                 query_posts(array(
-                    'p'         => $glossaryPageID,
-                    'post_type' => array('page')
+                    'pagename' => get_option('cmtt_glossaryPermalink'),
+                    'page'     => ''
                 ));
 
                 $wp_query->is_page = true;
+
+                $post = $wp_query->post;
+                $wp_the_query = $wp_query;
 
                 add_filter('template_include', 'glossary_index_page_template', 99);
 
@@ -916,6 +933,7 @@ class CMTooltipGlossaryFrontend
 
                     return $template;
                 }
+
             }
             else
             {

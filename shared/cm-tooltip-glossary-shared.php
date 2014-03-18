@@ -96,7 +96,8 @@ class CMTooltipGlossaryShared
         /*
          * General settings
          */
-        add_option('cmtt_glossaryOnPages', 1); //Show on Pages or just posts?
+        add_option('cmtt_glossaryOnPages', 1); //Show on Pages?
+        add_option('cmtt_glossaryOnPosts', 1); //Show on Posts?
         add_option('cmtt_glossaryID', 0); //The ID of the main Glossary Page
         add_option('cmtt_glossaryPermalink', 'glossary'); //Set permalink name
         add_option('cmtt_glossaryOnlySingle', 0); //Show on Home and Category Pages or just single post pages?
@@ -294,6 +295,46 @@ class CMTooltipGlossaryShared
         if( !session_id() )
         {
             session_start();
+        }
+    }
+
+    /**
+     * Function tries to generate the new Glossary Index Page
+     */
+    public static function tryGenerateGlossaryIndexPage()
+    {
+        $glossaryIndexId = get_option('cmtt_glossaryID', -1);
+        if( $glossaryIndexId == -1 || get_post($glossaryIndexId) === null )
+        {
+            $id = wp_insert_post(array(
+                'post_author' => get_current_user_id(),
+                'post_status' => 'publish',
+                'post_title'  => 'Glossary',
+                'post_type'   => 'page'
+            ));
+
+            if( is_numeric($id) )
+            {
+                update_option('cmtt_glossaryID', $id);
+            }
+        }
+    }
+
+    /**
+     * Function seaches for the options with prefix "red_" (old tooltip options were prefixed that way) and applies their values to the new options
+     */
+    public static function tryResetOldOptions()
+    {
+        $all_options = wp_load_alloptions();
+        foreach($all_options as $name => $value)
+        {
+            if( stripos($name, 'red_') === 0 )
+            {
+                $realOptionName = 'cmtt_' . str_ireplace('red_', '', $name);
+                $unserialisedValue = maybe_unserialize($value);
+                update_option($realOptionName, $unserialisedValue);
+                delete_option($name);
+            }
         }
     }
 

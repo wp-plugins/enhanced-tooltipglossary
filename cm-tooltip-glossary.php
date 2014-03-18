@@ -3,7 +3,7 @@
   Plugin Name: CM Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create a Glossary, Encyclopedia or Dictionary of your custom terms. Plugin parses posts and pages searching for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.6.4
+  Version: 2.6.6
   Author: CreativeMindsSolutions
   Author URI: http://plugins.cminds.com/
  */
@@ -98,7 +98,7 @@ class CMTooltipGlossary
          */
         if( !defined('CMTT_VERSION') )
         {
-            define('CMTT_VERSION', '2.6.0');
+            define('CMTT_VERSION', '2.6.5');
         }
 
         /**
@@ -192,23 +192,8 @@ class CMTooltipGlossary
 
     private static function __install()
     {
-        $glossaryIndexId = get_option('cmtt_glossaryID', 0);
-
-        if( $glossaryIndexId == 0 || get_post($glossaryIndexId) === null )
-        {
-            $id = wp_insert_post(array(
-                'post_author' => get_current_user_id(),
-                'post_status' => 'publish',
-                'post_title'  => 'Glossary',
-                'post_type'   => 'page'
-            ));
-
-            if( is_numeric($id) )
-            {
-                update_option('cmtt_glossaryID', $id);
-            }
-        }
-
+        CMTooltipGlossaryShared::tryGenerateGlossaryIndexPage();
+        CMTooltipGlossaryShared::tryResetOldOptions();
         self::__resetOptions();
     }
 
@@ -222,43 +207,6 @@ class CMTooltipGlossary
         update_option('cmtt_glossary_backLinkText', '&laquo; Back to Glossary Index');
         update_option('cmtt_glossary_backLinkBottomText', '&laquo; Back to Glossary Index');
         update_option('cmtt_glossaryFilterTooltipA', 0);
-
-        if( get_option('red_glossaryID', 0) !== 0 )
-        {
-            update_option('cmtt_glossaryOnlySingle', get_option('red_glossaryOnlySingle', 0));
-            update_option('cmtt_glossaryOnPages', get_option('red_glossaryOnPages', 1));
-            update_option('cmtt_glossaryID', get_option('red_glossaryID', 0));
-            update_option('cmtt_glossaryTooltip', get_option('red_glossaryTooltip', 0));
-            update_option('cmtt_glossaryDiffLinkClass', get_option('red_glossaryDiffLinkClass', 0));
-            update_option('cmtt_glossaryListTiles', get_option('red_glossaryListTiles', 0));
-            update_option('cmtt_glossaryPermalink', get_option('red_glossaryPermalink', 'glossary'));
-            update_option('cmtt_glossaryFirstOnly', get_option('red_glossaryFirstOnly', 0));
-            update_option('cmtt_glossaryFilterTooltip', get_option('red_glossaryFilterTooltip', 30));
-            update_option('cmtt_glossaryLimitTooltip', get_option('red_glossaryLimitTooltip', 0));
-            update_option('cmtt_glossaryTermLink', get_option('red_glossaryTermLink', 0));
-            update_option('cmtt_glossaryExcerptHover', get_option('red_glossaryExcerptHover', 0));
-            update_option('cmtt_glossaryProtectedTags', get_option('red_glossaryProtectedTags', 1));
-            update_option('cmtt_glossaryCaseSensitive', get_option('red_glossaryCaseSensitive', 0));
-            update_option('cmtt_glossaryInNewPage', get_option('red_glossaryInNewPage', 0));
-            update_option('cmtt_showTitleAttribute', get_option('red_showTitleAttribute', 1));
-
-            delete_option('red_glossaryOnlySingle');
-            delete_option('red_glossaryOnPages');
-            delete_option('red_glossaryID');
-            delete_option('red_glossaryTooltip');
-            delete_option('red_glossaryDiffLinkClass');
-            delete_option('red_glossaryListTiles');
-            delete_option('red_glossaryPermalink');
-            delete_option('red_glossaryFirstOnly');
-            delete_option('red_glossaryFilterTooltip');
-            delete_option('red_glossaryLimitTooltip');
-            delete_option('red_glossaryTermLink');
-            delete_option('red_glossaryExcerptHover');
-            delete_option('red_glossaryProtectedTags');
-            delete_option('red_glossaryCaseSensitive');
-            delete_option('red_glossaryInNewPage');
-            delete_option('red_showTitleAttribute');
-        }
     }
 
     public static function _uninstall()
