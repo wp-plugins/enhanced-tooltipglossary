@@ -53,9 +53,8 @@ class CMTooltipGlossaryBackend
         global $submenu;
         $current_user = wp_get_current_user();
 
-        add_menu_page('Glossary', CMTT_NAME, 'edit_posts', CMTT_MENU_OPTION, 'edit.php?post_type=glossary');
+        add_menu_page('Glossary', CMTT_NAME, 'edit_posts', CMTT_MENU_OPTION, 'edit.php?post_type=glossary', self::$cssPath.'images/cm-glossary-tooltip-icon.png');
 
-//        add_submenu_page(CMTT_MENU_OPTION, 'Trash', 'Trash', 'edit_posts', 'edit.php?post_status=trash&post_type=glossary');
         add_submenu_page(CMTT_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
         add_submenu_page(CMTT_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'edit_posts', CMTT_SETTINGS_OPTION, array(self::$calledClassName, 'cmtt_admin_options'));
         add_submenu_page(CMTT_MENU_OPTION, 'About', 'About', 'edit_posts', CMTT_ABOUT_OPTION, array(self::$calledClassName, 'cmtt_admin_about'));
@@ -109,7 +108,7 @@ class CMTooltipGlossaryBackend
                 self::cmtt_flush_rewrite_rules();
             }
 
-            $options_names = array('cmtt_glossaryOnlySingle', 'cmtt_glossaryOnPages', 'cmtt_glossaryOnPosts', 'cmtt_glossaryTooltip', 'cmtt_glossaryTooltipStripShortcode',
+            $options_names = array('cmtt_glossaryOnMainQuery', 'cmtt_glossaryOnlySingle', 'cmtt_glossaryOnPages', 'cmtt_glossaryOnPosts', 'cmtt_glossaryTooltip', 'cmtt_glossaryTooltipStripShortcode',
                 'cmtt_glossaryDiffLinkClass', 'cmtt_glossaryTooltipDesc', 'cmtt_glossaryTooltipDescExcerpt', 'cmtt_glossaryRunApiCalls', 'cmtt_glossaryListTiles', 'cmtt_glossaryFirstOnly', 'cmtt_glossaryOnlySpaceSeparated',
                 'cmtt_script_in_footer', 'cmtt_glossaryLimitTooltip', 'cmtt_glossaryTermDetailsLink', 'cmtt_glossaryFilterTooltip', 'cmtt_glossaryFilterTooltipA',
                 'cmtt_glossaryTermLink', 'cmtt_glossaryListTermLink', 'cmtt_glossary_showSearch', 'cmtt_glossary_SearchLabel', 'cmtt_glossaryTagsLabel', 'cmtt_glossary_ClearLabel',

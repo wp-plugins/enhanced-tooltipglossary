@@ -118,6 +118,14 @@
                         </td>
                         <td colspan="2" class="cmtt_field_help_container">Select this option if you want glossary terms to be case-sensitive.</td>
                     </tr>
+                    <tr valign="top">
+                        <th scope="row">Only higlight on "main" WP query?</th>
+                        <td><input type="checkbox" name="cmtt_glossaryOnMainQuery" <?php checked(true, get_option('cmtt_glossaryOnMainQuery')); ?> value="1" /></td>
+                        <td colspan="2" class="cmtt_field_help_container">
+                            <strong>Warning: Don't change this setting unless you know what you're doing</strong><br/>
+                            Select this option if you wish to only highlight glossary terms on main glossary query.
+                            Unchecking this box may fix problems with highlighting terms on some themes which manipulate the WP_Query.</td>
+                    </tr>
                 </table>
                 <div class="clear"></div>
             </div>
@@ -252,6 +260,7 @@
                 $upload_max = ini_get('upload_max_filesize') ? ini_get('upload_max_filesize') : 'N/A';
                 $post_max = ini_get('post_max_size') ? ini_get('post_max_size') : 'N/A';
                 $memory_limit = ini_get('memory_limit') ? ini_get('memory_limit') : 'N/A';
+                $max_execution_time = ini_get('max_execution_time') ? ini_get('max_execution_time') : 'N/A';
                 $cURL = function_exists('curl_version') ? 'On' : 'Off';
                 $mb_support = function_exists('mb_strtolower') ? 'On' : 'Off';
 
@@ -293,6 +302,13 @@
                         <td><?php echo $post_max; ?></td>
                         <td><?php if( cminds_units2bytes($post_max) < 1024 * 1024 * 5 ): ?>
                                 <strong>This value can be too low to import large files.</strong>
+                            <?php else: ?><span>OK</span><?php endif; ?></td>
+                    </tr>
+                    <tr>
+                        <td>PHP Max Execution Time </td>
+                        <td><?php echo $max_execution_time; ?></td>
+                        <td><?php if( $max_execution_time < 300 ): ?>
+                                <strong>This value can be too low for lengthy operations. We strongly suggest setting this value to at least 300.</strong>
                             <?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>
                     <tr>

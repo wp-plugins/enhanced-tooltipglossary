@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 2.6.6
+Stable tag: 2.6.7
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -34,14 +34,16 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 * Music - Include mp3 voice or music file for each tooltip
 * Amazon - Enhance your site with Tooltips including Amazon product recommendation
 
+**Add-Ons**
+
+* [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
+* [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
 
 **Demo & User Guide**
 
-Visit [Plugin Site](http://tooltip.cminds.com/)
-
-See basic demo of the plugin [here](http://www.cminds.com/glossary/)
-
-For more information please visit [plugin detailed User Guide](http://www.cminds.com/cm-tooltip-glossary-user-guide/).
+* Visit [Plugin Site](http://tooltip.cminds.com/)
+* See basic demo of the plugin [here](http://www.cminds.com/glossary/)
+* For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
 
 **Features**
 
@@ -178,6 +180,10 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 5. Glossary setting page in Admin
 
 == Changelog ==
+ 2.6.7 =
+* Added the menu icon
+* Added setting to disable highlighting only on the "main" WP_Query
+
 = 2.6.6 =
 * Fixed the unclosed div bug
 * Fixed the title of the Glossary Index Page when there's permalink conflict

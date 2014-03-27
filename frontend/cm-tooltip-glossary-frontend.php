@@ -52,7 +52,7 @@ class CMTooltipGlossaryFrontend
         /*
          *  We need to redirect the queries to the archive
          */
-        add_action('template_redirect', array(self::$calledClassName, 'cmtt_templateRedirect'));
+        add_action('template_redirect', array(self::$calledClassName, 'cmtt_templateRedirect'), 1);
     }
 
     /**
@@ -167,11 +167,12 @@ class CMTooltipGlossaryFrontend
         $showOnSinglePost = (is_single() && get_option('cmtt_glossaryOnPosts') == 1);
         $showOnSinglePage = (is_page() && get_option('cmtt_glossaryOnPages') == 1);
         $showOnHomepageAuthorpageEtc = (!is_page() && !is_single() && get_option('cmtt_glossaryOnlySingle') == 0);
+        $onMainQueryOnly = (get_option('cmtt_glossaryOnMainQuery') == 1 ) ? is_main_query() : TRUE;
 
         /*
          * Run the glossary parser
          */
-        if( $force || (is_main_query() && ($showOnHomepageAuthorpageEtc || $showOnSinglePage || $showOnSinglePost)) )
+        if( $force || ($onMainQueryOnly && ($showOnHomepageAuthorpageEtc || $showOnSinglePage || $showOnSinglePost)) )
         {
             $contentHash = sha1($content);
             if( !$force )
@@ -657,6 +658,7 @@ class CMTooltipGlossaryFrontend
         if( is_numeric($glossaryPageID) && is_page($glossaryPageID) && $glossaryPageID > 0 && $currentPost && $currentPost->ID == $glossaryPageID )
         {
             $content = self::cmtt_glossaryShowList($content);
+            remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
         }
         return $content;
     }
@@ -735,11 +737,6 @@ class CMTooltipGlossaryFrontend
                 $glossaryItemContent = self::cmtt_glossary_filterTooltipContent($glossaryItemContentBase, get_permalink($glossary_item));
 
                 $glossaryItemDesc = '';
-
-                if( get_option('cmtt_glossary_addSynonymsTooltip') == 1 )
-                {
-                    $glossaryItemContent .= Glossary_Synonyms::renderSynonyms($glossary_item->ID);
-                }
 
                 if( $removeLinksToTerms )
                 {
@@ -820,13 +817,15 @@ class CMTooltipGlossaryFrontend
         global $wp_query;
         $post = $wp_query->post;
 
-        if( is_single() && get_query_var('post_type') == 'glossary' && is_main_query() && 'glossary' == get_post_type() )
+        $onMainQueryOnly = (get_option('cmtt_glossaryOnMainQuery') == 1 ) ? is_main_query() : TRUE;
+
+        if( is_single() && get_query_var('post_type') == 'glossary' && $onMainQueryOnly && 'glossary' == get_post_type() )
         {
             global $post;
 
             $mainPageId = get_option('cmtt_glossaryID');
-            $addBacklink = get_option('cmtt_glossary_addBackLink', 0);
-            $addBacklinkBottom = get_option('cmtt_glossary_addBackLinkBottom', 0);
+            $addBacklink = 0;
+            $addBacklinkBottom = 0;
 
             $backlink = ($addBacklink == 1 && $mainPageId > 0) ? '<a href="' . get_permalink($mainPageId) . '" style="display:block;margin:10px 0;">' . get_option('cmtt_glossary_backLinkText') . '</a>' : '';
             $backlinkBottom = ($addBacklinkBottom == 1 && $mainPageId > 0) ? '<a href="' . get_permalink($mainPageId) . '" style="display:block;margin:10px 0;">' . get_option('cmtt_glossary_backLinkBottomText') . '</a>' : '';
