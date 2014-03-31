@@ -98,65 +98,15 @@ class CMTooltipGlossaryShared
          */
         add_option('cmtt_glossaryOnPages', 1); //Show on Pages?
         add_option('cmtt_glossaryOnPosts', 1); //Show on Posts?
-        add_option('cmtt_glossaryID', 0); //The ID of the main Glossary Page
+        add_option('cmtt_glossaryID', -1); //The ID of the main Glossary Page
         add_option('cmtt_glossaryPermalink', 'glossary'); //Set permalink name
         add_option('cmtt_glossaryOnlySingle', 0); //Show on Home and Category Pages or just single post pages?
         add_option('cmtt_glossaryFirstOnly', 0); //Search for all occurances in a post or only one?
+        add_option('cmtt_glossaryCaseSensitive', 0); //Should the terms be case sensitive
         add_option('cmtt_glossaryOnlySpaceSeparated', 1); //Search only for words separated by spaces
-        add_option('cmtt_script_in_footer', 0); //Place the scripts in the footer not the header
+        add_option('cmtt_glossaryOnMainQuery', 1); //Analyze only on "main" WP query?
+        add_option('cmtt_removeGlossaryCreateListFilter', 0); //Remove the create list filter after it's outputted?
 
-        /*
-         * Glossary page styling
-         */
-        add_option('cmtt_glossaryDoubleclickEnabled', 0);
-        add_option('cmtt_glossaryDoubleclickService', 0);
-
-        /*
-         * Glossary page styling
-         */
-        add_option('cmtt_glossaryDiffLinkClass', 0); //Use different class to style glossary list
-        add_option('cmtt_glossaryListTiles', 0); // Display glossary terms list as tiles
-        add_option('cmtt_glossaryListTermLink', 0); //Remove links from glossary index to glossary page
-        add_option('cmtt_glossary_showSearch', 1); //Show the search button on the index glossary page
-        add_option('cmtt_glossaryTagsLabel', 'Tags: '); //Label for the Tags on the index glossary page and term page
-        add_option('cmtt_glossary_SearchLabel', 'Search:'); //Label for the Search button on the index glossary page
-        add_option('cmtt_glossary_ClearLabel', '(clear)'); //Label for the clear link on the index glossary page
-        add_option('cmtt_index_letters', array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'));
-        add_option('cmtt_glossaryTooltipDesc', 0); // Display description in glossary list
-        add_option('cmtt_glossaryTooltipDescExcerpt', 0); // Display excerpt in glossary list
-        add_option('cmtt_glossaryServerSidePagination', 0); //paginate server side or client side (with alphabetical index)
-        add_option('cmtt_perPage', 0); //pagination on "glossary page" withing alphabetical navigation
-        add_option('cmtt_glossaryRunApiCalls', 0); //exclude the API calls from the glossary main page
-        add_option('cmtt_index_includeNum', 1);
-        add_option('cmtt_index_includeAll', 1);
-        add_option('cmtt_glossary_addBackLink', 1);
-        add_option('cmtt_glossary_addBackLinkBottom', 1);
-        add_option('cmtt_glossary_backLinkText', '&laquo; Back to Glossary Index');
-        add_option('cmtt_glossary_backLinkBottomText', '&laquo; Back to Glossary Index');
-        add_option('cmtt_glossaryUseTemplate', 0); //Use the attached single term template?
-        /*
-         * Related articles
-         */
-        add_option('cmtt_glossary_showRelatedArticles', 1);
-        add_option('cmtt_glossary_showRelatedArticlesCount', 5);
-        add_option('cmtt_glossary_showRelatedArticlesGlossaryCount', 5);
-        add_option('cmtt_glossary_showRelatedArticlesMerged', 0);
-        add_option('cmtt_glossary_showRelatedArticlesTitle', 'Related Articles:');
-        add_option('cmtt_glossary_showRelatedArticlesGlossaryTitle', 'Related Glossary Terms:');
-        add_option('cmtt_glossary_showRelatedArticlesPostTypesArr', array('post', 'page', 'glossary'));
-        add_option('cmtt_glossary_relatedArticlesPrefix', 'Glossary: ');
-        /*
-         * Related terms
-         */
-        add_option('cmtt_showRelatedTermsList', 1); //show the list of related terms under post/page
-        add_option('cmtt_glossary_showRelatedTermsTitle', 'Related Terms:'); //title of the "Related Terms" box
-        add_option('cmtt_glossary_relatedTermsPrefix', 'Term: '); //prefix of the "Related Terms" item
-        /*
-         * Synonyms
-         */
-        add_option('cmtt_glossary_addSynonyms', 1);
-        add_option('cmtt_glossary_addSynonymsTitle', 'Synonyms: ');
-        add_option('cmtt_glossary_addSynonymsTooltip', 0);
         /*
          * Referral
          */
@@ -164,48 +114,26 @@ class CMTooltipGlossaryShared
         add_option('cmtt_glossaryAffiliateCode', '');
 
         /*
-         * Tooltip content
+         * Glossary Index Page
          */
-        add_option('cmtt_glossaryTooltip', 1); //Use tooltips on glossary items?
-        add_option('cmtt_glossaryTooltipStripShortcode', 0); //Strip the shortcodes from glossary page before placing the tooltip?
-        add_option('cmtt_glossaryFilterTooltip', 30); //Clean the tooltip text from uneeded chars?
-        add_option('cmtt_glossaryFilterTooltipA', 0); //Clean the tooltip anchor tags
-        add_option('cmtt_glossaryLimitTooltip', 0); // Limit the tooltip length  ?
-        add_option('cmtt_glossaryTermDetailsLink', 'Term details'); // Label of the link to term's details
-        add_option('cmtt_glossaryExcerptHover', 0); //Search for all occurances in a post or only one?
-        add_option('cmtt_glossaryProtectedTags', 1); //SAviod the use of Glossary in Protected tags?
-        add_option('cmtt_glossaryCaseSensitive', 0); //Case sensitive?
-        /*
-         * Glossary link
-         */
-        add_option('cmtt_glossaryInNewPage', 0); //In New Page?
-        add_option('cmtt_glossaryTermLink', 0); //Remove links to glossary page
-        add_option('cmtt_showTitleAttribute', 1); //show HTML title attribute
+        add_option('cmtt_glossaryDiffLinkClass', 0); //Use different class to style glossary list
+        add_option('cmtt_glossaryListTiles', 0); // Display glossary terms list as tiles
 
         /*
-         * Tooltip styling
+         * Glossary Term
          */
-        add_option('cmtt_tooltipFontStyle', 'default');
-        add_option('cmtt_tooltipIsClickable', 0);
-        add_option('cmtt_tooltipLinkUnderlineStyle', 'dotted');
-        add_option('cmtt_tooltipLinkUnderlineWidth', 1);
-        add_option('cmtt_tooltipLinkUnderlineColor', '#000000');
-        add_option('cmtt_tooltipLinkColor', '#000000');
-        add_option('cmtt_tooltipLinkHoverUnderlineStyle', 'solid');
-        add_option('cmtt_tooltipLinkHoverUnderlineWidth', '1');
-        add_option('cmtt_tooltipLinkHoverUnderlineColor', '#333333');
-        add_option('cmtt_tooltipLinkHoverColor', '#333333');
-        add_option('cmtt_tooltipBackground', '#666666');
-        add_option('cmtt_tooltipForeground', '#ffffff');
-        add_option('cmtt_tooltipOpacity', 95);
-        add_option('cmtt_tooltipBorderStyle', 'none');
-        add_option('cmtt_tooltipBorderWidth', 0);
-        add_option('cmtt_tooltipBorderColor', '#000000');
-        add_option('cmtt_tooltipPositionTop', 3);
-        add_option('cmtt_tooltipPositionLeft', 23);
-        add_option('cmtt_tooltipFontSize', 13);
-        add_option('cmtt_tooltipPadding', '2px 12px 3px 7px');
-        add_option('cmtt_tooltipBorderRadius', 6);
+        add_option('cmtt_glossaryListTermLink', 0); //Remove links from glossary index to glossary page
+        add_option('cmtt_showTitleAttribute', 1); //show HTML title attribute
+        add_option('cmtt_glossaryInNewPage', 0); //In New Page?
+
+        /*
+         * Tooltip
+         */
+        add_option('cmtt_glossaryTooltip', 1); //Use tooltips on glossary items?
+        add_option('cmtt_glossaryLimitTooltip', 0); // Limit the tooltip length  ?
+        add_option('cmtt_glossaryFilterTooltip', 0); //Clean the tooltip text from uneeded chars?
+        add_option('cmtt_glossaryProtectedTags', 1); //Aviod the use of Glossary in Protected tags?
+        add_option('cmtt_glossaryExcerptHover', 0); //Search for all occurances in a post or only one?
 
         /*
          * Adding additional options
@@ -276,18 +204,12 @@ class CMTooltipGlossaryShared
 
     public function registerShortcodes()
     {
-//        add_shortcode('create_wallet_button', array(get_class(), 'getCreateWalletButton'));
-//        add_shortcode('get_transaction_wallet', array(get_class(), 'getTransactionWalletID'));
-//        add_shortcode('get_transaction_wallet_points', array(get_class(), 'getTransactionWalletPoints'));
-//        add_shortcode('cm_micropayment_checkout', array(get_class(), 'getCheckOutTemplate'));
-//        add_shortcode('cm_confirm_payment', array(get_class(), 'confirmPayment'));
-//        add_shortcode('cm_check_wallet', array(get_class(), 'getWalletData'));
+        return;
     }
 
     public function registerFilters()
     {
-//        add_filter('wallet_has_enough_points', array(get_class(), 'hasWalletEnoughPoints'));
-//        add_filter('withdraw_wallet_points', array(get_class(), 'withdrawWalletPoints'));
+        return;
     }
 
     public static function initSession()
@@ -304,7 +226,7 @@ class CMTooltipGlossaryShared
     public static function tryGenerateGlossaryIndexPage()
     {
         $glossaryIndexId = get_option('cmtt_glossaryID', -1);
-        if( $glossaryIndexId == -1 || get_post($glossaryIndexId) === null )
+        if( $glossaryIndexId == -1 )
         {
             $id = wp_insert_post(array(
                 'post_author' => get_current_user_id(),

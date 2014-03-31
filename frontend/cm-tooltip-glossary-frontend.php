@@ -29,9 +29,8 @@ class CMTooltipGlossaryFrontend
         self::$jsPath = CMTT_PLUGIN_URL . 'frontend/assets/js/';
         self::$viewsPath = CMTT_PLUGIN_DIR . 'frontend/views/';
 
-        add_action('wp_enqueue_scripts', array(self::$calledClassName, 'cmtt_glossary_js'));
         add_action('wp_print_styles', array(self::$calledClassName, 'cmtt_glossary_css'));
-        add_action('wp_enqueue_scripts', array(self::$calledClassName, 'cmtt_glossary_createList_scripts'));
+        add_action('wp_enqueue_scripts', array(self::$calledClassName, 'cmtt_glossary_js'));
 
         /*
          * FILTERS
@@ -56,40 +55,33 @@ class CMTooltipGlossaryFrontend
     }
 
     /**
-     * Add tooltip stylesheet & javascript to page first
+     * Adds tooltip javascript
      */
     public static function cmtt_glossary_js()
     {
         wp_enqueue_script('tooltip-js', self::$jsPath . 'tooltip.js', array('jquery'), false);
-        self::cmtt_insert_php_js();
-    }
 
-    /**
-     * Localize (add options) the tooltip script
-     */
-    public static function cmtt_insert_php_js()
-    {
         $tooltipData = array();
 
         $tooltipArgs = array(
-            'clickable'    => (int) get_option('cmtt_tooltipIsClickable', 0),
-            'top'          => (int) get_option('cmtt_tooltipPositionTop', 3),
-            'left'         => (int) get_option('cmtt_tooltipPositionLeft', 23),
-            'endalpha'     => (int) get_option('cmtt_tooltipOpacity', 95),
-            'borderStyle'  => get_option('cmtt_tooltipBorderStyle', 'none'),
-            'borderWidth'  => get_option('cmtt_tooltipBorderWidth', 0) . 'px',
-            'borderColor'  => get_option('cmtt_tooltipBorderColor', '#000'),
-//            'background'   => get_option('cmtt_tooltipBackground'),
-//            'foreground'   => get_option('cmtt_tooltipForeground'),
-            'fontSize'     => get_option('cmtt_tooltipFontSize', 13) . 'px',
-            'padding'      => get_option('cmtt_tooltipPadding', '2px 12px 3px 7px'),
-            'borderRadius' => get_option('cmtt_tooltipBorderRadius', 6) . 'px'
+            'clickable'    => 0, //(int) get_option('cmtt_tooltipIsClickable', 0),
+            'top'          => 3, //(int) get_option('cmtt_tooltipPositionTop', 3),
+            'left'         => 23, //(int) get_option('cmtt_tooltipPositionLeft', 23),
+            'endalpha'     => 95, //(int) get_option('cmtt_tooltipOpacity', 95),
+            'borderStyle'  => 'none', //get_option('cmtt_tooltipBorderStyle', 'none'),
+            'borderWidth'  => '0px', //get_option('cmtt_tooltipBorderWidth', 0) . 'px',
+            'borderColor'  => '#000', //get_option('cmtt_tooltipBorderColor', '#000'),
+            'fontSize'     => '13px', //get_option('cmtt_tooltipFontSize', 13) . 'px',
+            'padding'      => '2px 12px 3px 7px', //get_option('cmtt_tooltipPadding', '2px 12px 3px 7px'),
+            'borderRadius' => '6px', //get_option('cmtt_tooltipBorderRadius', 6) . 'px'
         );
 
         $tooltipData['tooltip'] = $tooltipArgs;
         $tooltipData['ajaxurl'] = admin_url('admin-ajax.php');
 
         wp_localize_script('tooltip-js', 'cmtt_data', $tooltipData);
+
+        self::cmtt_glossary_createList_scripts();
     }
 
     /**
@@ -109,6 +101,7 @@ class CMTooltipGlossaryFrontend
         if( is_numeric($glossaryPageID) && is_page($glossaryPageID) )
         {
             wp_enqueue_script('jquery-listnav', self::$jsPath . 'jquery.listnav.glossary.js', array('jquery'));
+            wp_enqueue_script('listnav-js', self::$jsPath . 'listnav.js', array('jquery', 'jquery-listnav'));
             wp_enqueue_style('jquery-listnav-style', self::$cssPath . 'jquery.listnav.css');
 
             $listnavArgs = array(
@@ -118,7 +111,7 @@ class CMTooltipGlossaryFrontend
             $tooltipData['listnav'] = $listnavArgs;
             $tooltipData['list_id'] = 'glossaryList' . (isset($_POST['isshortcode']) && isset($_POST["gcat_id"]) ? '_' . $_POST["gcat_id"] : '');
 
-            wp_localize_script('tooltip-js', 'cmtt_listnav_data', $tooltipData);
+            wp_localize_script('listnav-js', 'cmtt_listnav_data', $tooltipData);
         }
     }
 
@@ -266,8 +259,7 @@ class CMTooltipGlossaryFrontend
                     {
                         continue;
                     }
-                    $glossary_title = preg_quote(str_replace('\'', '&#39;', htmlspecialchars(trim($glossary_item->post_title), ENT_QUOTES, 'UTF-8')), '/');
-
+                    $glossary_title = preg_quote(str_replace('\'', '&#39;', htmlspecialchars(trim(get_the_title($glossary_item->ID)), ENT_QUOTES, 'UTF-8')), '/');
                     $addition = '';
 
                     $glossaryIndexArrKey = $glossary_title . $addition;
@@ -358,7 +350,7 @@ class CMTooltipGlossaryFrontend
              * Base query NEVER parse in scripts
              */
             $query = '//text()[not(ancestor::script)]';
-            if(get_option('cmtt_glossaryProtectedTags') == 1)
+            if( get_option('cmtt_glossaryProtectedTags') == 1 )
             {
                 $query .= '[not(ancestor::a)][not(ancestor::pre)][not(ancestor::object)][not(ancestor::h1)][not(ancestor::h2)][not(ancestor::h3)][not(ancestor::h4)][not(ancestor::h5)][not(ancestor::h6)]';
             }
@@ -658,7 +650,11 @@ class CMTooltipGlossaryFrontend
         if( is_numeric($glossaryPageID) && is_page($glossaryPageID) && $glossaryPageID > 0 && $currentPost && $currentPost->ID == $glossaryPageID )
         {
             $content = self::cmtt_glossaryShowList($content);
-            remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
+            $removeGlossaryIndexFilterAfterOutput = (get_option('cmtt_removeGlossaryCreateListFilter', 0) == 1);
+            if( $removeGlossaryIndexFilterAfterOutput )
+            {
+                remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
+            }
         }
         return $content;
     }
@@ -884,8 +880,8 @@ class CMTooltipGlossaryFrontend
         $glossaryPageID = get_option('cmtt_glossaryID');
         $glossaryPermalink = get_option('cmtt_glossaryPermalink');
 
-        $otherPageWithSamePermalink = is_page() && $wp_query->queried_object_id != $glossaryPageID && $wp_query->query['pagename'] === $glossaryPermalink;
-        $archiveOrHome = (is_archive() || is_home()) && !is_feed() && $wp_query->query['post_type'] == 'glossary';
+        $otherPageWithSamePermalink = isset($wp_query->queried_object_id) && $wp_query->queried_object_id != $glossaryPageID && isset($wp_query->query['pagename']) && $wp_query->query['pagename'] === $glossaryPermalink;
+        $archiveOrHome = (is_archive() || is_home()) && !is_feed() && isset($wp_query->query['post_type']) && $wp_query->query['post_type'] == 'glossary';
 
         if( $otherPageWithSamePermalink || $archiveOrHome )
         {

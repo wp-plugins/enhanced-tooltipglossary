@@ -6,7 +6,6 @@
 <form method="post">
     <?php wp_nonce_field('update-options'); ?>
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="cmtt_glossaryDoubleclickEnabled, cmtt_glossaryDoubleclickService, cmtt_index_includeAll, cmtt_glossaryID,cmtt_glossaryOnlySingle,cmtt_glossary_showRelatedTermsTitle,cmtt_glossaryOnPages,cmtt_glossaryTooltip,cmtt_glossaryDiffLinkClass,cmtt_glossaryTooltipDesc,cmtt_glossaryTooltipDescExcerpt,cmtt_glossaryRunApiCalls,cmtt_glossaryListTiles,cmtt_glossaryPermalink,cmtt_glossaryFirstOnly,cmtt_glossaryOnlySpaceSeparated,cmtt_glossaryLimitTooltip,cmtt_glossaryTermDetailsLink,cmtt_glossaryFilterTooltip,cmtt_glossaryFilterTooltipA,cmtt_glossaryTermLink,cmtt_glossaryListTermLink,cmtt_glossary_SearchLabel,cmtt_glossary_showSearch,cmtt_glossaryExcerptHover,cmtt_glossaryProtectedTags,cmtt_glossaryCaseSensitive,cmtt_tooltipFeaturedImageSize,cmtt_glossaryInNewPage,cmtt_showTitleAttribute,cmtt_perPage,cmtt_tooltipFontStyle,cmtt_showRelatedTermsList,cmtt_tooltipIsClickable,cmtt_tooltipBackground,cmtt_tooltipForeground,cmtt_tooltipPadding,cmtt_tooltipFontSize,cmtt_tooltipPositionTop,cmtt_tooltipPositionLeft,cmtt_tooltipOpacity,cmtt_tooltipBorderStyle,cmtt_tooltipBorderWidth,cmtt_tooltipBorderWidth,cmtt_tooltipBorderColor,cmtt_tooltipBorderRadius,cmtt_tooltipLinkUnderlineStyle,cmtt_tooltipLinkUnderlineWidth,cmtt_tooltipLinkUnderlineColor,cmtt_tooltipLinkColor,cmtt_tooltipLinkHoverUnderlineStyle,cmtt_tooltipLinkHoverUnderlineWidth,cmtt_tooltipLinkHoverUnderlineColor,cmtt_tooltipLinkHoverColor,cmtt_glossaryServerSidePagination,cmtt_glossary_addBackLink,cmtt_glossary_showRelatedArticles,cmtt_glossary_showRelatedArticlesCount,cmtt_glossary_showRelatedArticlesTitle,cmtt_glossary_showRelatedArticlesPostTypesArr,cmtt_glossary_addSynonyms,cmtt_glossary_addSynonymsTitle,cmtt_glossary_addSynonymsTooltip,cmtt_glossary_relatedArticlesPrefix,cmtt_glossary_addBackLinkBottom,cmtt_glossary_backLinkText,cmtt_glossary_backLinkBottomText,cmtt_glossaryUseTemplate,cmtt_glossary_showRelatedArticlesMerged,cmtt_glossary_showRelatedArticlesGlossaryCount,cmtt_glossary_showRelatedArticlesGlossaryTitle,cmtt_tooltip3RD_AmazonEnabled, cmtt_tooltip3RD_AmazonApiKey, cmtt_tooltip3RD_AmazonCategories" />
     <br/><br/>
     <p>
         <strong>Supported Shortcodes:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
@@ -33,7 +32,14 @@
         <li>Coming Soon - Glossary Server (share your glossary items)</li>
     </ul>
     <p>
-        <strong>Link to the Glossary index page:</strong> <a href="<?php echo home_url('/' . get_option('cmtt_glossaryPermalink') . '/'); ?>" target="_blank"><?php echo home_url('/' . get_option('cmtt_glossaryPermalink') . '/'); ?></a>
+        <?php
+        $glossaryIndexPageEditLink = admin_url('post.php?post=' . get_option('cmtt_glossaryID') . '&action=edit');
+        $glossaryIndexPageLink = get_page_link(get_option('cmtt_glossaryID'));
+        ?>
+        <strong>Link to the Glossary Index Page:</strong> <a href="<?php echo $glossaryIndexPageLink; ?>" target="_blank"><?php echo $glossaryIndexPageLink; ?></a> (<a title="Edit the Glossary Index Page" href="<?php echo $glossaryIndexPageEditLink; ?>">edit</a>)
+    </p>
+    <p>
+        <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))).'sample-term' ?>
     </p>
     <?php
 // check permalink settings
@@ -70,9 +76,14 @@
                         <td colspan="2" class="cmtt_field_help_container">Select the page ID of the page you would like to use as the Glossary Index Page. If you select "-None-" terms will still be highlighted in relevant posts/pages but there won't be a central list of terms (Glossary Index Page). If you check the checkbox a new page would be generated automatically. WARNING! You have to manually remove old pages!</td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row">Glossary Index Page Permalink</th>
+                        <th scope="row">Glossary Terms Permalink</th>
                         <td><input type="text" name="cmtt_glossaryPermalink" value="<?php echo get_option('cmtt_glossaryPermalink'); ?>" /></td>
-                        <td colspan="2" class="cmtt_field_help_container">Enter the name you would like to use for the permalink to the Glossary Index Page and glossary terms.  By default this is glossary, however you can update this if you wish. If you are using a parent please indicate this in path eg. /path/glossary, otherwise just leave glossary or the name you have chosen. WARNING! If you already use this permalink the plugins behavior may be unpredictable.</td>
+                        <td colspan="2" class="cmtt_field_help_container">Enter the name you would like to use for the permalink to the Glossary Terms.
+                            By default this is "glossary", however you can update this if you wish.
+                            If you are using a parent please indicate this in path eg. "/path/glossary", otherwise just leave glossary or the name you have chosen.
+                            <br/><br/>
+                            The permalink of the Glossary Index Page will change automatically, but you can change it manually (if you like) using the "edit" link near the "Link to the Glossary Index Page" above.
+                            <br/><br/>WARNING! If you already use this permalink the plugin's behavior may be unpredictable.</td>
                     </tr>
                     <tr valign="top">
                         <th scope="row">Only show terms on single posts/pages (not Homepage, authors etc.)?</th>
@@ -119,12 +130,28 @@
                         <td colspan="2" class="cmtt_field_help_container">Select this option if you want glossary terms to be case-sensitive.</td>
                     </tr>
                     <tr valign="top">
-                        <th scope="row">Only higlight on "main" WP query?</th>
-                        <td><input type="checkbox" name="cmtt_glossaryOnMainQuery" <?php checked(true, get_option('cmtt_glossaryOnMainQuery')); ?> value="1" /></td>
+                        <th scope="row">Only highlight on "main" WP query?</th>
+                        <td>
+                            <input type="hidden" name="cmtt_glossaryOnMainQuery" value="0" />
+                            <input type="checkbox" name="cmtt_glossaryOnMainQuery" <?php checked(1, get_option('cmtt_glossaryOnMainQuery')); ?> value="1" />
+                        </td>
                         <td colspan="2" class="cmtt_field_help_container">
                             <strong>Warning: Don't change this setting unless you know what you're doing</strong><br/>
                             Select this option if you wish to only highlight glossary terms on main glossary query.
                             Unchecking this box may fix problems with highlighting terms on some themes which manipulate the WP_Query.</td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Run the function outputting the Glossary Index Page only once</th>
+                        <td>
+                            <input type="hidden" name="cmtt_removeGlossaryCreateListFilter" value="0" />
+                            <input type="checkbox" name="cmtt_removeGlossaryCreateListFilter" <?php checked(1, get_option('cmtt_removeGlossaryCreateListFilter')); ?> value="1" />
+                        </td>
+                        <td colspan="2" class="cmtt_field_help_container">
+                            <strong>Warning: Don't change this setting unless you know what you're doing</strong><br/>
+                            Select this option if you wish to remove the filter responsible for outputting the Glossary Index. <br/>
+                            When this option is selected the function responsible for rendering the Glossary Index page (hooked to "the_content" filter) <br/>
+                            will run only once and then it will be removed. It's known that this conflicts with some translation plugins (e.g. qTranslate).
+                        </td>
                     </tr>
                 </table>
                 <div class="clear"></div>
@@ -143,7 +170,9 @@
                     </tr>
                     <tr valign="top">
                         <th scope="row" valign="middle" align="left" ><?php _e('Affiliate Code', 'cm-tooltip-ecommerce'); ?>:</th>
-                        <td><input type="text" name="cmtt_glossaryAffiliateCode" value="<?php echo get_option('cmtt_glossaryAffiliateCode'); ?>" placeholder="<?php _e('Affiliate Code', 'cm-tooltip-ecommerce'); ?>"/></td>
+                        <td>
+                            <input type="text" name="cmtt_glossaryAffiliateCode" value="<?php echo get_option('cmtt_glossaryAffiliateCode'); ?>" placeholder="<?php _e('Affiliate Code', 'cm-tooltip-ecommerce'); ?>"/>
+                        </td>
                         <td colspan="2" class="cmtt_field_help_container"><?php _e('Please add your affiliate code in here.', 'cm-tooltip-ecommerce'); ?></td>
                     </tr>
                 </table>
@@ -260,7 +289,7 @@
                 $upload_max = ini_get('upload_max_filesize') ? ini_get('upload_max_filesize') : 'N/A';
                 $post_max = ini_get('post_max_size') ? ini_get('post_max_size') : 'N/A';
                 $memory_limit = ini_get('memory_limit') ? ini_get('memory_limit') : 'N/A';
-                $max_execution_time = ini_get('max_execution_time') ? ini_get('max_execution_time') : 'N/A';
+                $max_execution_time = (int)ini_get('max_execution_time');
                 $cURL = function_exists('curl_version') ? 'On' : 'Off';
                 $mb_support = function_exists('mb_strtolower') ? 'On' : 'Off';
 
@@ -307,7 +336,7 @@
                     <tr>
                         <td>PHP Max Execution Time </td>
                         <td><?php echo $max_execution_time; ?></td>
-                        <td><?php if( $max_execution_time < 300 ): ?>
+                        <td><?php if( $max_execution_time < 300 && $max_execution_time !== 0 ): ?>
                                 <strong>This value can be too low for lengthy operations. We strongly suggest setting this value to at least 300.</strong>
                             <?php else: ?><span>OK</span><?php endif; ?></td>
                     </tr>

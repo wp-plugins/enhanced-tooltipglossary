@@ -186,7 +186,7 @@ CM_Tooltip.glossaryTip = null;
         if (this.length)
         {
             return this.each(function () {
-                var tooltipContent, $inputCopy;
+                var tooltipContent;
 
                 tooltipContent = $(this).data('tooltip');
 
@@ -213,12 +213,5 @@ CM_Tooltip.glossaryTip = null;
                 $("[data-tooltip]").glossaryTooltip(window.cmtt_data.tooltip);
             }
         });
-
-        if (window.cmtt_listnav_data !== undefined && window.cmtt_listnav_data.listnav && window.cmtt_listnav_data.list_id) {
-            $(document).ready(function ($) {
-                $("#" + window.cmtt_listnav_data.list_id).listnav(window.cmtt_listnav_data.listnav);
-            });
-        }
-
     });
 }(jQuery));

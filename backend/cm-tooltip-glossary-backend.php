@@ -53,7 +53,7 @@ class CMTooltipGlossaryBackend
         global $submenu;
         $current_user = wp_get_current_user();
 
-        add_menu_page('Glossary', CMTT_NAME, 'edit_posts', CMTT_MENU_OPTION, 'edit.php?post_type=glossary', self::$cssPath.'images/cm-glossary-tooltip-icon.png');
+        add_menu_page('Glossary', CMTT_NAME, 'edit_posts', CMTT_MENU_OPTION, 'edit.php?post_type=glossary', self::$cssPath . 'images/cm-glossary-tooltip-icon.png');
 
         add_submenu_page(CMTT_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
         add_submenu_page(CMTT_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'edit_posts', CMTT_SETTINGS_OPTION, array(self::$calledClassName, 'cmtt_admin_options'));
@@ -74,123 +74,64 @@ class CMTooltipGlossaryBackend
     public static function cmtt_admin_options()
     {
         $_POST = array_map('stripslashes_deep', $_POST);
+        $post = $_POST;
+
         CMTooltipGlossaryShared::tryResetOldOptions();
+        CMTooltipGlossaryShared::tryGenerateGlossaryIndexPage();
 
         wp_enqueue_script('jquery-ui-tabs');
         wp_enqueue_style('jquery-ui-tabs-css', self::$cssPath . 'jquery-ui-1.10.3.custom.css');
 
-        if( isset($_POST["cmtt_glossarySave"]) || isset($_POST['cmtt_glossaryRelatedRefresh']) )
+        if( isset($post["cmtt_glossarySave"]) || isset($post['cmtt_glossaryRelatedRefresh']) )
         {
             $enqueeFlushRules = false;
             /*
              * Update the page options
              */
-            update_option('cmtt_glossaryID', $_POST["cmtt_glossaryID"]);
+            update_option('cmtt_glossaryID', $post["cmtt_glossaryID"]);
             CMTooltipGlossaryShared::tryGenerateGlossaryIndexPage();
 
-            if( $_POST["cmtt_glossaryPermalink"] !== get_option('cmtt_glossaryPermalink') )
+            if( $post["cmtt_glossaryPermalink"] !== get_option('cmtt_glossaryPermalink') )
             {
                 /*
                  * Update glossary post permalink
                  */
                 $glossaryPost = array(
-                    'ID'        => $_POST["cmtt_glossaryID"],
-                    'post_name' => $_POST["cmtt_glossaryPermalink"]
+                    'ID'        => $post["cmtt_glossaryID"],
+                    'post_name' => $post["cmtt_glossaryPermalink"]
                 );
                 wp_update_post($glossaryPost);
                 $enqueeFlushRules = true;
             }
 
-            update_option('cmtt_glossaryPermalink', $_POST["cmtt_glossaryPermalink"]);
+            update_option('cmtt_glossaryPermalink', $post["cmtt_glossaryPermalink"]);
 
             if( $enqueeFlushRules )
             {
                 self::cmtt_flush_rewrite_rules();
             }
 
-            $options_names = array('cmtt_glossaryOnMainQuery', 'cmtt_glossaryOnlySingle', 'cmtt_glossaryOnPages', 'cmtt_glossaryOnPosts', 'cmtt_glossaryTooltip', 'cmtt_glossaryTooltipStripShortcode',
-                'cmtt_glossaryDiffLinkClass', 'cmtt_glossaryTooltipDesc', 'cmtt_glossaryTooltipDescExcerpt', 'cmtt_glossaryRunApiCalls', 'cmtt_glossaryListTiles', 'cmtt_glossaryFirstOnly', 'cmtt_glossaryOnlySpaceSeparated',
-                'cmtt_script_in_footer', 'cmtt_glossaryLimitTooltip', 'cmtt_glossaryTermDetailsLink', 'cmtt_glossaryFilterTooltip', 'cmtt_glossaryFilterTooltipA',
-                'cmtt_glossaryTermLink', 'cmtt_glossaryListTermLink', 'cmtt_glossary_showSearch', 'cmtt_glossary_SearchLabel', 'cmtt_glossaryTagsLabel', 'cmtt_glossary_ClearLabel',
-                'cmtt_glossaryExcerptHover', 'cmtt_glossaryProtectedTags', 'cmtt_glossaryCaseSensitive', 'cmtt_tooltipFeaturedImageSize',
-                'cmtt_glossaryInNewPage', 'cmtt_showTitleAttribute', 'cmtt_showRelatedTermsList', 'cmtt_glossary_showRelatedTermsTitle', 'cmtt_glossary_relatedTermsPrefix', 'cmtt_perPage', 'cmtt_tooltipBackground',
-                'cmtt_tooltipForeground', 'cmtt_tooltipPadding', 'cmtt_tooltipFontSize', 'cmtt_tooltipIsClickable',
-                'cmtt_tooltipPositionTop', 'cmtt_tooltipPositionLeft', 'cmtt_tooltipOpacity',
-                'cmtt_tooltipBorderStyle', 'cmtt_tooltipBorderWidth', 'cmtt_tooltipBorderWidth',
-                'cmtt_tooltipBorderColor', 'cmtt_tooltipBorderRadius', 'cmtt_tooltipFontStyle', 'cmtt_tooltipLinkUnderlineStyle',
-                'cmtt_tooltipLinkUnderlineWidth', 'cmtt_tooltipLinkUnderlineColor', 'cmtt_tooltipLinkColor',
-                'cmtt_tooltipLinkHoverUnderlineStyle', 'cmtt_tooltipLinkHoverUnderlineWidth',
-                'cmtt_tooltipLinkHoverUnderlineColor', 'cmtt_tooltipLinkHoverColor', 'cmtt_glossaryServerSidePagination',
-                'cmtt_glossary_addBackLink', 'cmtt_glossary_addBackLinkBottom', 'cmtt_glossary_backLinkText', 'cmtt_glossary_backLinkBottomText', 'cmtt_glossaryUseTemplate', 'cmtt_glossary_showRelatedArticles', 'cmtt_glossary_showRelatedArticlesCount',
-                'cmtt_glossary_showRelatedArticlesTitle', 'cmtt_glossary_showRelatedArticlesPostTypesArr',
-                'cmtt_glossary_addSynonymsTooltip', 'cmtt_glossary_addSynonyms', 'cmtt_glossary_addSynonymsTitle', 'cmtt_glossaryReferral', 'cmtt_glossaryAffiliateCode',
-                'cmtt_tooltip3RDGoogleEnabled', 'cmtt_tooltip3RDGoogleTerm', 'cmtt_tooltip3RDGoogleTogether', 'cmtt_tooltip3RDGoogleApiKey', 'cmtt_tooltip3RDGoogleSource', 'cmtt_tooltip3RDGoogleTarget',
-                'cmtt_glossary_relatedArticlesPrefix', 'cmtt_index_letters', 'cmtt_index_includeNum', 'cmtt_index_includeAll', 'cmtt_glossary_showRelatedArticlesMerged', 'cmtt_glossary_showRelatedArticlesGlossaryCount', 'cmtt_glossary_showRelatedArticlesGlossaryTitle',
-                'cmtt_tooltip3RD_MWDictionaryEnabled', 'cmtt_tooltip3RD_MWDictionaryApiKey', 'cmtt_tooltip3RD_MWThesaurusEnabled', 'cmtt_tooltip3RD_MWThesaurusApiKey',
-                'cmtt_tooltip3RD_MWDictionaryTooltip', 'cmtt_tooltip3RD_MWDictionaryTerm', 'cmtt_tooltip3RD_MWThesaurusTooltip', 'cmtt_tooltip3RD_MWThesaurusTerm');
+            unset($post['cmtt_glossaryID'], $post['cmtt_glossaryPermalink'], $post['cmtt_glossarySave']);
+            $options_names = array_filter(array_keys($post), function($k){ return strpos($k, 'cmtt_') === 0; });
 
+            /*
+             * Add the option_names which have to be updated added with other plugins
+             */
             $options_names = apply_filters('cmtt_thirdparty_option_names', $options_names);
 
             foreach($options_names as $option_name)
             {
-                if( !isset($_POST[$option_name]) )
+                if( $option_name == 'cmtt_index_letters' )
                 {
-//                    if( strpos($option_name, 'tooltip3RD') === FALSE )
-//                    {
-//                        delete_option($option_name);
-//                    }
+                    $optionValue = explode(',', $post[$option_name]);
                 }
                 else
                 {
-                    if( $option_name == 'cmtt_index_letters' )
-                    {
-                        $optionValue = explode(',', $_POST[$option_name]);
-                    }
-                    else
-                    {
-                        $optionValue = trim($_POST[$option_name]);
-                    }
-                    update_option($option_name, $optionValue);
+                    $optionValue = trim($post[$option_name]);
                 }
-            }
-            /*
-             * Added code to update replacements while updating other options
-             */
-            if( isset($_POST['cmtt_glossary_from']) && isset($_POST['cmtt_glossary_to']) && isset($_POST['cmtt_glossary_case']) )
-            {
-                if( is_array($_POST['cmtt_glossary_from']) && is_array($_POST['cmtt_glossary_to']) && is_array($_POST['cmtt_glossary_case']) )
-                {
-                    $replacement_from = $_POST['cmtt_glossary_from'];
-                    $replacement_to = $_POST['cmtt_glossary_to'];
-                    $replacement_case = $_POST['cmtt_glossary_case'];
-                    $repl_array = array();
-                    foreach($replacement_from as $key => $value)
-                    {
-                        if( $replacement_from[$key] != '' && $replacement_to[$key] != '' )
-                        {
-                            $repl_array[$key] = array('from' => $replacement_from[$key],
-                                'to'   => $replacement_to[$key],
-                                'case' => (isset($replacement_case[$key]) ? 1 : 0));
-                        }
-                    }
-                    update_option('cmtt_glossary_replacements', $repl_array);
-                }
+                update_option($option_name, $optionValue);
             }
         }
-
-        $messages = '';
-        if( isset($_POST['cmtt_glossaryRelatedRefresh']) )
-        {
-            CMTT_Related::crawlArticles();
-            $messages = 'Related Articles Index has been updated';
-        }
-        if( isset($_POST['cmtt_tooltip3RD_MWFlushcache']) )
-        {
-            CMTT_Mw_API::flushDatabase();
-            $messages = '3rd party definitions cache database has been flushed';
-        }
-
-        $glossary_path = plugin_dir_path(__FILE__);
 
         self::cmtt_admin_settings();
     }
@@ -358,7 +299,7 @@ class CMTooltipGlossaryBackend
                 $isNotSubPage = $isExternalPage || strpos($item[2], '.php') !== FALSE;
                 $url = $isNotSubPage ? $slug : get_admin_url(null, 'admin.php?page=' . $slug);
                 $target = $isExternalPage ? '_blank' : '';
-                $submenus[$item[0]] = '<a href="' . $url . '" target="'.$target.'" class="' . ($isCurrent ? 'current' : '') . '">' . $item[0] . '</a>';
+                $submenus[$item[0]] = '<a href="' . $url . '" target="' . $target . '" class="' . ($isCurrent ? 'current' : '') . '">' . $item[0] . '</a>';
             }
         }
         return $submenus;
