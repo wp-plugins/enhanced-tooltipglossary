@@ -112,7 +112,12 @@ class CMTooltipGlossaryBackend
             }
 
             unset($post['cmtt_glossaryID'], $post['cmtt_glossaryPermalink'], $post['cmtt_glossarySave']);
-            $options_names = array_filter(array_keys($post), function($k){ return strpos($k, 'cmtt_') === 0; });
+
+            function cmtt_get_the_option_names($k)
+            {
+                return strpos($k, 'cmtt_') === 0;
+            }
+            $options_names = array_filter(array_keys($post), 'cmtt_get_the_option_names');
 
             /*
              * Add the option_names which have to be updated added with other plugins

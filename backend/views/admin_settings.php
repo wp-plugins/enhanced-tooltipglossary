@@ -39,7 +39,7 @@
         <strong>Link to the Glossary Index Page:</strong> <a href="<?php echo $glossaryIndexPageLink; ?>" target="_blank"><?php echo $glossaryIndexPageLink; ?></a> (<a title="Edit the Glossary Index Page" href="<?php echo $glossaryIndexPageEditLink; ?>">edit</a>)
     </p>
     <p>
-        <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))).'sample-term' ?>
+        <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))) . 'sample-term' ?>
     </p>
     <?php
 // check permalink settings
@@ -289,7 +289,7 @@
                 $upload_max = ini_get('upload_max_filesize') ? ini_get('upload_max_filesize') : 'N/A';
                 $post_max = ini_get('post_max_size') ? ini_get('post_max_size') : 'N/A';
                 $memory_limit = ini_get('memory_limit') ? ini_get('memory_limit') : 'N/A';
-                $max_execution_time = (int)ini_get('max_execution_time');
+                $max_execution_time = (int) ini_get('max_execution_time');
                 $cURL = function_exists('curl_version') ? 'On' : 'Off';
                 $mb_support = function_exists('mb_strtolower') ? 'On' : 'Off';
 

@@ -684,13 +684,12 @@ class CMTooltipGlossaryFrontend
         $content .= '<div class="glossary-container">';
 
         $args = array(
-            'post_type'   => 'glossary',
-            'post_status' => 'publish',
-            'orderby'     => 'title',
-            'order'       => 'ASC',
+            'post_type'      => 'glossary',
+            'post_status'    => 'publish',
+            'orderby'        => 'title',
+            'order'          => 'ASC',
+            'posts_per_page' => 500
         );
-
-        $args['nopaging'] = true;
 
         ob_start();
         ?>
