@@ -18,15 +18,16 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 
 [youtube http://www.youtube.com/watch?v=WN3HLZ6ZuBM]
 
-
+> #### Plugin Site
+> * Visit [Plugin Site](http://tooltip.cminds.com/)
+>
 > #### Add-Ons
 >
 > * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
 > * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
-
+>
 > #### Demo & User Guide
 >
-> * Visit [Plugin Site](http://tooltip.cminds.com/)
 > * See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 > * For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
 
