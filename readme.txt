@@ -18,6 +18,18 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 
 [youtube http://www.youtube.com/watch?v=WN3HLZ6ZuBM]
 
+
+> #### Add-Ons
+>
+> * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
+> * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
+
+> #### Demo & User Guide
+>
+> * Visit [Plugin Site](http://tooltip.cminds.com/)
+> * See basic demo of the plugin [here](http://www.cminds.com/glossary/)
+> * For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
+
 **Use-Cases**
 
 * Dictionary - Creates a dictionary of specifically used terms on your site.
@@ -34,17 +46,6 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 * Music - Include mp3 voice or music file for each tooltip
 * Amazon - Enhance your site with Tooltips including Amazon product recommendation
 
-> #### Add-Ons
->
-> * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
-> * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
-
-> #### Demo & User Guide
->
-> * Visit [Plugin Site](http://tooltip.cminds.com/)
-> * See basic demo of the plugin [here](http://www.cminds.com/glossary/)
-> * For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
-
 **Basic Features**
 
 * Automatically generates a Glossary index of terms. [Example](http://www.cminds.com/glossary/)
@@ -59,7 +60,7 @@ CM Tooltip creates a glossary index with all terms used. [ Visit Plugin Site](ht
 * Controls the settings in cases where the Tooltip appears more than once.
 * Supports UTF-8
 
-> #### Pro Version Features**
+> #### Pro Version Features
 >
 > [Pro Version](http://tooltip.cminds.com/)
 > The CM Tooltip Pro version adds a layer of powerful features to the Super Tooltip Glossary plugin.
