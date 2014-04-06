@@ -9,7 +9,6 @@ Stable tag: 2.6.9
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
-
 == Description ==
 
 CM Glossary Tooltip is a plugin for WordPress that enables you to parse posts or pages for defined glossary terms, by adding links to a glossary term page that contains the definition of the term used.
@@ -20,16 +19,28 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 
 > #### Plugin Site
 > * Visit [Plugin Site](http://tooltip.cminds.com/)
->
+> * [Pro Version Detailed Feature List](http://tooltip.cminds.com/features)
+
+---
+ 
 > #### Add-Ons
 >
 > * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
 > * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
->
+
+---
+ 
 > #### Demo & User Guide
 >
 > * See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 > * For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
+
+---
+ 
+> #### Follow Us
+> [Blog](http://plugin.cminds.com/blog/) | [Twitter](http://twitter.com/cmplugins)  | [Google+](https://plus.google.com/108513627228464018583/) | [LinkedIn](https://www.linkedin.com/company/creativeminds) | [YouTube](https://www.youtube.com/user/cmindschannel) | [Pinterest](http://www.pinterest.com/cmplugins/)
+
+---
 
 **Use-Cases**
 
@@ -63,8 +74,8 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 
 > #### Pro Version Features
 >
-> [Pro Version](http://tooltip.cminds.com/)
-> The CM Tooltip Pro version adds a layer of powerful features to the Super Tooltip Glossary plugin.
+> [Pro Version Detailed Feature List](http://tooltip.cminds.com/features)
+>
 > 
 > **Pro Version Features - Content API's**
 >
