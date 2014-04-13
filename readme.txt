@@ -20,6 +20,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 > #### Plugin Site
 > * Visit [Plugin Site](http://tooltip.cminds.com/)
 > * [Pro Version Detailed Feature List](http://tooltip.cminds.com/features)
+> * [Installation Guide](http://tooltip.cminds.com/cm-tooltip-guide-initial-installation-instructions/)
 
 ---
  
