@@ -34,6 +34,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 >
 > * See basic demo of the plugin [here](http://www.cminds.com/glossary/)
 > * For more information please visit [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/).
+> * [Infographic](http://tooltip.cminds.com/wp-content/uploads/features/infographic1.png).
 
 ---
  
