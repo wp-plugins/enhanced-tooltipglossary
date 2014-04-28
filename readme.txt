@@ -200,5 +200,5 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 
 == Changelog ==
 
-> [View Release Notes in Tooltip Glossary Plugin Site](http://tooltip.cminds.com/release-notes/)
+> [View Release Notes in Tooltip Glossary Plugin Site](http://tooltip.cminds.com/cm-tooltip-free-edition-release-notes/)
 >
