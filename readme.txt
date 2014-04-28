@@ -150,7 +150,7 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 > [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/)
 >
 
-1. Upload the plugin folder to the `/wp-content/plugins/` directory
+1. Upload the plugin folder to the /wp-content/plugins/ directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Define your glossary terms under the glossary menu item in the administration interface.  The title of the page should be the term.  The body content should be the definition.
 4. Creates a main Glossary page (example "Glossary") with no body content, if you so wish. If you do not create this page then your terms will still be highlighted, but without a central listing page of all your terms.
