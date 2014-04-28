@@ -147,6 +147,9 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 
 == Installation ==
 
+> [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/)
+>
+
 1. Upload the plugin folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Define your glossary terms under the glossary menu item in the administration interface.  The title of the page should be the term.  The body content should be the definition.
@@ -157,6 +160,11 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 Note: You must have a call to wp_head() in your template in order for the Tooltip js and css to work properly.  If your theme does not support them you will need to link to these files manually in your theme (not recommended).
 
 == Frequently Asked Questions ==
+
+> [More FAQ's](http://tooltip.cminds.com/faq)
+>
+> [Detailed User Guide](http://tooltip.cminds.com/cm-tooltip-user-guide/)
+>
 
 = Does my main glossary page need to be titled "Glossary"? =
 
@@ -192,165 +200,5 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 
 == Changelog ==
 
-= 2.6.9 =
-* Fixed the "parse_error" bug in PHP versions <5.3
-* Limited the maximum number of terms displayed on the Glossary Index Page to 500 (to limit the memory usage)
-
-= 2.6.8 =
-* Added setting to run the function displaying the Glossary Index only once
-* Improved the option saving
-* Fixed some PHP notices
-* Fixed the problem with saving the "-None-" Glossary Index Page option
-* Updated the explanation of how the Glossary Index Page is created
-
-= 2.6.7 =
-* Added the menu icon
-* Added setting to disable highlighting only on the "main" WP_Query
-
-= 2.6.6 =
-* Fixed the unclosed div bug
-* Fixed the title of the Glossary Index Page when there's permalink conflict
-* Displaying "Glossary Index Page ID" settings in separate line
-* Fixed the setting "Avoid parsing protected tags?" 
-
-= 2.6.5 =
-* Changed the "Glossary Index Page ID" input from textbox to select
-* Updated the descriptions of "Glossary Index Page ID" and "Glossary Index Page Permalink"
-* Added option to generate the "Glossary Index Page"
-* Added new column in "System Information" with information if the setting is OK
-
-= 2.6.4 =
-* Fixed the bug with 'persistent' tooltip
-
-= 2.6.3 =
-* Fixed the bug with Permalinks not being changed on Settings save
-
-= 2.6.2 =
-* Fixed the bug which disabled the Woocommerce support after save
-* Fixed saving the settings
-
-= 2.6.1 =
-* Fixed bugs
-* Added warning message about missing "mbstring" library
-* Added [All] and [0-9] elements to the nav list
-
-= 2.6.0 =
-* Completely redesinged the settings page
-* Refreshed tooltip looks
-* Changed the names of the options
-
-= 2.5.2 =
-* Added the "mbstring" check to the System Information tab
-* Fixed the conflict with "NextGen Gallery"
-* Fixed the bug with "&amp;" character in synonyms
-
-= 2.5.0 =
-* Fixed the conditions in "the_content" filters
-
-= 2.4.10 =
-* Added the support for BuddyPress (custom type for filter: "bp_blogs_record_comment_post_types")
-* Added "Edit Glossary Item" to the admin bar
-* Fixed the tooltip positioning
-* Added the link to the "Trash" (for trashed glossary terms)
-
-= 2.4.7 =
-* Update the user guide link
-= 2.4.6 =
-* Fixed notifications appearing on some plugin installations
-* Fixed the style for the tiles when removed links to glossary pages
-
-= 2.4.1 =
-* Fixed a PHP bug which happened when post_title was empty
-
-= 2.3.1 =
-* Added link in setting to glossary index location
-
-= 2.3 =
-* Updated plugin site links and about pages
-
-= 2.2.4 =
-* Fixed bug with replacing single quotes with backticks
-* tested with WP 3.5.2
-* Fixed slashes before single quotes in tooltip content
-
-= 2.2.3 =
-* Added user guide
-
-= 2.2.2 =
-* Fixed special characters (e.g. umlauts) parsing
-
-= 2.1 =
-* Added revisions to glossary term
-
-= 2.0.7 =
-* Added right single quotation mark to normalization
-
-= 2.0.5 =
-* Content normalized regarding special characters like single quote and ampersand, which were encoded differently based on environment, editor and other factors.
-
-= 2.0.4 =
-* Fixed problem with (*UTF8) flag not being recognized on all PHP environments
-* Added one-time admin notice about PRO version
-
-= 2.0.3 =
-* Fixed problem with html entities in glossary term name (ampersand, apostrophe, etc.)
-
-= 2.0.2 =
-* Install bug fix and add comments to glossary
-
-= 2.0 =
-* Minor fix in styling
-* Allow users with "edit_posts" capability to add/edit glossary terms
-* Added "/u" (UTF8) flag to regex to force UTF8 encoding
-* Glossary main page is now automatically created upon activation if not exists
-
-= 1.6 =
-* Added "open glossary description in new window/tab" option to settings panel
-* Added onclick event on tooltip, so if you using touch device, you just need to click on the tooltip to hide it.
-* Changed parsing mechanism
-* Added www.cminds.com backlink
-
-= 1.5 =
-* Added "case-sensitive" option to settings panel
-* Fixed bug when slash character inside glossary term was causing problems
-* Added default z-index:100 to tooltip CSS
-
-= 1.4 =
-* Fixed bug when multiline tooltips were not displayed correctly on Glossary List
-* Fixed bug when glossary list was displayed in the bottom of all pages/posts when Glossary Page ID was not set in Settings
-* Terms that are substrings of current glossary item are not highlighted now on glossary definition page
-* Fixed bug when term with brackets inside was not highlighted
-* Added "Published/Trash" filter for glossary terms
-
-= 1.31 =
-* Bug fix with escaped single qoutations
-
-= 1.3 =
-* Reorganize admin menu
-* Added 'with_front'=false for rewrite item
-
-= 1.2 =
-* Added alphabetical letter index for glossary list
-* Added option to style glossary list as tiles instead of regular list
-* Do not show glossary explanation tooltip when on its explanation page
-* Do not show [glossary_exclude] tag in tooltips
-* Fix bug when excluded tags were embedded into other excluded tags
-* Fix bug when glossary terms were substrings of other glossary terms and only the shortest was caught (Thanks to Torsten Keil)
-* Fix bug when HTML code in tooltip content causes page to break
-* Thanks for Paul Ryan (prar@hawaii.edu) for his code contribution and Sebastian Palus for his addition and bug fixes
-
-= 1.1 =
-* Add A tag to the list of tags to ignore (Thanks to Robert Gilman)
-* Change activation mechanisim  (Thanks to Robert Gilman)
-* Fix bug when using excerpt (Thanks to Robert Gilman)
-
-= 1.0 =
-* First release nased on revised version on TooltipGlossary
-* Optimized code and bug fix from TooltipGlossary
-* Added [glossary_exclude] text [/glossary_exclude]
-* Added filters to clean tooltip text
-* Avoid changing URL using this format: href='url' in adition to href=""
-* Add extended functionality including excluding H1, H2, H3, Script, Object tags
-* Use the excerpt (if it exists) as hover text.
-* Remove term link to the glossary page
-* Limits for tooltip length
+> [View Release Notes in Tooltip Glossary Plugin Site](http://tooltip.cminds.com/release-notes/)
+>
