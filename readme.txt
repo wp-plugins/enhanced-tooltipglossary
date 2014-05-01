@@ -23,8 +23,9 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 
 ---
  
-> #### Add-Ons
+> #### Add-Ons & Extensions
 >
+> * New [CM Tooltip Glossary Skins](http://tooltip.cminds.com/cm-tooltip-glossary-skins/)
 > * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
 > * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
 
