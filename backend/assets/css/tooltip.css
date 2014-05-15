@@ -2,6 +2,10 @@
 #tttop {display:block; height:5px; margin-left:5px;}
 #ttcont {display:block; padding:2px 12px 3px 7px; margin-left:5px; background:#666; color:white}
 #ttbot {display:block; height:5px; margin-left:5px;}
+
+ul#glossaryList{padding: 0; margin: 0}
+div.glossary-container > ul.pageNumbers {padding-top: 20px;}
+
 span.glossaryLink, a.glossaryLink {text-decoration:none !important; border-bottom: dotted 1px;}
 a.glossaryLink:hover {text-decoration:none !important;}
 #glossary-categories {float: right; margin: 0}
@@ -12,7 +16,7 @@ h4.glossary_related_title {margin-bottom:0px;}
 ul.glossary_related {margin-top:0;}
 div.glossary_synonyms {margin:10px 0;}
 div.glossary_synonyms_title {margin: 10px 0;}
-.glossary_top_filter {clear: both; overflow: hidden;}
+.glossary_top_filter {clear: both; overflow: hidden; margin-bottom: 10px;}
 .glossary_top_filter .left {}
 .glossary_top_filter .right {float: right;}
 .error {color: red;}
@@ -63,11 +67,24 @@ div.cmtt_field_help:hover{
     background-image: url('images/help_hover.png');
 }
 
+div.cmtt_help{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url('images/help.png');
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+div.cmtt_help:hover{
+    background-image: url('images/help_hover.png');
+}
+
 .cm-showhide-handle{ cursor: pointer;}
 
 /* PRO PLUS ONLY */
 .glossary-container{ position: relative}
-.glossary-search-clear{ cursor: pointer}
+.glossary-search-clear{margin-left: 1em; cursor: pointer}
 
 /*THIRD PARTY*/
 #tt .mobile-link a.glossaryLinkMain{color: #fff}
@@ -163,3 +180,55 @@ div.scnt {margin-top: 1em}
 .server-info-table td:nth-child(3) {}
 .server-info-table span {color: green; font-weight: bold;}
 .server-info-table strong {color: red; font-weight: bold;}
+
+.cmtt-social-box {
+    margin-bottom: 10px;
+}
+
+.cmtt-social-box .sharetitle {
+    float: left;
+    border-right: 1px solid #D2D2D2;
+    padding: 3px 10px 2px 0px;
+    margin: 0 10px 0 0;
+    line-height: 25px;
+    vertical-align: middle;
+}
+
+.cmtt-social-box .sharetwitter {
+    float: left;
+    width: 90px;
+    border-right: 1px solid #D2D2D2;
+    margin: 0 15px 0 0;
+    padding: 3px 0 2px;
+    height: 25px;
+}
+
+.cmtt-social-box .sharefb {
+    width: 120px;
+    float: left;
+    border-right: 1px solid #D2D2D2;
+    padding: 3px 0 2px;
+    height: 25px;
+}
+
+.cmtt-social-box .sharegplus {
+    float: left;
+    width: 120px;
+    padding: 3px 0 2px;
+    border-right: 1px solid #D2D2D2;
+    height: 25px;
+    margin: 0 0px 0 15px;
+}
+
+.cmtt-social-box .sharelinkedin {
+    float: left;
+    width: 120px;
+    margin: 0 0px 0 15px;
+    padding: 3px 0 2px;
+    border-right: 0px solid #D2D2D2;
+    height: 25px;
+}
+
+select#cmtt_glossaryID{
+    max-width: 350px;
+}

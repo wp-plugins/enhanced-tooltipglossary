@@ -179,11 +179,14 @@ class CMTooltipGlossaryFrontend
 
             if( empty($glossary_index) )
             {
-                $glossary_index = get_children(array(
+                $glossary_index = get_posts(array(
                     'post_type'   => 'glossary',
                     'post_status' => 'publish',
                     'order'       => 'DESC',
-                    'orderby'     => 'title'
+                    'orderby'     => 'title',
+                    'numberposts' => -1,
+                    'update_post_meta_cache' => false,
+                    'update_post_term_cache' => false
                 ));
                 /*
                  *  Sort by title length (functions.php)

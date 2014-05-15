@@ -79,6 +79,7 @@ class CMTooltipGlossaryShared
     {
         define('CMTT_MENU_OPTION', 'cmtt_menu_option');
         define('CMTT_ABOUT_OPTION', 'cmtt_about');
+        define('CMTT_EXTENSIONS_OPTION', 'cmtt_extensions');
         define('CMTT_PRO_OPTION', 'cmtt_pro');
         define('CMTT_SETTINGS_OPTION', 'cmtt_settings');
         define('CMTT_IMPORTEXPORT_OPTION', 'cmtt_importexport');

@@ -1,9 +1,9 @@
 <?php
 /**
- * CM Tooltip Glossary about page
+ * CM Enhanced Tooltip Glossary extensions page
  *
  * @author CreativeMinds (http://plugins.cminds.com)
- * @copyright Copyright (c) 2012, CreativeMinds
+ * @copyright Copyright (c) 2014, CreativeMinds
  * @package Glossary/View
  */
 ?>
@@ -12,9 +12,9 @@
 
 This plugin was developed by <a href="http://plugins.cminds.com/" target="new">CreativeMinds</a>. You can find more information about CM Tooltip <a href="http://tooltip.cminds.com/" target="new">here</a>
 <br /><br />
-<h3>Premium Plugins by CreativeMinds</h3>
+<h3>CM Tooltip Glossary Add-Ons by CreativeMinds</h3>
 <div>
-    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&cat=Plugin&nitems=2" height="700" style="width: 100%" ></iframe>
+    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&tags=Tooltip&nitems=2" height="700" style="width: 100%" ></iframe>
 </div>
 
 <br />

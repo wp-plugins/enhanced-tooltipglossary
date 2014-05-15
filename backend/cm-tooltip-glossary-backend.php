@@ -58,6 +58,7 @@ class CMTooltipGlossaryBackend
         add_submenu_page(CMTT_MENU_OPTION, 'Add New', 'Add New', 'edit_posts', 'post-new.php?post_type=glossary');
         add_submenu_page(CMTT_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'edit_posts', CMTT_SETTINGS_OPTION, array(self::$calledClassName, 'cmtt_admin_options'));
         add_submenu_page(CMTT_MENU_OPTION, 'About', 'About', 'edit_posts', CMTT_ABOUT_OPTION, array(self::$calledClassName, 'cmtt_admin_about'));
+        add_submenu_page(CMTT_MENU_OPTION, 'Extensions', 'Extensions', 'edit_posts', CMTT_EXTENSIONS_OPTION, array(self::$calledClassName, 'cmtt_admin_extensions'));
         add_submenu_page(CMTT_MENU_OPTION, 'Pro Version', 'Pro Version', 'edit_posts', CMTT_PRO_OPTION, array(self::$calledClassName, 'cmtt_admin_pro'));
 
         if( user_can($current_user, 'edit_posts') )
@@ -231,6 +232,18 @@ class CMTooltipGlossaryBackend
     {
         ob_start();
         require_once self::$viewsPath . 'admin_about.php';
+        $content = ob_get_contents();
+        ob_end_clean();
+        require_once self::$viewsPath . 'admin_template.php';
+    }
+
+    /**
+     * Shows extensions page
+     */
+    public static function cmtt_admin_extensions()
+    {
+        ob_start();
+        require_once self::$viewsPath . 'admin_extensions.php';
         $content = ob_get_contents();
         ob_end_clean();
         require_once self::$viewsPath . 'admin_template.php';
