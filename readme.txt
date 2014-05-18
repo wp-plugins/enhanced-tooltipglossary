@@ -200,9 +200,13 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 4. Glossary Index Page - Second Template
 5. Admin's Glossary Terms
 6. Plugin's Settings
-5. Log Information
-5. Statistics of Usage
-5. Plugin's Settings Tooltip Tab
+7. Log Information
+8. Statistics of Usage
+9. Plugin's Settings Tooltip Tab
+10. Video In Transparent Tooltip
+11. Merriam-Webster Embedded Content 
+12. Wikipedia Embedded Content
+13. Import / Export 
 
 == Changelog ==
 
