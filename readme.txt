@@ -194,11 +194,15 @@ You can use glossaryLink. You can also define glossaryLinkMain if you wish to ha
 
 == Screenshots ==
 
-1. List of terms in Glossary
-2. Tooltip for one term inside glossary page
-3. Tooltip for one term inside a post
-4. Glossary terms page in Admin panel
-5. Glossary setting page in Admin
+1. Tooltip in a Post using Skins
+2. Glossary Term Page with Related Articles
+3. Glossary Index Page
+4. Glossary Index Page - Second Template
+5. Admin's Glossary Terms
+6. Plugin's Settings
+5. Log Information
+5. Statistics of Usage
+5. Plugin's Settings Tooltip Tab
 
 == Changelog ==
 
