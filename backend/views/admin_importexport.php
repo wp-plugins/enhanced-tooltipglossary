@@ -1,8 +1,10 @@
+<p class="clear"></p>
+<br/>
 <h3>Export Glossary Terms</h3>
 <form method="post">
     <input type="submit" value="Export to CSV" name="cmtt_doExport" class="button button-primary"/>
 </form>
-<br><br><br><br>
+<br/><br/><br/><br/>
 <h3>Import Glossary Terms from File</h3>
 <p>
     If the term already exists in the database, only content is updated. Otherwise, new term is added.
@@ -10,10 +12,11 @@
 <p>
     <strong>Important!!</strong> File should be UTF-8 encoded and, if you use MS Excel, please remember that by default it can't save proper CSV format (comma-delimited) - see <a href="http://support.microsoft.com/kb/291296" target="_blank" rel="nofollow">Microsoft Knowledge Base Article</a></p>
 
-<?php if( $_GET['msg'] == 'imported' ): ?>
-    <div id="message" class="updated below-h2">File <?php if( $_GET['itemsnumber'] == 0 ) echo 'import failed';
-    else 'succesfully imported';
-    ?> (<?php echo $_GET['itemsnumber']; ?> items read from file)</div>
+<?php if( isset($_GET['msg']) && $_GET['msg'] == 'imported' ): ?>
+    <div id="message" class="updated below-h2">File <?php
+        if( $_GET['itemsnumber'] == 0 ) echo 'import failed';
+        else 'succesfully imported';
+        ?> (<?php echo $_GET['itemsnumber']; ?> items read from file)</div>
 <?php endif; ?>
 
 <form method="post" enctype="multipart/form-data">

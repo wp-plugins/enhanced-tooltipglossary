@@ -68,6 +68,15 @@ class CMTooltipGlossary
 
         self::setupConstants();
 
+        /*
+         * Shared
+         */
+        require_once CMTT_PLUGIN_DIR . '/shared/cm-tooltip-glossary-shared.php';
+        $CMTooltipGlossarySharedInstance = CMTooltipGlossaryShared::instance();
+
+        require_once CMTT_PLUGIN_DIR . '/licensing_api.php';
+        $licensingApi = new CMTT_Cminds_Licensing_API('CM Tooltip Glossary', CMTT_MENU_OPTION, CMTT_NAME, CMTT_PLUGIN_FILE, array('release-notes' => 'http://tooltip.cminds.com/release-notes/'));
+
         if( is_admin() )
         {
             /*
@@ -85,11 +94,6 @@ class CMTooltipGlossary
             $CMTooltipGlossaryFrontendInstance = CMTooltipGlossaryFrontend::instance();
         }
 
-        /*
-         * Shared
-         */
-        require_once CMTT_PLUGIN_DIR . '/shared/cm-tooltip-glossary-shared.php';
-        $CMTooltipGlossarySharedInstance = CMTooltipGlossaryShared::instance();
     }
 
     /**
