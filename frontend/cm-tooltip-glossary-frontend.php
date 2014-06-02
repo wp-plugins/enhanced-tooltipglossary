@@ -798,6 +798,8 @@ class CMTooltipGlossaryFrontend
 
         $content .= '</div>';
 
+        $content = apply_filters('cmtt_glossary_index_after_content', $content);
+
         $authorUrl = self::getAuthorUrl();
         $content .= (get_option('cmtt_glossaryReferral') == 1 && get_option('cmtt_glossaryAffiliateCode')) ? self::cmtt_getReferralSnippet() : $authorUrl;
         return $content;
@@ -846,6 +848,8 @@ class CMTooltipGlossaryFrontend
              * In the end add the backlink at the beginning and the referral snippet at the end
              */
             $contentWithBacklink = $backlink . $filteredContent . $referralSnippet;
+
+            $contentWithBacklink = apply_filters('cmtt_glossary_term_after_content', $contentWithBacklink);
 
             return $contentWithBacklink;
         }

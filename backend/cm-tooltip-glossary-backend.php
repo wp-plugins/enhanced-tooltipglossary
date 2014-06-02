@@ -324,7 +324,6 @@ class CMTooltipGlossaryBackend
     }
 
     /**
-     * I don't know what it does ??
      * @global type $typenow
      */
     public static function cmtt_restrict_manage_posts()
@@ -333,13 +332,14 @@ class CMTooltipGlossaryBackend
         if( $typenow == 'glossary' )
         {
             $status = get_query_var('post_status');
-            $selected = ( $status == 'trash' ) ? ' selected="selected"' : '';
-            ?>
-            <select name="post_status">
-                <option value="published"><?php _e('Published'); ?></option>
-                <option value="trash" <?php echo $selected; ?> ><?php _e('Trash'); ?></option>
-            </select>
-            <?php
+            $options = apply_filters('cmtt_glossary_restrict_manage_posts', array('published', 'trash'));
+
+            echo '<select name="post_status">';
+            foreach($options as $key => $label)
+            {
+                echo '<option value="'.$key.'" '.selected($key, $status).'>'._e($label).'</option>';
+            }
+            echo '</select>';
         }
     }
 
