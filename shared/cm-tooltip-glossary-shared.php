@@ -124,7 +124,7 @@ class CMTooltipGlossaryShared
          * Glossary Term
          */
         add_option('cmtt_glossaryListTermLink', 0); //Remove links from glossary index to glossary page
-        add_option('cmtt_showTitleAttribute', 1); //show HTML title attribute
+        add_option('cmtt_showTitleAttribute', 0); //show HTML title attribute
         add_option('cmtt_glossaryInNewPage', 0); //In New Page?
 
         /*

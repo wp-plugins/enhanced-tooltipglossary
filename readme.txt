@@ -5,7 +5,7 @@ Donate link: http://tooltip.cminds.com/
 Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 2.7.3
+Stable tag: 2.7.4
 
 Easily create a Glossary, Encyclopaedia or Dictionary of your terms and show tooltip when users hover over. Many powerful features
 
@@ -25,6 +25,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
  
 > #### Add-Ons & Extensions
 >
+> * New [CM Tooltip Glossary Community Terms](https://tooltip.cminds.com/tooltip-glossary-community-terms/)
 > * New [CM Tooltip Glossary Log & Statistics](http://tooltip.cminds.com/cm-tooltip-log-statistics/)
 > * New [CM Tooltip Glossary Skins](http://tooltip.cminds.com/cm-tooltip-glossary-skins/)
 > * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
@@ -93,6 +94,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 >
 > **Pro Version Features - Language Tools**
 >
+> * **Support WPML** - Support WPML plugin and Multilingual sites
 > * **Related Post** - Shows all related posts and pages for each glossary term. This option is cached to enhance performance [View Image](http://jumpstartcto.com/glossary/minimal-viable-product/), [View Image that shows settings](http://static.cminds.com/wp-content/uploads/edd/glossarypro9.jpg)
 > * **Synonyms** - Users of the CM Tooltip Pro can add several Synonyms for each term, so that the Tooltip is be made to appear for all Synonyms in posts or pages that are listed in the Glossary index [View Demo](http://jumpstartcto.com/glossary/minimal-viable-product/), Glossary Term Page: [View Image](http://static.cminds.com/wp-content/uploads/edd/glossarypro10.jpg)
 > * **Singular and Plural** - Supports different variations of nouns that allow the user to specify a definition for each term according to the specific use of the word. The Tooltip will appear for all variations in all posts and pages. [View Image](http://tooltip.cminds.com/wp-content/uploads/edd/tooltip99D.png)
