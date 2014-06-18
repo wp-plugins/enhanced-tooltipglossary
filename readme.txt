@@ -25,6 +25,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
  
 > #### Add-Ons & Extensions
 >
+> * New [CM Tooltip Glossary Remote Import](https://tooltip.cminds.com/tooltip-glossary-remote-import/)
 > * New [CM Tooltip Glossary Community Terms](https://tooltip.cminds.com/tooltip-glossary-community-terms/)
 > * New [CM Tooltip Glossary Log & Statistics](http://tooltip.cminds.com/cm-tooltip-log-statistics/)
 > * New [CM Tooltip Glossary Skins](http://tooltip.cminds.com/cm-tooltip-glossary-skins/)
