@@ -149,7 +149,7 @@ Alphabetical index for the Glossary index is based on [jQuery ListNav Plugin](ht
 * [CM Ad Changer](http://wordpress.org/plugins/cm-ad-changer/) - Manage, Track and Report Advertising Campaigns Across Sites. Can turn your WP into an Ad Server
 * [CM Download Manager](http://wordpress.org/extend/plugins/cm-download-manager) - Allows users to upload, manage, track and support documents or files in a download directory listing database for others to contribute, use and comment upon.
 * [CM Answers](http://wordpress.org/extend/plugins/cm-answers/) - Allows users to post questions and answers (Q&A) in a Stack-overflow style community forum which is easy to use, customize and install. Comes with Social integration Shortcodes.
-* [CM MicroPayments]((https://plugins.cminds.com/cm-micropayment-platform/)) - Adds the in-site support for your own “virtual currency“. The purpose of this plugin is to allow in-site transactions without the necessity of processing the external payments each time (quicker & easier). Developers can use it as a platform to integrate with their own plugins.
+* [CM MicroPayments](https://plugins.cminds.com/cm-micropayment-platform/) - Adds the in-site support for your own "virtual currency". The purpose of this plugin is to allow in-site transactions without the necessity of processing the external payments each time (quicker & easier). Developers can use it as a platform to integrate with their own plugins.
 
 == Installation ==
 
