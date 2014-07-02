@@ -37,6 +37,8 @@ class CMTooltipGlossaryFrontend
          */
         add_filter('get_the_excerpt', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
         add_filter('the_content_more_link', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
+        add_filter('wpseo_opengraph_desc', array(self::$calledClassName, 'cmtt_reenable_parsing'), 1);
+        
         /*
          * Make sure parser runs before the post or page content is outputted
          */
