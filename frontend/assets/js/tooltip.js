@@ -55,12 +55,12 @@ CM_Tooltip.gtooltip = function (opts) {
                  * If the tooltip is not clickable we shouldn't be able to hover it
                  */
                 if (opts.clickable !== 0) {
-                jQuery(tooltipWrapper).mouseover(function () {
-                    clearTimeout(CM_Tooltip.timeoutId);
-                    if (jQuery(this).is(':animated')) {
-                        jQuery(this).stop().fadeTo(tooltipWrapper.timer, (opts.endalpha / 100));
-                    }
-                });
+                    jQuery(tooltipWrapper).mouseover(function () {
+                        clearTimeout(CM_Tooltip.timeoutId);
+                        if (jQuery(this).is(':animated')) {
+                            jQuery(this).stop().fadeTo(tooltipWrapper.timer, (opts.endalpha / 100));
+                        }
+                    });
                 }
 
                 jQuery(tooltipWrapper).mouseleave(function () {
@@ -100,15 +100,11 @@ CM_Tooltip.gtooltip = function (opts) {
 
             tooltipWrapper.style.display = 'block';
             tooltipWrapper.style.width = 'auto';
+            tooltipWrapper.style.maxWidth = opts.maxw+'px';
 
             if (!switchElement && ie) {
-                tooltipWrapper.style.width = tooltipWrapper.offsetWidth;
                 tooltipTop.style.display = 'block';
                 tooltipBottom.style.display = 'block';
-            }
-
-            if (tooltipWrapper.offsetWidth > opts.maxw) {
-                tooltipWrapper.style.width = opts.maxw + 'px';
             }
 
             h = parseInt(tooltipWrapper.offsetHeight, 10) + opts.top;
@@ -116,13 +112,39 @@ CM_Tooltip.gtooltip = function (opts) {
             jQuery(tooltipWrapper).stop().fadeTo(tooltipWrapper.timer, (opts.endalpha / 100));
         },
         pos: function (e) {
-            var u, l, x;
+            var u, l, x, leftShift, screenWidth, testNumber;
             u = ie ? event.clientY + document.documentElement.scrollTop : e.pageY;
             l = ie ? event.clientX + document.documentElement.scrollLeft : e.pageX;
             x = (u - h) > 28 ? (u - h / 2) : 28;
 
+            leftShift = (l + opts.left - 5);
+            screenWidth = jQuery(window).width();
+
+            tooltipWrapper.style.right = 'none';
+            tooltipWrapper.style.left = 'none';
+
+            testNumber = (screenWidth - leftShift) < opts.minw;
+//            console.log('offset+leftshift:'+ parseInt(tooltipWrapper.offsetWidth + leftShift));
+//            console.log('offsetWidth:'+ tooltipWrapper.offsetWidth);
+//            console.log('oscreenWidth:'+ screenWidth);
+//            console.log('test:' + testNumber);
+
+            if (testNumber )
+            {
+                tooltipWrapper.style.width = 'auto';
+                tooltipWrapper.style.left = null;
+                tooltipWrapper.style.right = 0 + 'px';
+                h = parseInt(tooltipWrapper.offsetHeight, 10) + opts.top;
+                x = u - h;
+            }
+            else
+            {
+                tooltipWrapper.style.width = 'auto';
+                tooltipWrapper.style.left = leftShift + 'px';
+                tooltipWrapper.style.right = null;
+            }
+
             tooltipWrapper.style.top = x + 'px';
-            tooltipWrapper.style.left = (l + opts.left) + 'px';
 
             /*
              * If the tooltip has to be clickable we have to turnoff it's repositioning 'feature'
@@ -169,6 +191,7 @@ CM_Tooltip.glossaryTip = null;
             top: 3,
             left: 23,
             maxw: 400,
+            minw: 200,
             speed: 10,
             timer: 500,
             endalpha: 95,

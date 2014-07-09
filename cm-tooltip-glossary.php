@@ -3,7 +3,7 @@
   Plugin Name: CM Tooltip Glossary
   Plugin URI: http://tooltip.cminds.com/
   Description:  Easily create a Glossary, Encyclopedia or Dictionary of your custom terms. Plugin parses posts and pages searching for defined glossary terms and adds links to the glossary term page. Hovering over the link shows a tooltip with the definition.
-  Version: 2.7.5
+  Version: 2.7.6
   Author: CreativeMindsSolutions
   Author URI: http://plugins.cminds.com/
  */
@@ -71,10 +71,10 @@ class CMTooltipGlossary
         /*
          * Shared
          */
-        require_once CMTT_PLUGIN_DIR . '/shared/cm-tooltip-glossary-shared.php';
+        include_once CMTT_PLUGIN_DIR . '/shared/cm-tooltip-glossary-shared.php';
         $CMTooltipGlossarySharedInstance = CMTooltipGlossaryShared::instance();
 
-        require_once CMTT_PLUGIN_DIR . '/licensing_api.php';
+        include_once CMTT_PLUGIN_DIR . '/licensing_api.php';
         $licensingApi = new CMTT_Cminds_Licensing_API('CM Tooltip Glossary', CMTT_MENU_OPTION, CMTT_NAME, CMTT_PLUGIN_FILE, array('release-notes' => 'http://tooltip.cminds.com/release-notes/'));
 
         if( is_admin() )
@@ -82,7 +82,7 @@ class CMTooltipGlossary
             /*
              * Backend
              */
-            require_once CMTT_PLUGIN_DIR . '/backend/cm-tooltip-glossary-backend.php';
+            include_once CMTT_PLUGIN_DIR . '/backend/cm-tooltip-glossary-backend.php';
             $CMTooltipGlossaryBackendInstance = CMTooltipGlossaryBackend::instance();
         }
         else
@@ -90,7 +90,7 @@ class CMTooltipGlossary
             /*
              * Frontend
              */
-            require_once CMTT_PLUGIN_DIR . '/frontend/cm-tooltip-glossary-frontend.php';
+            include_once CMTT_PLUGIN_DIR . '/frontend/cm-tooltip-glossary-frontend.php';
             $CMTooltipGlossaryFrontendInstance = CMTooltipGlossaryFrontend::instance();
         }
 

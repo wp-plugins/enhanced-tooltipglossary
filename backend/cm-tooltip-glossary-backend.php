@@ -118,6 +118,7 @@ class CMTooltipGlossaryBackend
             {
                 return strpos($k, 'cmtt_') === 0;
             }
+
             $options_names = array_filter(array_keys($post), 'cmtt_get_the_option_names');
 
             /*
@@ -219,10 +220,10 @@ class CMTooltipGlossaryBackend
     public static function cmtt_admin_settings()
     {
         ob_start();
-        require_once self::$viewsPath . 'admin_settings.php';
+        include_once self::$viewsPath . 'admin_settings.php';
         $content = ob_get_contents();
         ob_end_clean();
-        require_once self::$viewsPath . 'admin_template.php';
+        include_once self::$viewsPath . 'admin_template.php';
     }
 
     /**
@@ -231,10 +232,10 @@ class CMTooltipGlossaryBackend
     public static function cmtt_admin_about()
     {
         ob_start();
-        require_once self::$viewsPath . 'admin_about.php';
+        include_once self::$viewsPath . 'admin_about.php';
         $content = ob_get_contents();
         ob_end_clean();
-        require_once self::$viewsPath . 'admin_template.php';
+        include_once self::$viewsPath . 'admin_template.php';
     }
 
     /**
@@ -243,10 +244,10 @@ class CMTooltipGlossaryBackend
     public static function cmtt_admin_extensions()
     {
         ob_start();
-        require_once self::$viewsPath . 'admin_extensions.php';
+        include_once self::$viewsPath . 'admin_extensions.php';
         $content = ob_get_contents();
         ob_end_clean();
-        require_once self::$viewsPath . 'admin_template.php';
+        include_once self::$viewsPath . 'admin_template.php';
     }
 
     /**
@@ -255,10 +256,10 @@ class CMTooltipGlossaryBackend
     public static function cmtt_admin_pro()
     {
         ob_start();
-        require_once self::$viewsPath . 'admin_pro.php';
+        include_once self::$viewsPath . 'admin_pro.php';
         $content = ob_get_contents();
         ob_end_clean();
-        require_once self::$viewsPath . 'admin_template.php';
+        include_once self::$viewsPath . 'admin_template.php';
     }
 
     /**
@@ -266,21 +267,26 @@ class CMTooltipGlossaryBackend
      */
     public static function cmtt_glossary_stylesheets()
     {
-        wp_enqueue_style('jqueryUIStylesheet', self::$cssPath . 'jquery-ui-1.10.3.custom.css');
-        wp_enqueue_style('tooltip', self::$cssPath . 'tooltip.css');
+        global $plugin_page;
 
-        wp_enqueue_script('tooltip-admin-js', self::$jsPath . 'cm-tooltip.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tooltip'));
-
-        $int_version = (int) str_replace('.', '', get_bloginfo('version'));
-        if( $int_version < 100 )
+        if( $plugin_page == CMTT_SETTINGS_OPTION )
         {
-            $int_version *= 10; // will be 340 or 341 or 350 etc
-        }
+            wp_enqueue_style('jqueryUIStylesheet', self::$cssPath . 'jquery-ui-1.10.3.custom.css');
+            wp_enqueue_style('tooltip', self::$cssPath . 'tooltip.css');
 
-        if( $int_version >= 350 )
-        {
-            wp_enqueue_script('jqueryUIWPTooltips', includes_url() . 'js/jquery/ui/jquery.ui.tooltip.min.js', array(), '1.0.0', false);
-            wp_enqueue_script('jqueryUIWPTabs', includes_url() . 'js/jquery/ui/jquery.ui.tabs.min.js', array(), '1.0.0', false);
+            wp_enqueue_script('tooltip-admin-js', self::$jsPath . 'cm-tooltip.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tooltip'));
+
+            $int_version = (int) str_replace('.', '', get_bloginfo('version'));
+            if( $int_version < 100 )
+            {
+                $int_version *= 10; // will be 340 or 341 or 350 etc
+            }
+
+            if( $int_version >= 350 )
+            {
+                wp_enqueue_script('jqueryUIWPTooltips', includes_url() . 'js/jquery/ui/jquery.ui.tooltip.min.js', array(), '1.0.0', false);
+                wp_enqueue_script('jqueryUIWPTabs', includes_url() . 'js/jquery/ui/jquery.ui.tabs.min.js', array(), '1.0.0', false);
+            }
         }
     }
 
@@ -337,7 +343,7 @@ class CMTooltipGlossaryBackend
             echo '<select name="post_status">';
             foreach($options as $key => $label)
             {
-                echo '<option value="'.$key.'" '.selected($key, $status).'>'._e($label).'</option>';
+                echo '<option value="' . $key . '" ' . selected($key, $status) . '>' . _e($label) . '</option>';
             }
             echo '</select>';
         }
@@ -373,7 +379,7 @@ class CMTooltipGlossaryBackend
                     'target'  => $isExternalPage ? '_blank' : ''
                 );
             }
-            require_once self::$viewsPath . 'admin_nav.php';
+            include_once self::$viewsPath . 'admin_nav.php';
         }
     }
 

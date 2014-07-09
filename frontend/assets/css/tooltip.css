@@ -1,9 +1,9 @@
 #tt {position:absolute; display:block;z-index:1500;}
-#tttop {display:block; height:5px; margin-left:5px;}
+#tttop {display:block; height:5px; margin: 5px 0;}
 #ttcont {display:block; padding:2px 12px 3px 7px; margin-left:5px; background:#666; color:white}
 #ttbot {display:block; height:5px; margin-left:5px;}
 
-ul#glossaryList{padding: 0; margin: 0}
+ul#glossaryList{padding: 0; margin: 0;}
 
 span.glossaryLink, a.glossaryLink {text-decoration:none !important; border-bottom: dotted 1px;}
 a.glossaryLink:hover {text-decoration:none !important;}
@@ -18,7 +18,7 @@ div.glossary_synonyms_title {margin: 10px 0;}
 .glossary_top_filter {clear: both; overflow: hidden;}
 .glossary_top_filter .left {}
 .glossary_top_filter .right {float: right;}
-.error {color: red;}
+#message.error {color: red;}
 
 .red-glossary-third-party .block {border: 1px solid grey;border-radius: 13px;padding: 20px;margin-bottom: 5px;}
 .red-glossary-third-party .block h3 {padding-top: 0px; margin-top: 0px;}

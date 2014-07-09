@@ -38,7 +38,7 @@ class CMTooltipGlossaryFrontend
         add_filter('get_the_excerpt', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
         add_filter('the_content_more_link', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
         add_filter('wpseo_opengraph_desc', array(self::$calledClassName, 'cmtt_reenable_parsing'), 1);
-        
+
         /*
          * Make sure parser runs before the post or page content is outputted
          */
@@ -128,9 +128,25 @@ class CMTooltipGlossaryFrontend
         global $wp_query;
         if( $wp_query->is_main_query() && !is_single() )
         {  // to prevent conflict with Yost SEO
-            remove_filter('the_content', 'cmtt_glossary_parse');
-            remove_filter('the_content', 'cmtt_glossary_addBacklink');
+            remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_parse'), 9999);
+            remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
+            remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_addBacklink'), 10000);
         }
+        return $smth;
+    }
+
+    /**
+     * Reenable the parsing for some reason
+     * @global type $wp_query
+     * @param type $smth
+     * @return type
+     */
+    public static function cmtt_reenable_parsing($smth)
+    {
+        add_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_parse'), 9999);
+        add_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
+        add_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_addBacklink'), 10000);
+
         return $smth;
     }
 

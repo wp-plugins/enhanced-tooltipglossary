@@ -200,7 +200,7 @@ class CMTooltipGlossaryShared
         /*
          * Load the file with shared global functions
          */
-        require_once CMTT_PLUGIN_DIR . "shared/functions.php";
+        include_once CMTT_PLUGIN_DIR . "shared/functions.php";
     }
 
     public function registerShortcodes()

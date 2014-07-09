@@ -19,7 +19,7 @@ div.glossary_synonyms_title {margin: 10px 0;}
 .glossary_top_filter {clear: both; overflow: hidden; margin-bottom: 10px;}
 .glossary_top_filter .left {}
 .glossary_top_filter .right {float: right;}
-.error {color: red;}
+#message.error {color: red;}
 .cmtt_Glossary-replacement-add {border: 1px solid #CCC;border-radius: 5px;background: #EEE;margin-top: 30px;padding-bottom: 12px;}
 .glossary_loading {background: url('images/ajax-loader.gif') no-repeat center center;background-color: #DDD;position: absolute;width: 100%;height: 100%;opacity: 0.5;display: none;}
 .glossary_replacements_list tr:hover {background-color: #EEE;}
