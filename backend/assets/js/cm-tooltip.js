@@ -12,7 +12,14 @@
             newElement = $('<div class="cmtt_field_help"></div>');
             newElement.attr('title', element.html());
 
-            element.siblings('th').append(newElement);
+            if (element.siblings('th').length)
+            {
+                element.siblings('th').append(newElement);
+            }
+            else
+            {
+                element.siblings('*').append(newElement);
+            }
             element.remove();
         });
 

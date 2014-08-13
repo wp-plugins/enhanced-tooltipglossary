@@ -44,6 +44,12 @@
         <p>
             <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))) . 'sample-term' ?>
         </p>
+        <div>
+            <div class="cmtt_field_help_container">Warning! This option will completely erase all of the data stored by the CM Tooltip Glossary in the database: terms, options, synonyms etc. <br/> It will also remove the Glossary Index Page. <br/> It cannot be reverted.</div>
+            <input onclick="return confirm('All database items of CM Tooltip Glossary (terms, options etc.) will be erased. This cannot be reverted.')" type="submit" name="cmtt_tooltipPluginCleanup" value="Clenup database" class="button cmtt-cleanup-button"/>
+            <span style="display: inline-block;position: relative;"></span>
+        </div>
+
         <?php
 // check permalink settings
         if( get_option('permalink_structure') == '' )
@@ -140,6 +146,16 @@
                         </td>
                         <td colspan="2" class="cmtt_field_help_container">Select this option if you want glossary terms to be case-sensitive.</td>
                     </tr>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="block">
+                <h3>Debug/Conflict Settings</h3>
+                <p>
+                    This section holds the settings which are known for causing/solving conflicts with some themes/plugins. <br/>
+                    If you experience any problems with Glossary Index Page, please consult the <a href="https://tooltip.cminds.com/cm-tooltip-user-guide/" target="_blank">User Guide</a> and the help icons or search the Support forums before changing those settings (default ones should work best in most cases).
+                </p>
+                <table class="floated-form-table form-table">
                     <tr valign="top">
                         <th scope="row">Only highlight on "main" WP query?</th>
                         <td>
@@ -147,7 +163,6 @@
                             <input type="checkbox" name="cmtt_glossaryOnMainQuery" <?php checked(1, get_option('cmtt_glossaryOnMainQuery')); ?> value="1" />
                         </td>
                         <td colspan="2" class="cmtt_field_help_container">
-                            <strong>Warning: Don't change this setting unless you know what you're doing</strong><br/>
                             Select this option if you wish to only highlight glossary terms on main glossary query.
                             Unchecking this box may fix problems with highlighting terms on some themes which manipulate the WP_Query.</td>
                     </tr>
@@ -158,10 +173,9 @@
                             <input type="checkbox" name="cmtt_removeGlossaryCreateListFilter" <?php checked(1, get_option('cmtt_removeGlossaryCreateListFilter')); ?> value="1" />
                         </td>
                         <td colspan="2" class="cmtt_field_help_container">
-                            <strong>Warning: Don't change this setting unless you know what you're doing</strong><br/>
                             Select this option if you wish to remove the filter responsible for outputting the Glossary Index. <br/>
                             When this option is selected the function responsible for rendering the Glossary Index page (hooked to "the_content" filter) <br/>
-                            will run only once and then it will be removed. It's known that this conflicts with some translation plugins (e.g. qTranslate).
+                            will run only once and then it will be removed. It's known that this conflicts with some translation plugins (e.g. qTranslate, Jetpack, PageBuilder).
                         </td>
                     </tr>
                 </table>

@@ -140,6 +140,12 @@ class CMTooltipGlossaryBackend
             }
         }
 
+        if( isset($post['cmtt_tooltipPluginCleanup']) )
+        {
+            self::_cleanup();
+            $messages = 'CM Tooltip Glossary data (terms, options) have been removed from the database.';
+        }
+
         self::cmtt_admin_settings();
     }
 
@@ -429,6 +435,77 @@ class CMTooltipGlossaryBackend
             $message = __('CM Tooltip Glossary since version 2.6.0 requires "mbstring" PHP extension to work! ');
             $message .= '<a href="http://www.php.net/manual/en/mbstring.installation.php" target="_blank">(' . __('Installation instructions.') . ')</a>';
             cminds_show_message($message, true);
+        }
+    }
+
+    /**
+     * Function cleans up the plugin, removing the terms, resetting the options etc.
+     *
+     * @return string
+     */
+    protected static function _cleanup($force = true)
+    {
+        $glossary_index = get_posts(array(
+            'post_type'              => 'glossary',
+            'post_status'            => 'publish',
+            'order'                  => 'DESC',
+            'orderby'                => 'title',
+            'numberposts'            => -1,
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
+            'suppress_filters'       => false
+        ));
+
+        /*
+         * Remove the glossary terms
+         */
+        foreach($glossary_index as $key => $post)
+        {
+            wp_delete_post($post->ID, $force);
+        }
+
+        /*
+         * Remove the data from the other tables
+         */
+        if( class_exists('CMTT_Synonyms') )
+        {
+            CMTT_Synonyms::flushSynonymsDb();
+        }
+        if( class_exists('CMTT_Abbreviations') )
+        {
+            CMTT_Abbreviations::flushAbbreviationsDb();
+        }
+        if( class_exists('CMTT_Wikipedia_API') )
+        {
+            CMTT_Wikipedia_API::flushDatabase();
+        }
+        if( class_exists('CMTT_Mw_API') )
+        {
+            CMTT_Mw_API::flushDatabase();
+        }
+        if( class_exists('CMTT_Google_API') )
+        {
+            CMTT_Google_API::flushDatabase();
+        }
+
+        $glossaryIndexPageId = self::cmtt_getGlossaryIndexPageId();
+        if(!empty($glossaryIndexPageId))
+        {
+            wp_delete_post($glossaryIndexPageId);
+        }
+
+        /*
+         * Remove the options
+         */
+        $optionNames = wp_load_alloptions();
+        function cmtt_get_the_option_names($k)
+        {
+            return strpos($k, 'cmtt_') === 0;
+        }
+        $options_names = array_filter(array_keys($optionNames), 'cmtt_get_the_option_names');
+        foreach($options_names as $optionName)
+        {
+            delete_option($optionName);
         }
     }
 
