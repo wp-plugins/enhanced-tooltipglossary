@@ -36,7 +36,7 @@ class CMTooltipGlossaryFrontend
          * FILTERS
          */
         add_filter('get_the_excerpt', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
-        add_filter('the_content_more_link', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
+//            add_filter('the_content_more_link', array(self::$calledClassName, 'cmtt_disable_parsing'), 1);
         add_filter('wpseo_opengraph_desc', array(self::$calledClassName, 'cmtt_reenable_parsing'), 1);
 
         /*
@@ -126,7 +126,7 @@ class CMTooltipGlossaryFrontend
     public static function cmtt_disable_parsing($smth)
     {
         global $wp_query;
-        if( $wp_query->is_main_query() && !is_single() )
+        if( $wp_query->is_main_query() && !$wp_query->is_singular )
         {  // to prevent conflict with Yost SEO
             remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_parse'), 9999);
             remove_filter('the_content', array(self::$calledClassName, 'cmtt_glossary_createList'), 9998);
@@ -198,11 +198,11 @@ class CMTooltipGlossaryFrontend
             if( empty($glossary_index) )
             {
                 $glossary_index = get_posts(array(
-                    'post_type'   => 'glossary',
-                    'post_status' => 'publish',
-                    'order'       => 'DESC',
-                    'orderby'     => 'title',
-                    'numberposts' => -1,
+                    'post_type'              => 'glossary',
+                    'post_status'            => 'publish',
+                    'order'                  => 'DESC',
+                    'orderby'                => 'title',
+                    'numberposts'            => -1,
                     'update_post_meta_cache' => false,
                     'update_post_term_cache' => false
                 ));
