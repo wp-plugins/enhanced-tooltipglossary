@@ -1,20 +1,15 @@
-<?php
-/**
- * CM Enhanced Tooltip Glossary extensions page
- *
- * @author CreativeMinds (http://plugins.cminds.com)
- * @copyright Copyright (c) 2014, CreativeMinds
- * @package Glossary/View
- */
-?>
-<br />
+
+<div class="clear"></div>
+<hr>
+
+This plugin was developed by <a href="http://plugins.cminds.com/" target="_blank">CreativeMinds</a>.
+You can find more information about CM Tooltip <a href="http://tooltip.cminds.com/" target="_blank">here</a>
+
 <br />
 
-This plugin was developed by <a href="http://plugins.cminds.com/" target="new">CreativeMinds</a>. You can find more information about CM Tooltip <a href="http://tooltip.cminds.com/" target="new">here</a>
-<br /><br />
 <h3>CM Tooltip Glossary Add-Ons by CreativeMinds</h3>
 <div>
-    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&tags=Tooltip&nitems=2" height="700" style="width: 100%" ></iframe>
+    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&tags=Tooltip" height="700" style="width: 100%" ></iframe>
 </div>
 
 <br />

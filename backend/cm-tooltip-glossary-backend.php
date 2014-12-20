@@ -59,7 +59,7 @@ class CMTooltipGlossaryBackend
         add_submenu_page(CMTT_MENU_OPTION, 'TooltipGlossary Options', 'Settings', 'edit_posts', CMTT_SETTINGS_OPTION, array(self::$calledClassName, 'cmtt_admin_options'));
         add_submenu_page(CMTT_MENU_OPTION, 'About', 'About', 'edit_posts', CMTT_ABOUT_OPTION, array(self::$calledClassName, 'cmtt_admin_about'));
         add_submenu_page(CMTT_MENU_OPTION, 'Add-ons', 'Add-ons', 'edit_posts', CMTT_EXTENSIONS_OPTION, array(self::$calledClassName, 'cmtt_admin_extensions'));
-        add_submenu_page(CMTT_MENU_OPTION, 'Pro Version', 'Pro Version', 'edit_posts', CMTT_PRO_OPTION, array(self::$calledClassName, 'cmtt_admin_pro'));
+        add_submenu_page(CMTT_MENU_OPTION, 'Pro Versions', 'Pro Versions', 'edit_posts', CMTT_PRO_OPTION, array(self::$calledClassName, 'cmtt_admin_pro'));
 
         if( user_can($current_user, 'edit_posts') )
         {

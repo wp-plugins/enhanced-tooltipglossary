@@ -49,7 +49,7 @@ class CMTooltipGlossaryShared
         {
             ?>
             <div id="message" class="updated fade">
-                <p><strong>New !! Pro versions of Tooltip Glossary are <a href="http://tooltip.cminds.com/"  target="_blank">available here</a></strong></p>
+                <p><strong>New !! Pro versions of CM Tooltip Glossary are <a href="http://tooltip.cminds.com/"  target="_blank">available here</a></strong></p>
             </div>
             <?php
             delete_option('cmtt_afterActivation');

@@ -1,23 +1,24 @@
-<?php
-/**
- * CM Tooltip Glossary about page
- *
- * @author CreativeMinds (http://plugins.cminds.com)
- * @copyright Copyright (c) 2012, CreativeMinds
- * @package Glossary/View
- */
-?>
-<br />
+
+<div class="clear"></div>
+<hr>
+
+This plugin was developed by <a href="http://plugins.cminds.com/" target="_blank">CreativeMinds</a>.
+You can find more information about CM Tooltip <a href="http://tooltip.cminds.com/" target="_blank">here</a>
+
 <br />
 
-This plugin was developed by <a href="http://plugins.cminds.com/" target="new">CreativeMinds</a>. You can find more information about CM Tooltip <a href="http://tooltip.cminds.com/" target="new">here</a>
-<br /><br />
+<h3><strong>Video Demo </strong></h3>
+<iframe width="560" height="315" src="//www.youtube.com/embed/WN3HLZ6ZuBM" frameborder="0" allowfullscreen></iframe>
+
+<br />
+
 <h3>Premium Plugins by CreativeMinds</h3>
 <div>
-    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&cat=Plugin&nitems=2" height="700" style="width: 100%" ></iframe>
+    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&cat=Plugin" height="700" style="width: 100%" ></iframe>
 </div>
 
 <br />
+
 <h3>We Are Experts in Custom Plugin Development</h3>
 <ul>
     <li><strong>Professional Quality Work </strong>- We follow a detailed coding standard that ensures we deliver only the highest quality products and services. You can count on maintainable code that fulfills your requirements completely.</li>
