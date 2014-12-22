@@ -213,7 +213,7 @@
                     }
                     html.push('<a class="ln-' + (letters[i] === '-' ? '-' : i) + ' lnletter-' + letters[i].toLowerCase() + '" href="#">' + ((letters[i] === '-') ? '...' : letters[i].toUpperCase()) + '</a>');
                 }
-                return '<div class="ln-letters">' + html.join('') + '</div>' + ((opts.showCounts) ? '<div class="ln-letter-count" style="display:none; position:absolute; top:0; left:0; width:20px;">0</div>' : '');
+                return '<div class="ln-letters">' + html.join('') + '</div>' + ((opts.showCounts) ? '<div class="ln-letter-count" style="display:none; position:absolute; top:0; left:0; min-width:20px;">0</div>' : '');
             }
             init();
         });

@@ -843,10 +843,10 @@ class CMTooltipGlossaryFrontend
 
             $mainPageId = get_option('cmtt_glossaryID');
             $addBacklink = 0;
-            $addBacklinkBottom = 0;
+            $addBacklinkBottom = get_option('cmtt_glossary_addBackLinkBottom', 0);
 
             $backlink = ($addBacklink == 1 && $mainPageId > 0) ? '<a href="' . get_permalink($mainPageId) . '" style="display:block;margin:10px 0;">' . get_option('cmtt_glossary_backLinkText') . '</a>' : '';
-            $backlinkBottom = ($addBacklinkBottom == 1 && $mainPageId > 0) ? '<a href="' . get_permalink($mainPageId) . '" style="display:block;margin:10px 0;">' . get_option('cmtt_glossary_backLinkBottomText') . '</a>' : '';
+            $backlinkBottom = ($addBacklinkBottom == 1 && $mainPageId > 0) ? '<a href="' . get_permalink($mainPageId) . '" style="margin:10px 0;">' . get_option('cmtt_glossary_backLinkBottomText') . '</a>' : '';
 
             $authorUrl = self::getAuthorUrl();
             $referralSnippet = (get_option('cmtt_glossaryReferral') == 1 && get_option('cmtt_glossaryAffiliateCode')) ? self::cmtt_getReferralSnippet() : $authorUrl;

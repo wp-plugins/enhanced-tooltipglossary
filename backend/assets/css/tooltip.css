@@ -240,21 +240,6 @@ select#cmtt_glossaryID{
     max-width: 350px;
 }
 
-div.cminds_call_to_action{
-    display: flex;
-}
-
-div.cminds_call_to_action .inner_box{
-    border: 1px solid #999;
-    padding: 0 0.5em 0.5em;
-    margin: 0 auto;
-    min-width: 290px;
-}
-
-div.cminds_call_to_action a{
-    text-decoration: none;
-}
-
 div.cminds_settings_description{
     float: left;
     max-width: 55%;

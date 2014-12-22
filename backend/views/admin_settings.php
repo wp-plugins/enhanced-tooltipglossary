@@ -3,68 +3,70 @@
 <?php endif; ?>
 
 <br/>
-<form method="post">
-    <?php wp_nonce_field('update-options'); ?>
-    <input type="hidden" name="action" value="update" />
+<br/>
 
-    <br/>
+<div class="cminds_settings_description">
+    <p>
+        <strong>Supported Shortcodes:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    </p>
 
-    <div class="cminds_settings_description">
-        <p>
-            <strong>Supported Shortcodes:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
-        </p>
+    <ul style="display:none;list-style-type:disc;margin-left:20px;">
+        <li><strong>Exclude from parsing</strong> - [glossary_exclude] text [/glossary_exclude]</li>
+        <li><del><strong>Show glossary category index</strong> - [glossary cat="cat name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="_blank">Pro+</a></li>
+        <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Custom glossary tooltip</strong> - [glossary_tooltip content="text"] term [/glossary_tooltip]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Apply tooltip</strong> - [cm_tooltip_parse] text [/cm_tooltip_parse] </del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
+        <li><del><strong>Wikipedia</strong> - [glossary_wikipedia term="term name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Ecommerce version</a></li>
+    </ul>
+    <p>
+        <strong>Upgrade Options:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
+    </p>
 
-        <ul style="display:none;list-style-type:disc;margin-left:20px;">
-            <li><strong>Exclude from parsing</strong> - [glossary_exclude] text [/glossary_exclude]</li>
-            <li><del><strong>Show glossary category index</strong> - [glossary cat="cat name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
-            <li><del><strong>Show Merriam-Webster Dictionary</strong> - [glossary_dictionary term="term name"]</del>- Only in <a href="http://tooltip.cminds.com" target="_blank">Pro+</a></li>
-            <li><del><strong>Show Merriam-Webster Thesaurus</strong> - [glossary_thesaurus term="term name"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
-            <li><del><strong>Translate</strong> - [glossary_translate term="text-to-translate" source="english" target="spanish"]</del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
-            <li><del><strong>Custom glossary tooltip</strong> - [glossary_tooltip content="text"] term [/glossary_tooltip]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
-            <li><del><strong>Apply tooltip</strong> - [cm_tooltip_parse] text [/cm_tooltip_parse] </del>- Only in <a href="http://tooltip.cminds.com"  target="_blank">Pro+</a></li>
-            <li><del><strong>Wikipedia</strong> - [glossary_wikipedia term="term name"]</del> - Only in <a href="http://tooltip.cminds.com"  target="_blank">Ecommerce version</a></li>
-        </ul>
-        <p>
-            <strong>Upgrade Options:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
-        </p>
-
-        <ul style="display:none;list-style-type:disc;margin-left:20px;">
-            <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Pro Version</a></strong></li>
-            <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Pro+ Version</a></strong></li>
-            <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Ecommerce Version</a></strong></li>
-            <li>Coming Soon - Glossary Server (share your glossary items)</li>
-        </ul>
-        <p>
-            <?php
-            $glossaryIndexPageEditLink = admin_url('post.php?post=' . get_option('cmtt_glossaryID') . '&action=edit');
-            $glossaryIndexPageLink = get_page_link(get_option('cmtt_glossaryID'));
-            ?>
-            <strong>Link to the Glossary Index Page:</strong> <a href="<?php echo $glossaryIndexPageLink; ?>" target="_blank"><?php echo $glossaryIndexPageLink; ?></a> (<a title="Edit the Glossary Index Page" href="<?php echo $glossaryIndexPageEditLink; ?>">edit</a>)
-        </p>
-        <p>
-            <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))) . 'sample-term' ?>
-        </p>
+    <ul style="display:none;list-style-type:disc;margin-left:20px;">
+        <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Pro Version</a></strong></li>
+        <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Pro+ Version</a></strong></li>
+        <li><strong><a href="http://tooltip.cminds.com/pricing/" target="_blank">Ecommerce Version</a></strong></li>
+        <li>Coming Soon - Glossary Server (share your glossary items)</li>
+    </ul>
+    <p>
+        <?php
+        $glossaryIndexPageEditLink = admin_url('post.php?post=' . get_option('cmtt_glossaryID') . '&action=edit');
+        $glossaryIndexPageLink = get_page_link(get_option('cmtt_glossaryID'));
+        ?>
+        <strong>Link to the Glossary Index Page:</strong> <a href="<?php echo $glossaryIndexPageLink; ?>" target="_blank"><?php echo $glossaryIndexPageLink; ?></a> (<a title="Edit the Glossary Index Page" href="<?php echo $glossaryIndexPageEditLink; ?>">edit</a>)
+    </p>
+    <p>
+        <strong>Example of Glossary Term link:</strong> <?php echo trailingslashit(home_url(get_option('cmtt_glossaryPermalink'))) . 'sample-term' ?>
+    </p>
+    <form method="post">
         <div>
             <div class="cmtt_field_help_container">Warning! This option will completely erase all of the data stored by the CM Tooltip Glossary in the database: terms, options, synonyms etc. <br/> It will also remove the Glossary Index Page. <br/> It cannot be reverted.</div>
             <input onclick="return confirm('All database items of CM Tooltip Glossary (terms, options etc.) will be erased. This cannot be reverted.')" type="submit" name="cmtt_tooltipPluginCleanup" value="Clenup database" class="button cmtt-cleanup-button"/>
             <span style="display: inline-block;position: relative;"></span>
         </div>
-
-        <?php
-// check permalink settings
-        if( get_option('permalink_structure') == '' )
-        {
-            echo '<span style="color:red">Your WordPress Permalinks needs to be set to allow plugin to work correctly. Please Go to <a href="' . admin_url() . 'options-permalink.php" target="new">Settings->Permalinks</a> to set Permalinks to Post Name.</span><br><br>';
-        }
-        ?>
-    </div>
+    </form>
 
     <?php
-    include plugin_dir_path(__FILE__) . '/call_to_action.phtml';
+// check permalink settings
+    if( get_option('permalink_structure') == '' )
+    {
+        echo '<span style="color:red">Your WordPress Permalinks needs to be set to allow plugin to work correctly. Please Go to <a href="' . admin_url() . 'options-permalink.php" target="new">Settings->Permalinks</a> to set Permalinks to Post Name.</span><br><br>';
+    }
     ?>
+</div>
 
-    <br/>
-    <div class="clear"></div>
+<?php
+include plugin_dir_path(__FILE__) . '/call_to_action.phtml';
+?>
+
+<br/>
+<div class="clear"></div>
+
+<form method="post">
+    <?php wp_nonce_field('update-options'); ?>
+    <input type="hidden" name="action" value="update" />
 
     <div id="tabs" class="glossarySettingsTabs">
         <div class="glossary_loading"></div>
@@ -253,6 +255,14 @@
                             <input type="checkbox" name="cmtt_showTitleAttribute" <?php checked(true, get_option('cmtt_showTitleAttribute')); ?> value="1" />
                         </td>
                         <td colspan="2" class="cmtt_field_help_container">Select this option if you want to use glossary name as HTML "title" for link</td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">Show back link on the bottom</th>
+                        <td>
+                            <input type="hidden" name="cmtt_glossary_addBackLinkBottom" value="0" />
+                            <input type="checkbox" name="cmtt_glossary_addBackLinkBottom" <?php checked(true, get_option('cmtt_glossary_addBackLinkBottom')); ?> value="1" />
+                        </td>
+                        <td colspan="2" class="cmtt_field_help_container">Select this option if you want to show link back to glossary index from glossary term page</td>
                     </tr>
                 </table>
             </div>

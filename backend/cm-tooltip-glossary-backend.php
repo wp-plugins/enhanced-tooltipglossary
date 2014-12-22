@@ -290,8 +290,8 @@ class CMTooltipGlossaryBackend
 
             if( $int_version >= 350 )
             {
-                wp_enqueue_script('jqueryUIWPTooltips', includes_url() . 'js/jquery/ui/jquery.ui.tooltip.min.js', array(), '1.0.0', false);
-                wp_enqueue_script('jqueryUIWPTabs', includes_url() . 'js/jquery/ui/jquery.ui.tabs.min.js', array(), '1.0.0', false);
+                wp_enqueue_script('jquery-ui-tooltip');
+                wp_enqueue_script('jquery-ui-tabs');
             }
         }
     }
