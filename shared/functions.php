@@ -68,6 +68,10 @@ if( !function_exists('cminds_file_exists_remote') )
 
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_NOBODY, true);
+        /*
+         * Don't wait more than 5s for a file
+         */
+        curl_setopt($curl,CURLOPT_TIMEOUT,5);
         //Check connection only
         $result = curl_exec($curl);
         //Actual request

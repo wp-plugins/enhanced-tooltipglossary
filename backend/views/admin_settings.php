@@ -185,7 +185,7 @@ include plugin_dir_path(__FILE__) . '/call_to_action.phtml';
             </div>
             <div class="block">
                 <h3>Referrals</h3>
-                <p>Refer new users to any of the CM Plugins and you'll receive 10% of their purchase!. For more information please visit CM Plugins <a href="http://www.cminds.com/referral-program/" target="new">Affiliate page</a></p>
+                <p>Refer new users to any of the CM Plugins and you'll receive a minimum of <strong>15%</strong> of their purchase! For more information please visit CM Plugins <a href="http://www.cminds.com/referral-program/" target="new">Affiliate page</a></p>
                 <table>
                     <tr valign="top">
                         <th scope="row" valign="middle" align="left" >Enable referrals:</th>

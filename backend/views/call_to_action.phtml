@@ -29,12 +29,12 @@ $twitterTweet = rawurlencode('Checkout the CM Tooltip Glossary ( http://wordpres
     <div id="fb-root"></div>
     <div class="inner_box">
         <h3>Share your Appreciation</h3>
-        <a target="_blank" href="<?php echo $pluginReviewLink; ?>">
+        <a target="_blank" href="<?php echo esc_attr($pluginReviewLink); ?>">
             <div class="btn button">
                 <div class="dashicons dashicons-share-alt2"></div><span>Submit a review</span>
             </div>
         </a>
-        <a target="_blank"  href="http://twitter.com/home/?status=<?php echo $twitterTweet ?>">
+        <a target="_blank"  href="http://twitter.com/home/?status=<?php echo esc_attr(urlencode($twitterTweet)) ?>">
             <div class="btn button">
                 <div class="dashicons dashicons-twitter"></div><span>Tweet</span>
             </div>
@@ -52,10 +52,8 @@ $twitterTweet = rawurlencode('Checkout the CM Tooltip Glossary ( http://wordpres
             }(document, 'script', 'twitter-wjs');
         </script>
 
-        <!-- Umieść ten tag w miejscu, w którym ma być widoczny widżet. -->
         <div class="g-follow" data-annotation="none" data-height="24" data-href="https://plus.google.com/108513627228464018583" data-rel="publisher"></div>
 
-        <!-- Umieść ten tag po ostatnim tagu widżetu widżet. -->
         <script type="text/javascript">
             (function () {
                 var po = document.createElement('script');
