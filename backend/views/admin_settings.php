@@ -43,7 +43,7 @@
     <form method="post">
         <div>
             <div class="cmtt_field_help_container">Warning! This option will completely erase all of the data stored by the CM Tooltip Glossary in the database: terms, options, synonyms etc. <br/> It will also remove the Glossary Index Page. <br/> It cannot be reverted.</div>
-            <input onclick="return confirm('All database items of CM Tooltip Glossary (terms, options etc.) will be erased. This cannot be reverted.')" type="submit" name="cmtt_tooltipPluginCleanup" value="Clenup database" class="button cmtt-cleanup-button"/>
+            <input onclick="return confirm('All database items of CM Tooltip Glossary (terms, options etc.) will be erased. This cannot be reverted.')" type="submit" name="cmtt_tooltipPluginCleanup" value="Cleanup database" class="button cmtt-cleanup-button"/>
             <span style="display: inline-block;position: relative;"></span>
         </div>
     </form>
