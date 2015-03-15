@@ -2,7 +2,7 @@
 Name: CM Tooltip Glossary
 Contributors: CreativeMindsSolutions
 Donate link: http://tooltip.cminds.com/
-Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,products recommendations,recommendations
+Tags: glossary,posts,definition,definitions,tooltip,automatic,hints,hint,tip,tool-tip,dictionary,Encyclopaedia,knowledge base,index,keywords,terms,knowledge base,knowledgebase,lexicon,synonyms,plural,singular,descriptions,description,explain,explanation,explanatory dictionary,Tooltips,vocabulary,words,word,expression,expressions,appendix,technical terms,content management,knowledge management,highlight,concordance,language,reference,terminology,jargon,palaver,style,talk,word,wording,thesaurus,word stock,wordbook,wordlist,archive,catalog,directory,index,listing,menu,source,archives,atlas,accent,expression,lingua,slang,bilingual,dialectic,expressed,lexical,literal,term,entry,verbal,verb,literature,book,literature,sourcebook,word list,translate,translation,google translate,merriam-webster,wikipedia,hint,youtube,vimeo,mp3,mp4,ecommerce,tags,amazon,products,productsrecommendations,recommendations,support,comments,images,page,pages,plugin,post,posts,seo,shortcode,sidebar,social,twitter,widget,widgets,wordpress,video,audio
 Requires at least: 3.3
 Tested up to: 4.1.1
 Stable tag: 3.1.0
@@ -30,6 +30,7 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 > * New [CM Tooltip Glossary Community Terms](https://tooltip.cminds.com/tooltip-glossary-community-terms/)
 > * New [CM Tooltip Glossary Log & Statistics](http://tooltip.cminds.com/cm-tooltip-log-statistics/)
 > * New [CM Tooltip Glossary Skins](http://tooltip.cminds.com/cm-tooltip-glossary-skins/)
+> * New [CM Tooltip Glossary Widgets](https://tooltip.cminds.com/wordpress-tooltip-glossary-widgets-add/)
 > * [CM Tooltip Glossary Amazon Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-amazon-support/)
 > * [CM Tooltip Glossary Woocommerce Widgets](http://wordpress.org/plugins/cm-tooltip-glossary-woocommerce-widgets/)
 
@@ -43,6 +44,13 @@ CM Tooltip creates a glossary index with all terms used. [VISIT PLUGIN SITE](htt
 
 ---
  
+
+> #### Other Plugins By CM Plugins
+> * [Plugin Catalog](https://plugins.cminds.com/)
+> * [Free Plugins](https://profiles.wordpress.org/creativemindssolutions#content-plugins)
+
+---
+
 > #### Follow Us
 > [Blog](http://plugin.cminds.com/blog/) | [Twitter](http://twitter.com/cmplugins)  | [Google+](https://plus.google.com/108513627228464018583/) | [LinkedIn](https://www.linkedin.com/company/creativeminds) | [YouTube](https://www.youtube.com/user/cmindschannel) | [Pinterest](http://www.pinterest.com/cmplugins/) | [FaceBook](https://www.facebook.com/cmplugins/)
 
