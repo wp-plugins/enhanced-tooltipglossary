@@ -8,9 +8,7 @@ You can find more information about CM Tooltip <a href="http://tooltip.cminds.co
 <br />
 
 <h3>CM Tooltip Glossary Add-Ons by CreativeMinds</h3>
-<div>
-    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&tags=Tooltip" height="700" style="width: 100%" ></iframe>
-</div>
+<div><a href="https://plugins.cminds.com/product-catalog/?showfilter=No&tags=Tooltip">List of CM Tooltip Glossary Extensions</a></div>
 
 <br />
 <h3>We Are Experts in Custom Plugin Development</h3>

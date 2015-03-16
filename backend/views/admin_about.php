@@ -7,15 +7,12 @@ You can find more information about CM Tooltip <a href="http://tooltip.cminds.co
 
 <br />
 
-<h3><strong>Video Demo </strong></h3>
-<iframe width="560" height="315" src="//www.youtube.com/embed/WN3HLZ6ZuBM" frameborder="0" allowfullscreen></iframe>
-
+<h3><strong>Video Demo</strong></h3>
+<div><a href="//www.youtube.com/embed/WN3HLZ6ZuBM">Watch the demo</a></div>
 <br />
 
 <h3>Premium Plugins by CreativeMinds</h3>
-<div>
-    <iframe src="https://plugins.cminds.com/product-catalog/?showfilter=No&cat=Plugin" height="700" style="width: 100%" ></iframe>
-</div>
+<div><a href="https://plugins.cminds.com/product-catalog/?showfilter=No&cat=Plugin">List of Our Premium Plugins</a></div>
 
 <br />
 

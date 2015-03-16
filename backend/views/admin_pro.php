@@ -62,7 +62,7 @@
         <li>Unlimited number of terms can be displayed in the Glossary index.</li>
     </ul>
     <h3>Video Demo</h3>
-    <iframe width="500" height="281" src="//www.youtube.com/embed/xfl3pum-XTk" frameborder="0" allowfullscreen></iframe>
+    <div><a href="//www.youtube.com/embed/xfl3pum-XTk">Watch the video</a></div>
 </div>
 
 <div class="column">
@@ -95,7 +95,7 @@
         <li><strong>Abbreviations</strong> - Include support for term abbreviation (one per each term). Abbreviation will appear in index page and will be highlighted in post and pages where it appears</li>
     </ul>
     <h3>Video Demo</h3>
-    <iframe width="500" height="281" src="//www.youtube.com/embed/Uc5ksso7c4o" frameborder="0" allowfullscreen></iframe>
+    <div><a href="//www.youtube.com/embed/Uc5ksso7c4o">Watch the video</a></div>
 </div>
 
 <div class="column">
@@ -115,7 +115,7 @@
         <li><strong>Tags</strong> - Tooltip Glossary now supports tags per each term. Tags are shown also on the Glossary index page and allow easy filtering of terms. Check <a title="Glossary" href="https://plugins.cminds.com/glossary/">Glossary index</a></li>
     </ul>
     <h3>Video Demo</h3>
-    <iframe width="500" height="281" src="//www.youtube.com/embed/sN-Bw7jmujM" frameborder="0" allowfullscreen></iframe>
+    <div><a href="//www.youtube.com/embed/sN-Bw7jmujM">Watch the video</a></div>
 </div>
 
 <div class="clear"></div>
