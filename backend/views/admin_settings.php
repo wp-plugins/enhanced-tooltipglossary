@@ -6,6 +6,10 @@
 <br/>
 
 <div class="cminds_settings_description">
+    <?php
+    include plugin_dir_path(__FILE__) . '/upgrade.phtml';
+    ?>
+
     <p>
         <strong>Supported Shortcodes:</strong> <a href="javascript:void(0)" onclick="jQuery(this).parent().next().slideToggle()">Show/Hide</a>
     </p>
@@ -81,11 +85,6 @@ include plugin_dir_path(__FILE__) . '/call_to_action.phtml';
             <div class="block">
                 <h3>General Settings</h3>
                 <table class="floated-form-table form-table">
-                    <tr style="background-color: #CCFFCC">
-                        <th scope="row"><strong>Pro Version</strong></th>
-                        <td><p><strong><a href="http://tooltip.cminds.com/" target="_blank">Upgrade</a></p></td>
-                        <td colspan="2" class="cmtt_field_help_container"> Professional version of CM Super Glossary Pro which which adds SEO support, Import/Export tools, Multisite support, Sidebar Widget, Synonyms, Support for huge glossaries, tooltip customization options and much more</td>
-                    </tr>
                     <tr valign="top" class="whole-line">
                         <th scope="row">Glossary Index Page ID</th>
                         <td>

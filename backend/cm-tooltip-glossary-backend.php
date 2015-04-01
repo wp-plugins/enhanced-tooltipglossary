@@ -12,6 +12,8 @@ class CMTooltipGlossaryBackend
     protected static $jsPath = NULL;
     protected static $viewsPath = NULL;
 
+    const PAGE_YEARLY_OFFER = 'https://www.cminds.com/store/cm-wordpress-plugins-yearly-membership/';
+
     public static function instance()
     {
         $class = __CLASS__;
@@ -66,7 +68,28 @@ class CMTooltipGlossaryBackend
             $submenu[CMTT_MENU_OPTION][500] = array('User Guide', 'edit_posts', 'http://tooltip.cminds.com/cm-tooltip-user-guide/');
         }
 
+        if( current_user_can('manage_options') )
+        {
+            $submenu[CMTT_MENU_OPTION][999] = array('Yearly membership offer', 'manage_options', self::PAGE_YEARLY_OFFER);
+            add_action('admin_head', array(__CLASS__, 'admin_head'));
+        }
+
         add_filter('views_edit-glossary', array(self::$calledClassName, 'cmtt_filter_admin_nav'), 10, 1);
+    }
+
+    public static function admin_head()
+    {
+        echo '<style type="text/css">
+        		#toplevel_page_cmtt_menu_option a[href*="cm-wordpress-plugins-yearly-membership"] {color: white;}
+    			a[href*="cm-wordpress-plugins-yearly-membership"]:before {font-size: 16px; vertical-align: middle; padding-right: 5px; color: #d54e21;
+    				content: "\f487";
+				    display: inline-block;
+					-webkit-font-smoothing: antialiased;
+					font: normal 16px/1 \'dashicons\';
+    			}
+    			#toplevel_page_cmtt_menu_option a[href*="cm-wordpress-plugins-yearly-membership"]:before {vertical-align: bottom;}
+
+        	</style>';
     }
 
     /**
@@ -489,7 +512,7 @@ class CMTooltipGlossaryBackend
         }
 
         $glossaryIndexPageId = self::cmtt_getGlossaryIndexPageId();
-        if(!empty($glossaryIndexPageId))
+        if( !empty($glossaryIndexPageId) )
         {
             wp_delete_post($glossaryIndexPageId);
         }
@@ -498,10 +521,12 @@ class CMTooltipGlossaryBackend
          * Remove the options
          */
         $optionNames = wp_load_alloptions();
+
         function cmtt_get_the_option_names($k)
         {
             return strpos($k, 'cmtt_') === 0;
         }
+
         $options_names = array_filter(array_keys($optionNames), 'cmtt_get_the_option_names');
         foreach($options_names as $optionName)
         {
