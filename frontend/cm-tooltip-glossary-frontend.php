@@ -280,7 +280,7 @@ class CMTooltipGlossaryFrontend
                     {
                         continue;
                     }
-                    $glossary_title = preg_quote(str_replace('\'', '&#39;', htmlspecialchars(trim(get_the_title($glossary_item->ID)), ENT_QUOTES, 'UTF-8')), '/');
+                    $glossary_title = str_replace('&#039;', '’', preg_quote(htmlspecialchars(trim($glossary_item->post_title), ENT_QUOTES, 'UTF-8'), '/'));
                     $addition = '';
 
                     $glossaryIndexArrKey = $glossary_title . $addition;
@@ -461,7 +461,7 @@ class CMTooltipGlossaryFrontend
         /*
          * If it's case insensitive, then the term keys are stored as lowercased
          */
-        $normalizedTitle = preg_quote(str_replace('\'', '&#39;', htmlspecialchars(trim($title), ENT_QUOTES, 'UTF-8')), '/');
+        $normalizedTitle = str_replace('&#039;', "’", preg_quote(htmlspecialchars(trim($title), ENT_QUOTES, 'UTF-8'), '/'));
         $titleIndex = (!$caseSensitive) ? mb_strtolower($normalizedTitle) : $normalizedTitle;
 
         /*

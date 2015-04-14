@@ -41,9 +41,6 @@ class CMTooltipGlossaryBackend
         add_action('restrict_manage_posts', array(self::$calledClassName, 'cmtt_restrict_manage_posts'));
         add_action('admin_notices', array(self::$calledClassName, 'cmtt_glossary_admin_notice_wp33'));
         add_action('admin_notices', array(self::$calledClassName, 'cmtt_glossary_admin_notice_mbstring'));
-
-//        add_action('save_post', array(self::$calledClassName, 'cmtt_save_postdata'));
-//        add_action('update_post', array(self::$calledClassName, 'cmtt_save_postdata'));
     }
 
     /**
