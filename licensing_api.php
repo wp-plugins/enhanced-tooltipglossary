@@ -311,7 +311,7 @@ if( !class_exists('CMTT_Cminds_Licensing_API') )
                     $apiCallResults[] = false;
                 }
 
-                $url = add_query_arg($params, self::$apiEndpointUrl);
+                $url = esc_url(add_query_arg($params, self::$apiEndpointUrl));
                 $response = wp_remote_get($url, array('timeout' => 15, 'sslverify' => false));
 
                 if( is_wp_error($response) )
@@ -378,7 +378,7 @@ if( !class_exists('CMTT_Cminds_Licensing_API') )
                      * This license is invalid / either it has expired or the key was invalid
                      */
                     $this->message = 'Your license key provided for "' . $this->pluginName . '" is inactive! <br/>'
-                            . 'Please, go to <a href="' . add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php')) . '">plugin\'s License page</a> and click "Activate License".';
+                            . 'Please, go to <a href="' . esc_url(add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php'))) . '">plugin\'s License page</a> and click "Activate License".';
                     $this->messageError = TRUE;
                     break;
                 case 'invalid':
@@ -386,7 +386,7 @@ if( !class_exists('CMTT_Cminds_Licensing_API') )
                      * This license is invalid / either it has expired or the key was invalid
                      */
                     $this->message = 'Your license key provided for "' . $this->pluginName . '" is invalid! <br/>'
-                            . 'Please go to <a href="' . add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php')) . '">plugin\'s License page</a> for the licencing instructions.';
+                            . 'Please go to <a href="' . esc_esc(add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php'))) . '">plugin\'s License page</a> for the licencing instructions.';
                     $this->messageError = TRUE;
                     break;
                 case '':
@@ -394,7 +394,7 @@ if( !class_exists('CMTT_Cminds_Licensing_API') )
                      * This license is invalid / either it has expired or the key was invalid
                      */
                     $this->message = 'To use "' . $this->pluginName . '" you have to provide a valid license key! <br/>'
-                            . 'Please go to <a href="' . add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php')) . '">plugin\'s License page</a> to enter your license.';
+                            . 'Please go to <a href="' . esc_esc(add_query_arg(array('page' => $this->pluginMenuPage), admin_url('admin.php'))) . '">plugin\'s License page</a> to enter your license.';
                     $this->messageError = TRUE;
                     break;
 
